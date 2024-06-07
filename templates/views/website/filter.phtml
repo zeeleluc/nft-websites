@@ -1,20 +1,22 @@
-<div class="container mt-4 mb-2">
+<div class="container-fluid mb-2">
     <div class="row justify-content-center text-center">
-        <h1>Weeping Filter</h1>
+        <h2>Weeping Filter</h2>
         <?php if ($totalFilteredNFTs > env('FILTER_LIMIT')): ?>
-            <h2><?=$totalFilteredNFTs; ?> Weeping Plebs found, limited to <?=env('FILTER_LIMIT'); ?> random Weeping Plebs</h2>
+            <p><?=$totalFilteredNFTs; ?> Weeping Plebs found, limited to <?=env('FILTER_LIMIT'); ?> random Weeping Plebs</p>
         <?php else: ?>
-            <h2><?=$totalFilteredNFTs; ?> Weeping Plebs found</h2>
+            <p><?=$totalFilteredNFTs; ?> Weeping Plebs found</p>
         <?php endif; ?>
         <p>
             <?php foreach (\App\Service\Filter::parse($currentFilter) as $trait => $property): ?>
-                <?=revert_snake_case($trait); ?>: <?=revert_snake_case($property); ?><br />
+                <a href="<?=env('APP_ORIGIN_URL'); ?>/filter/<?=\App\Service\Filter::queryRemoveTrait($currentFilter, $trait); ?>" class="badge bg-success badge-large">
+                    <?=revert_snake_case($trait); ?>: <?=revert_snake_case($property); ?>
+                </a>
             <?php endforeach; ?>
         </p>
     </div>
     <div class="row justify-content-center">
         <?php foreach ($filteredNFTs as $NFT): ?>
-            <div class="col col-12 col-sm-3 mt-4">
+            <div class="col col-12 col-sm-2 mt-4">
                 <?php require ROOT . "/templates/views/website/partials/nft-card.phtml"; ?>
             </div>
         <?php endforeach; ?>

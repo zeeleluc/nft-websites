@@ -17,6 +17,6 @@ class HomeAction extends BaseAction
         $this->setLayout('default');
         $this->setView('website/home');
 
-        $this->setVariable(new Variable('randomNFTs', (new NFTs())->getRandom(8)));
+        $this->setVariable(new Variable('randomNFTs', (new NFTs())->getRandom(24)));
     }
 }
