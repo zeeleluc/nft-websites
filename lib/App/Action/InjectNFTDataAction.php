@@ -23,7 +23,7 @@ class InjectNFTDataAction extends BaseAction implements CliActionInterface
      */
     public function run(): void
     {
-        foreach (range(8464, 8888) as $id) {
+        foreach (range(1, 8888) as $id) {
             $json = file_get_contents(env('CDN_ENDPOINT_METADATA') . $id . '.json');
             $metadata = (array) json_decode($json, true);
             $properties = [
