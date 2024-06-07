@@ -19,3 +19,4 @@ RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301,NE]
 # Pretty URLs
 RewriteRule ^([a-z-]+)/?$ index.php?action=$1 [NC,L,QSA]
 RewriteRule ^(filter)/([a-z0-9_;=]+)/?$ index.php?action=$1&filter=$2 [NC,L,QSA]
+RewriteRule ^(weepingpleb)/([0-9]+)/?$ index.php?action=$1&id=$2 [NC,L,QSA]

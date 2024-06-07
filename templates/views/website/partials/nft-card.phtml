@@ -8,30 +8,27 @@
         <?=$NFT->getName(); ?>
     </div>
     <div class="card-body p-0">
-        <img class="img-fluid" src="<?=$NFT->getImage(); ?>" />
+        <a href="<?=env('APP_ORIGIN_URL'); ?>/weepingpleb/<?=$NFT->id; ?>">
+            <img class="img-fluid" src="<?=$NFT->getImage(); ?>" />
+        </a>
     </div>
     <div class="card-footer">
-        <table class="table table-light table-borderless">
-            <?php foreach ($NFT->getAttributes() as $trait => $property): ?>
-            <tr>
-                <td class="text-end w-50 small py-0"><?=$trait; ?></td>
-                <td class="small py-0">
-                    <?php if ($currentFilter): ?>
-                        <?php if (\App\Service\Filter::queryHasFilter($currentFilter, snake_case($trait))): ?>
-                            <?=$property; ?>
-                        <?php else: ?>
-                            <a href="<?=$currentFilter; ?>;<?=snake_case($trait); ?>=<?=snake_case($property); ?>">
-                                <?=$property; ?>
-                            </a>
-                        <?php endif; ?>
-                    <?php else: ?>
-                        <a href="/filter/;<?=snake_case($trait); ?>=<?=snake_case($property); ?>">
-                            <?=$property; ?>
-                        </a>
-                    <?php endif; ?>
-                </td>
-            </tr>
-            <?php endforeach; ?>
-        </table>
+        <?php foreach ($NFT->getAttributes() as $trait => $property): ?>
+            <?php if ($currentFilter): ?>
+                <?php if (\App\Service\Filter::queryHasFilter($currentFilter, snake_case($trait))): ?>
+                    <a class="badge bg-success" href="<?=env('APP_ORIGIN_URL') . '/filter/'; ?><?=\App\Service\Filter::queryRemoveTrait($currentFilter, snake_case($trait)); ?>">
+                        <?=$property; ?>
+                    </a>
+                <?php else: ?>
+                    <a class="badge bg-secondary" href="<?=$currentFilter; ?>;<?=snake_case($trait); ?>=<?=snake_case($property); ?>">
+                        <?=$property; ?>
+                    </a>
+                <?php endif; ?>
+            <?php else: ?>
+                <a class="badge bg-secondary" href="/filter/<?=snake_case($trait); ?>=<?=snake_case($property); ?>">
+                    <?=$property; ?>
+                </a>
+            <?php endif; ?>
+        <?php endforeach; ?>
     </div>
 </div>

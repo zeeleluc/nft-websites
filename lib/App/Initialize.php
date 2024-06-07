@@ -68,6 +68,8 @@ class Initialize extends BaseObject
             return new Action\HomeAction();
         } elseif ($get['action'] === 'filter') {
             return new Action\FilterAction();
+        } elseif ($get['action'] === 'weepingpleb') {
+            return new Action\WeepingPlebAction();
         }
 
         throw new \Exception('Page not found.');

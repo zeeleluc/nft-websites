@@ -25,7 +25,7 @@ class NFTs
      */
     public function getRandom(int $total = 10): array
     {
-        $ids = range(10, 200);
+        $ids = range(1, 8888);
         shuffle($ids);
         $ids = array_slice($ids, 0, $total);
 

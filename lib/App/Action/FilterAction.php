@@ -28,7 +28,14 @@ class FilterAction extends BaseAction
             abort();
         }
 
-        $this->setVariable(new Variable('filteredNFTs', (new NFTs())->getFiltered($filters)));
+        $filteredNFTs = (new NFTs())->getFiltered($filters);
+        $totalFilteredNFTs = count($filteredNFTs);
+
+        shuffle($filteredNFTs);
+        $filteredNFTs = array_slice($filteredNFTs, 0, env('FILTER_LIMIT'));
+
+        $this->setVariable(new Variable('totalFilteredNFTs', $totalFilteredNFTs));
+        $this->setVariable(new Variable('filteredNFTs', $filteredNFTs));
         $this->setVariable(new Variable('currentFilter', $this->getRequest()->get()['filter']));
     }
 }

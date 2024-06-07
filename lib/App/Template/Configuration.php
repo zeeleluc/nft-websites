@@ -22,8 +22,8 @@ abstract class Configuration extends BaseObject
             'website' => [
                 'home',
                 'filter',
+                'weepingpleb',
             ],
         ];
     }
-
 }
