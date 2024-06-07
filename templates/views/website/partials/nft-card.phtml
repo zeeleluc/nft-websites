@@ -15,7 +15,21 @@
             <?php foreach ($NFT->getAttributes() as $trait => $property): ?>
             <tr>
                 <td class="text-end w-50 small py-0"><?=$trait; ?></td>
-                <td class="small py-0"><?=$property; ?></td>
+                <td class="small py-0">
+                    <?php if ($currentFilter): ?>
+                        <?php if (\App\Service\Filter::queryHasFilter($currentFilter, snake_case($trait))): ?>
+                            <?=$property; ?>
+                        <?php else: ?>
+                            <a href="<?=$currentFilter; ?>;<?=snake_case($trait); ?>=<?=snake_case($property); ?>">
+                                <?=$property; ?>
+                            </a>
+                        <?php endif; ?>
+                    <?php else: ?>
+                        <a href="/filter/;<?=snake_case($trait); ?>=<?=snake_case($property); ?>">
+                            <?=$property; ?>
+                        </a>
+                    <?php endif; ?>
+                </td>
             </tr>
             <?php endforeach; ?>
         </table>

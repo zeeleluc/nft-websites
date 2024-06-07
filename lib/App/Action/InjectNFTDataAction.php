@@ -32,7 +32,7 @@ class InjectNFTDataAction extends BaseAction implements CliActionInterface
                 ];
 
                 foreach ($metadata['attributes'] as $attribute) {
-                    $properties[snake_case($attribute['trait_type'])] = $attribute['value'];
+                    $properties[snake_case($attribute['trait_type'])] = snake_case($attribute['value']);
                 }
 
                 $this->NFTQuery->addNFT($properties);

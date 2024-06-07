@@ -42,7 +42,7 @@ class NFT
         $attributes = [];
         foreach (get_object_vars($this) as $column => $value) {
             if ($column !== 'id' && $column !== 'nft_id' && $value !== null) {
-                $attributes[revert_snake_case($column)] = $value;
+                $attributes[revert_snake_case($column)] = revert_snake_case($value);
             }
         }
 

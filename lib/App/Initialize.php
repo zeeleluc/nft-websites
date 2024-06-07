@@ -66,6 +66,8 @@ class Initialize extends BaseObject
 
         if (false === isset($get['action']) || (true === isset($get['action']) && '' === $get['action'])) {
             return new Action\HomeAction();
+        } elseif ($get['action'] === 'filter') {
+            return new Action\FilterAction();
         }
 
         throw new \Exception('Page not found.');

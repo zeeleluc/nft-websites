@@ -27,22 +27,13 @@ abstract class BaseAction extends BaseObject
             $this->template = new Template();
 
             $this->setVariable(new Variable('alert', $this->getSession()->getItem('alert')));
-        }
-    }
 
-    public function run()
-    {
-        if ($this->terminal) {
-            exit;
+            if (array_key_exists('action', $this->getRequest()->get())) {
+                $this->setVariable(new Variable('currentAction', $this->getRequest()->get()['action']));
+            } else {
+                $this->setVariable(new Variable('currentAction', null));
+            }
         }
-
-        if (array_key_exists('action', $this->getRequest()->get())) {
-            $this->setVariable(new Variable('currentAction', $this->getRequest()->get()['action']));
-        } else {
-            $this->setVariable(new Variable('currentAction', null));
-        }
-
-        return $this;
     }
 
     public function setVariable(Variable $variable): void

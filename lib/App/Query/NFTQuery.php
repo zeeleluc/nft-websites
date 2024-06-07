@@ -34,6 +34,45 @@ SQL;
     /**
      * @throws Exception
      */
+    public function getNFTsFiltered(array $filters): array
+    {
+        $sql = <<<SQL
+select * from nfts
+SQL;
+
+        $conditions = [];
+        $parameters = [];
+        $types = [];
+
+        foreach ($filters as $column => $value) {
+            $conditions[] = "$column = ?";
+            $parameters[] = htmlspecialchars($value);
+            $types[] = ParameterType::STRING;
+        }
+
+        if (!empty($conditions)) {
+            $sql .= ' where ' . implode(' and ', $conditions);
+        }
+
+        $statement = $this->connection->prepare($sql);
+
+        foreach ($parameters as $index => $parameter) {
+            $statement->bindValue($index + 1, $parameter, $types[$index]);
+        }
+
+        $results = $statement->execute()->fetchAllAssociative();
+
+        $NFTs = [];
+        foreach ($results as $result) {
+            $NFTs[] = new NFT($result);
+        }
+
+        return $NFTs;
+    }
+    
+    /**
+     * @throws Exception
+     */
     public function hasNFT(int $nftId): bool
     {
         $sql = /** @lang sql */

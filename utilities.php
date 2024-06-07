@@ -62,3 +62,17 @@ if (!function_exists('revert_snake_case')) {
         return ucwords($input);
     }
 }
+
+if (!function_exists('abort')) {
+    function abort(string $url = '') {
+        redirect($url);
+    }
+}
+
+if (!function_exists('redirect')) {
+    function redirect(string $url) {
+
+        header('Location: /' . $url);
+        exit;
+    }
+}

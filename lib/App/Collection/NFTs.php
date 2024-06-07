@@ -25,7 +25,7 @@ class NFTs
      */
     public function getRandom(int $total = 10): array
     {
-        $ids = range(1, 200);
+        $ids = range(10, 200);
         shuffle($ids);
         $ids = array_slice($ids, 0, $total);
 
@@ -35,5 +35,13 @@ class NFTs
         }
 
         return $NFTs;
+    }
+
+    /**
+     * @throws Exception
+     */
+    public function getFiltered(array $filters): array
+    {
+        return $this->NFTQuery->getNFTsFiltered($filters);
     }
 }
