@@ -44,3 +44,12 @@ if (!function_exists('is_cli')) {
         return false;
     }
 }
+if (!function_exists('snake_case')) {
+    function snake_case(string $input): string
+    {
+        $input = strtolower($input);
+        $input = preg_replace('/[^a-z0-9]+/', '_', $input);
+
+        return trim($input, '_');
+    }
+}

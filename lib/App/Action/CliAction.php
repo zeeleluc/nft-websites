@@ -27,5 +27,9 @@ class CliAction extends BaseAction
         if ($this->action === 'migrate') {
             (new MigrateAction())->run();
         }
+
+        if ($this->action === 'inject-nft-data') {
+            (new InjectNFTDataAction())->run();
+        }
     }
 }
