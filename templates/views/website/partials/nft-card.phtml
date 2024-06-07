@@ -1,0 +1,23 @@
+<?php
+/**
+ * @var $NFT \App\Model\NFT
+ */
+?>
+<div class="card">
+    <div class="card-header text-center">
+        <?=$NFT->getName(); ?>
+    </div>
+    <div class="card-body p-0">
+        <img class="img-fluid" src="<?=$NFT->getImage(); ?>" />
+    </div>
+    <div class="card-footer">
+        <table class="table table-light table-borderless">
+            <?php foreach ($NFT->getAttributes() as $trait => $property): ?>
+            <tr>
+                <td class="text-end w-50 small py-0"><?=$trait; ?></td>
+                <td class="small py-0"><?=$property; ?></td>
+            </tr>
+            <?php endforeach; ?>
+        </table>
+    </div>
+</div>

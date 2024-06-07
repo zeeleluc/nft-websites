@@ -24,18 +24,21 @@ class InjectNFTDataAction extends BaseAction implements CliActionInterface
     public function run(): void
     {
         foreach (range(1, 8888) as $id) {
-            $json = file_get_contents(env('CDN_ENDPOINT_METADATA') . $id . '.json');
-            $metadata = (array) json_decode($json, true);
-            $properties = [
-                'nft_id' => $id,
-            ];
-
-            foreach ($metadata['attributes'] as $attribute) {
-                $properties[snake_case($attribute['trait_type'])] = $attribute['value'];
-            }
-
             if (!$this->NFTQuery->hasNFT($id)) {
+                $json = file_get_contents(env('CDN_ENDPOINT_METADATA') . $id . '.json');
+                $metadata = (array) json_decode($json, true);
+                $properties = [
+                    'nft_id' => $id,
+                ];
+
+                foreach ($metadata['attributes'] as $attribute) {
+                    $properties[snake_case($attribute['trait_type'])] = $attribute['value'];
+                }
+
                 $this->NFTQuery->addNFT($properties);
+                echo '#' . $id . ' added..' . PHP_EOL;
+            } else {
+                echo '#' . $id . ' already exists..' . PHP_EOL;
             }
         }
     }

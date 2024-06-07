@@ -53,3 +53,12 @@ if (!function_exists('snake_case')) {
         return trim($input, '_');
     }
 }
+
+if (!function_exists('revert_snake_case')) {
+    function revert_snake_case(string $input): string
+    {
+        $input = str_replace('_', ' ', $input);
+
+        return ucwords($input);
+    }
+}

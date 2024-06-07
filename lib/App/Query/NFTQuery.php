@@ -1,6 +1,7 @@
 <?php
 namespace App\Query;
 
+use App\Model\NFT;
 use Doctrine\DBAL\Driver\Exception;
 use Doctrine\DBAL\ParameterType;
 
@@ -8,6 +9,27 @@ class NFTQuery extends Query
 {
 
     private string $table = 'nfts';
+
+    /**
+     * @throws Exception
+     */
+    public function getNFT(int $nft_id): ?NFT
+    {
+        $sql = /** @lang sql */
+            <<<SQL
+SELECT * FROM nfts WHERE nft_id = ? LIMIT 1
+SQL;
+
+        $statement = $this->connection->prepare($sql);
+        $statement->bindValue(1, $nft_id, ParameterType::INTEGER);
+        $data = $statement->execute()->fetchAssociative();
+
+        if ($data === false) {
+            return null; // NFT not found
+        }
+
+        return new NFT($data);
+    }
 
     /**
      * @throws Exception
