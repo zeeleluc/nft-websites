@@ -16,16 +16,16 @@
         <?php foreach ($NFT->getAttributes() as $trait => $property): ?>
             <?php if ($currentFilter): ?>
                 <?php if (\App\Service\Filter::queryHasFilter($currentFilter, snake_case($trait))): ?>
-                    <a class="badge bg-success" href="<?=env('APP_ORIGIN_URL') . '/filter/'; ?><?=\App\Service\Filter::queryRemoveTrait($currentFilter, snake_case($trait)); ?>">
+                    <a class="badge badge-selected" href="<?=env('APP_ORIGIN_URL') . '/filter/'; ?><?=\App\Service\Filter::queryRemoveTrait($currentFilter, snake_case($trait)); ?>">
                         <?=$property; ?>
                     </a>
                 <?php else: ?>
-                    <a class="badge bg-secondary" href="<?=$currentFilter; ?>;<?=snake_case($trait); ?>=<?=snake_case($property); ?>">
+                    <a class="badge" href="<?=$currentFilter; ?>;<?=snake_case($trait); ?>=<?=snake_case($property); ?>">
                         <?=$property; ?>
                     </a>
                 <?php endif; ?>
             <?php else: ?>
-                <a class="badge bg-secondary" href="/filter/<?=snake_case($trait); ?>=<?=snake_case($property); ?>">
+                <a class="badge" href="/filter/<?=snake_case($trait); ?>=<?=snake_case($property); ?>">
                     <?=$property; ?>
                 </a>
             <?php endif; ?>

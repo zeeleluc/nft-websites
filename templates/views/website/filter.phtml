@@ -1,24 +1,29 @@
-<div class="container-fluid mb-2">
+<div class="container-fluid mb-2 px-5">
     <div class="row justify-content-center text-center">
         <h2>Weeping Filter</h2>
-        <?php if ($totalFilteredNFTs > env('FILTER_LIMIT')): ?>
-            <p><?=$totalFilteredNFTs; ?> Weeping Plebs found, limited to <?=env('FILTER_LIMIT'); ?> random Weeping Plebs</p>
-        <?php else: ?>
-            <p><?=$totalFilteredNFTs; ?> Weeping Plebs found</p>
-        <?php endif; ?>
         <p>
+            <span class="badge badge-large bg-success text-white fw-bold">
+                <?=$totalFilteredNFTs; ?>
+            </span>
             <?php foreach (\App\Service\Filter::parse($currentFilter) as $trait => $property): ?>
-                <a href="<?=env('APP_ORIGIN_URL'); ?>/filter/<?=\App\Service\Filter::queryRemoveTrait($currentFilter, $trait); ?>" class="badge bg-success badge-large">
-                    <?=revert_snake_case($trait); ?>: <?=revert_snake_case($property); ?>
+                <a href="<?=env('APP_ORIGIN_URL'); ?>/filter/<?=\App\Service\Filter::queryRemoveTrait($currentFilter, $trait); ?>" class="badge badge-selected badge-large">
+                    <?=revert_snake_case($property); ?>
                 </a>
             <?php endforeach; ?>
         </p>
     </div>
     <div class="row justify-content-center">
         <?php foreach ($filteredNFTs as $NFT): ?>
-            <div class="col col-12 col-sm-2 mt-4">
+            <div class="col col-12 col-sm-6 col-md-4 col-lg-3 col-xl-3 col-xxl-2 mt-4">
                 <?php require ROOT . "/templates/views/website/partials/nft-card.phtml"; ?>
             </div>
         <?php endforeach; ?>
     </div>
+    <?php if ($totalFilteredNFTs > env('FILTER_LIMIT')): ?>
+        <div class="row justify-content-center mt-5">
+            <div class="col col-12 text-center">
+                <p><?=$totalFilteredNFTs; ?> Weeping Plebs found, limited to random <?=env('FILTER_LIMIT'); ?></p>
+            </div>
+        </div>
+    <?php endif; ?>
 </div>

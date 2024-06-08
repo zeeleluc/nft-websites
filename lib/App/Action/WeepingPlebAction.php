@@ -23,6 +23,20 @@ class WeepingPlebAction extends BaseAction
             abort();
         }
 
+        if ($id <= 1) {
+            $previous = null;
+        } else {
+            $previous = $id - 1;
+        }
+
+        if ($id >= 8888) {
+            $next = null;
+        } else {
+            $next = $id + 1;
+        }
+
+        $this->setVariable(new Variable('previous', $previous));
+        $this->setVariable(new Variable('next', $next));
         $this->setVariable(new Variable('NFT', (new NFTQuery())->getNFT($id)));
         $this->setVariable(new Variable('randomNFTs', (new NFTs())->getRandom(4)));
     }

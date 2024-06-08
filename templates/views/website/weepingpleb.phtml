@@ -3,22 +3,55 @@
  * @var $NFT \App\Model\NFT
  */
 ?>
-<div class="container mt-4 mb-2">
+<div class="container-fluid">
     <div class="row justify-content-center">
-        <div class="col col-12 col-sm-5 mt-4">
-            <img class="img-fluid" src="<?=$NFT->getImage(); ?>" />
-        </div>
-        <div class="col col-12 col-sm-5 mt-4">
-            <h1>
+        <div class="col col-12 text-center">
+            <h2>
                 <?=$NFT->getName(); ?>
-            </h1>
-            <?php foreach ($NFT->getAttributes() as $trait => $property): ?>
-                <?=$trait; ?>:
-                <a href="/filter/;<?=snake_case($trait); ?>=<?=snake_case($property); ?>">
-                    <?=$property; ?>
-                </a>
-                <br />
-            <?php endforeach; ?>
+            </h2>
+            <?php if ($previous): ?>
+                <a class="badge badge-large badge-selected" href="<?=env('APP_ORIGIN_URL'); ?>/weepingpleb/<?=$previous; ?>">Previous</a>
+            <?php endif; ?>
+            <?php if ($next): ?>
+                <a class="badge badge-large badge-selected" href="<?=env('APP_ORIGIN_URL'); ?>/weepingpleb/<?=$next; ?>">Next</a>
+            <?php endif; ?>
         </div>
+    </div>
+</div>
+
+<div class="container mt-4 mb-5 mb-2">
+    <div class="row justify-content-center">
+        <div class="col col-12 col-sm-4 mt-4">
+            <img class="img-fluid rounded-2" src="<?=$NFT->getImage(); ?>" />
+        </div>
+        <div class="col col-12 col-sm-6 mt-4">
+            <table class="table">
+                <?php foreach ($NFT->getAttributes() as $trait => $property): ?>
+                    <tr>
+                        <td class="w-50 text-end"><?=$trait; ?></td>
+                        <td class="w-50">
+                            <a href="/filter/;<?=snake_case($trait); ?>=<?=snake_case($property); ?>">
+                                <?=$property; ?>
+                            </a>
+                        </td>
+                    </tr>
+                <?php endforeach; ?>
+            </table>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid mt-5 mb-2">
+    <div class="row justify-content-center">
+        <div class="col col-12 mt-4">
+            <h3 class="mt-5">Some Random Weeping Plebs</h3>
+        </div>
+    </div>
+    <div class="row justify-content-center">
+        <?php foreach ($randomNFTs as $NFT): ?>
+            <div class="col col-12 col-sm-6 col-md-3 col-lg-2 mt-4">
+                <?php require ROOT . "/templates/views/website/partials/nft-card.phtml"; ?>
+            </div>
+        <?php endforeach; ?>
     </div>
 </div>

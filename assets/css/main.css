@@ -30,6 +30,26 @@ h2 {
     text-align: center;
 }
 
+h3 {
+    font-family: 'downtown_streetregular', serif;
+    text-align: center;
+    font-size: 48px;
+}
+
+.badge {
+    color: #111111;
+    font-size: 14px;
+    font-weight: normal;
+    padding: 4px 8px;
+    border-radius: 4px;
+    margin: 2px 0;
+}
+.badge-selected {
+    background-color: #2258CA;
+    color: #ffffff;
+    font-weight: bold;
+}
+
 .card-header {
     font-family: 'downtown_streetregular', serif;
     font-size: 40px;
@@ -50,3 +70,32 @@ h2 {
     font-size: 18px;
     margin: 2px 5px;
 }
+
+@media (max-width: 576px) {
+    h1 {
+        font-size: 46px;
+    }
+
+    h2 {
+        font-size: 34px;
+    }
+
+    h3 {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 58px;
+    }
+
+    h2 {
+        font-size: 42px;
+    }
+
+    h3 {
+        font-size: 32px;
+    }
+}
+
