@@ -1,5 +1,8 @@
-# Weeping Plebs Website
+# Various NFT Websites
 
-## As simple showcase website
+## Simple showcase websites for various NFT collections
 
-### This is not a collection from HasMints
+### Not from HasMints:
+- WeepingPlebs
+
+### From HasMints:
