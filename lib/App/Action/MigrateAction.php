@@ -21,14 +21,10 @@ class MigrateAction extends BaseAction implements CliActionInterface
         $this->migrationsDone = $this->migrationQuery->getAllIdentifiers();
     }
 
-    public function run(): array
+    public function run(): void
     {
         $this->runSqlMigrations();
         $this->runPhpMigrations();
-
-        return [
-            'Migrations done.',
-        ];
     }
 
     private function runPhpMigrations(): void
