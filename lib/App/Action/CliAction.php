@@ -31,5 +31,7 @@ class CliAction extends BaseAction
         if ($this->action === 'inject-nft-data') {
             (new InjectNFTDataAction())->run();
         }
+
+        exit;
     }
 }
