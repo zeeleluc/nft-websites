@@ -51,7 +51,7 @@ class NFT
 
     public function getName(): string
     {
-        return 'Weeping Pleb #' . $this->id;
+        return 'Weeping Pleb #' . $this->nft_id;
     }
 
     public function getImage(): string
