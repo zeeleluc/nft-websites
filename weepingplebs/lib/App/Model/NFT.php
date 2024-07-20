@@ -56,6 +56,6 @@ class NFT
 
     public function getImage(): string
     {
-        return env('CDN_ENDPOINT_IMAGES') . $this->id . '.png';
+        return env('CDN_ENDPOINT_IMAGES') . $this->nft_id . '.png';
     }
 }
