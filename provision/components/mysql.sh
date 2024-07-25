@@ -2,7 +2,7 @@
 
 DBHOST=localhost
 DBNAMES=(
-    'weepingplebs'
+    'nftwebsites'
 )
 DBUSER=root
 DBPASSWD=root

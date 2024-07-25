@@ -1,12 +1,12 @@
 
 @font-face {
-    font-family: 'downtown_streetregular';
-    src: url('/assets/fonts/downtown_street-webfont.eot');
-    src: url('/assets/fonts/downtown_street-webfont.eot?#iefix') format('embedded-opentype'),
-    url('/assets/fonts/downtown_street-webfont.woff2') format('woff2'),
-    url('/assets/fonts/downtown_street-webfont.woff') format('woff'),
-    url('/assets/fonts/downtown_street-webfont.ttf') format('truetype'),
-    url('/assets/fonts/downtown_street-webfont.svg#downtown_streetregular') format('svg');
+    font-family: 'weepingbleps';
+    src: url('/assets/fonts/plebs_-_official_text_font_1-webfont.eot');
+    src: url('/assets/fonts/plebs_-_official_text_font_1-webfont.eot?#iefix') format('embedded-opentype'),
+    url('/assets/fonts/plebs_-_official_text_font_1-webfont.woff2') format('woff2'),
+    url('/assets/fonts/plebs_-_official_text_font_1-webfont.woff') format('woff'),
+    url('/assets/fonts/plebs_-_official_text_font_1-webfont.ttf') format('truetype'),
+    url('/assets/fonts/plebs_-_official_text_font_1-webfont.svg#weepingbleps') format('svg');
     font-weight: normal;
     font-style: normal;
 
@@ -17,21 +17,21 @@ a {
 }
 
 h1 {
-    font-family: 'downtown_streetregular', serif;
+    font-family: 'weepingbleps', serif;
     color: #3642BD;
     font-size: 124px;
     text-align: center;
 }
 
 h2 {
-    font-family: 'downtown_streetregular', serif;
+    font-family: 'weepingbleps', serif;
     color: #B30A21;
     font-size: 72px;
     text-align: center;
 }
 
 h3 {
-    font-family: 'downtown_streetregular', serif;
+    font-family: 'weepingbleps', serif;
     text-align: center;
     font-size: 48px;
 }
@@ -51,7 +51,7 @@ h3 {
 }
 
 .card-header {
-    font-family: 'downtown_streetregular', serif;
+    font-family: 'weepingbleps', serif;
     font-size: 40px;
 }
 
