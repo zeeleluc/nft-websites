@@ -1,0 +1,180 @@
+
+@font-face {
+    font-family: 'lasereyes';
+    src: url('/assets/fonts/lasercorps-webfont.eot');
+    src: url('/assets/fonts/lasercorps-webfont.eot?#iefix') format('embedded-opentype'),
+    url('/assets/fonts/lasercorps-webfont.woff2') format('woff2'),
+    url('/assets/fonts/lasercorps-webfont.woff') format('woff'),
+    url('/assets/fonts/lasercorps-webfont.ttf') format('truetype'),
+    url('/assets/fonts/lasercorps-webfont.svg#lasereyes') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+main {
+    margin: 0;
+    paddin: 0;
+}
+
+body {
+    text-align: center;
+    background-image: url('../images/laser1.png'); /* Replace with your image path */
+    background-size: cover;
+    background-position: center;
+    background-repeat: repeat;
+    width: 100%; /* Ensure the element is full width */
+    height: 100vh;
+    color: black;
+    font-size: 16px;
+}
+
+h1 {
+    font-family: 'lasereyes', serif;
+    color: #7C018C;
+    font-size: 100px;
+}
+
+h1 small {
+    font-family: 'Arial', sans-serif;
+    font-size: 40px;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+
+    h1 {
+        font-size: 60px;
+    }
+
+    h1 small {
+        font-family: 'Arial', sans-serif;
+        font-size: 30px;
+    }
+
+    h2 {
+        font-size: 24px;
+    }
+
+}
+
+@media (max-width: 767px) {
+
+    h1 {
+        font-size: 40px;
+    }
+
+    h1 small {
+        font-family: 'Arial', sans-serif;
+        font-size: 20px;
+    }
+
+    h2 {
+        font-size: 18px;
+    }
+}
+
+p {
+    font-weight: normal;
+    font-size: 18px;
+    color: black;
+}
+
+.btn.btn-primary {
+    background-color: #7C018C;
+    border-color: #7C018C;
+    font-size: 20px;
+}
+
+
+h2 {
+    font-size: 24px;
+}
+
+h3 {
+    font-family: 'lasereyes', serif;
+    font-size: 54px;
+    color: black;
+}
+
+.card {
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+.card-links img {
+    height: 80px;
+    margin-bottom: 20px;
+}
+
+.card-links img.dexscreener {
+    height: 85px;
+}
+
+.card-links img.telegram {
+    height: 75px;
+}
+
+.card-links img.x {
+
+}
+
+.col-contract {
+    font-size: 36px;
+    color: white;
+    margin: 30px 0 50px 0;
+    padding: 0 20px;
+    font-weight: bold;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    white-space: normal;
+}
+.col-contract a {
+    color: white;
+    text-decoration: none;
+}
+
+footer {
+    background: black;
+    margin-top: 0;
+    padding: 50px 0 35px 0;
+}
+
+footer a {
+    color: white;
+}
+
+footer p {
+    font-size: 16px;
+    color: white;
+}
+
+.container-disclaimer {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+.container-disclaimer p {
+    color: white;
+    font-size: 16px;
+}
+
+.card {
+    border-radius: 10px;
+    padding: 10px 0;
+    box-shadow: none;
+    border: none;
+}
+
+img.logo {
+    border-radius: 10px;
+}
+
+.col-meme {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+.col-meme .img-fluid {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+

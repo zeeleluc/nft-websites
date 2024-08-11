@@ -1,0 +1,88 @@
+<div class="container mt-4 mb-2">
+    <div class="row justify-content-center">
+        <div class="col col-12 col-contract">
+            <a href="https://dexscreener.com/solana/iKTRRmF3WSd4HEbHfyiRcA2e4vdbtEDkjmCLs3Hpump" target="_blank">
+                iKTRRmF3WSd4HEbHfyiRcA2e4vdbtEDkjmCLs3Hpump
+            </a>
+        </div>
+
+        <div class="col col-12 col-lg-6 mb-5">
+            <img width="100%" class="logo" src="assets/images/logo.png" />
+        </div>
+
+        <div class="col col-12 col-lg-6">
+            <div class="card">
+                <div class="card-body card-links">
+                    <table class="table table-borderless">
+                        <tr>
+                            <td>
+                                <a href="https://dexscreener.com/solana/iKTRRmF3WSd4HEbHfyiRcA2e4vdbtEDkjmCLs3Hpump" target="_blank">
+                                    <img class="dexscreener" src="assets/images/dexscreener.png" alt="DEXScreener Icon" />
+                                </a>
+                                <p>DEXScreener: Track real-time crypto prices and charts.</p>
+                            </td>
+                            <td>
+                                <a href="https://x.com/LASER_CTO_SOL" target="_blank">
+                                    <img class="x" src="assets/images/x.png" alt="Twitter (X) Icon" />
+                                </a>
+                                <p>Twitter (X): Follow us for the latest updates and news.</p>
+                            </td>
+                            <td>
+                                <a href="https://t.me/lasercto" target="_blank">
+                                    <img class="telegram" src="assets/images/telegram.png" alt="Telegram Icon" />
+                                </a>
+                                <p>Telegram: Join our community chat and stay connected.</p>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container mt-4 mb-2">
+    <div class="row justify-content-center row-memes">
+        <div class="col col-12">
+            <div class="card">
+                <div class="card-body">
+                    <h3>Memes Library</h3>
+                    <p>
+                        <a class="btn btn-primary" href="https://memed.io/laser-eyes-meme-maker" target="_blank">
+                            Make your Laser Eyes meme at memed.io
+                        </a>
+                    </p>
+                    <p>
+                        Go to the meme maker on memed.io and add it to the library (share it on Telegram and X)
+                    </p>
+                    <p>
+                        <em>
+                            Refresh the page to see another selection.
+                        </em>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <hr />
+        <?php foreach ($memes as $meme): ?>
+            <div class="col-12 col-lg-3 py-1 col-meme">
+                <div class="card p-0">
+                    <div class="card-body p-1">
+                        <img class="img-fluid" src="./assets/images/memes/<?=$meme; ?>" alt="Meme Image" />
+                    </div>
+                </div>
+            </div>
+        <?php endforeach; ?>
+    </div>
+</div>
+
+<div class="container-fluid container-disclaimer py-5 mt-4">
+    <div class="row justify-content-center">
+        <div class="col col-12 col-lg-6">
+            <p class="m-0 p-0">
+                <strong>Disclaimer:</strong>
+                $LASER EYES is a memecoin built on the Solana blockchain and is intended purely for entertainment purposes. This token has no inherent value and should not be considered a financial investment. The value of $LASER EYES may be highly volatile and is driven purely by market speculation. Engaging with $LASER EYES is at your own risk, and you should only participate if you fully understand the risks involved. This is not financial advice. Always conduct your own research before making any decisions related to cryptocurrency.
+            </p>
+        </div>
+    </div>
+</div>
