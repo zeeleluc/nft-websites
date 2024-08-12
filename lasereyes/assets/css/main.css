@@ -14,19 +14,35 @@
 
 main {
     margin: 0;
-    paddin: 0;
+    padding: 0;
+    position: relative;
+    z-index: 2; /* Ensure content is above the overlay */
 }
-
 body {
+    position: relative;
     text-align: center;
-    background-image: url('../images/laser1.png'); /* Replace with your image path */
-    background-size: cover;
-    background-position: center;
+    background-image: url('../images/bg.png');
+    background-size: auto;
+    background-position: top center;
     background-repeat: repeat;
-    width: 100%; /* Ensure the element is full width */
-    height: 100vh;
+    width: 100%;
+    min-height: 100vh;
     color: black;
     font-size: 16px;
+    margin: 0;
+    padding: 0;
+}
+
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.5);
+    pointer-events: none;
+    z-index: 1;
 }
 
 h1 {
@@ -97,7 +113,7 @@ h3 {
 }
 
 .card {
-    background-color: rgba(255, 255, 255, 0.8);
+    background-color: rgba(255, 255, 255, 0.90);
 }
 
 .card-links img {
@@ -156,14 +172,19 @@ footer p {
 }
 
 .card {
-    border-radius: 10px;
+    border-radius: 15px;
     padding: 10px 0;
     box-shadow: none;
     border: none;
 }
 
+.card.card-header {
+    border-radius: 0 0 15px 15px;
+    padding-top: 0;
+}
+
 img.logo {
-    border-radius: 10px;
+    border-radius: 15px;
 }
 
 .col-meme {
@@ -175,7 +196,7 @@ img.logo {
 .col-meme .img-fluid {
     max-width: 100%;
     height: auto;
-    border-radius: 10px;
+    border-radius: 15px;
 }
 
 .row-memes .col-memes {
