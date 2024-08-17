@@ -118,7 +118,6 @@ h3 {
 
 .card-links img {
     height: 80px;
-    margin-bottom: 20px;
 }
 
 .card-links img.dexscreener {
@@ -126,11 +125,16 @@ h3 {
 }
 
 .card-links img.telegram {
-    height: 75px;
+    height: 70px;
+    margin-left: 10px;
 }
 
 .card-links img.x {
 
+}
+
+.card-links a {
+    text-decoration: none;
 }
 
 .col-contract {
