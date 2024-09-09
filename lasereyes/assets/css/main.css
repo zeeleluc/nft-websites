@@ -120,8 +120,14 @@ h3 {
     height: 80px;
 }
 
-.card-links img.dexscreener {
-    height: 85px;
+.card-links img.dextools {
+    height: 65px;
+    margin-right: 10px;
+}
+
+.card-links img.discord {
+    height: 65px;
+    margin-left: 13px;
 }
 
 .card-links img.telegram {
