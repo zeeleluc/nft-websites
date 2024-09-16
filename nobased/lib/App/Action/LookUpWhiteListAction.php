@@ -20,6 +20,7 @@ class LookUpWhiteListAction extends BaseAction
             exit;
         }
 
+        $wallet = strtolower($wallet);
         if (!preg_match('/^0x[a-fA-F0-9]{40}$/', $wallet)) {
             echo json_encode([
                 'success' => false,
@@ -30,6 +31,7 @@ class LookUpWhiteListAction extends BaseAction
 
         $jsonFile = ROOT . '/wallets-wl-nobased.json';
         $wallets = (array) json_decode(file_get_contents($jsonFile), true);
+        $wallets = array_map('strtolower', $wallets);
 
         $walletOnWhitelist = in_array($wallet, $wallets);
         echo json_encode([
