@@ -1,0 +1,116 @@
+
+@font-face {
+    font-family: 'arcaderegular';
+    src: url('../fonts/arcade-webfont.eot');
+    src: url('../fonts/arcade-webfont.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/arcade-webfont.woff2') format('woff2'),
+    url('../fonts/arcade-webfont.woff') format('woff'),
+    url('../fonts/arcade-webfont.ttf') format('truetype'),
+    url('../fonts/arcade-webfont.svg#arcaderegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+h1 {
+    font-size: 70px;
+    font-family: 'arcaderegular', sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 43px;
+}
+
+h2 {
+    margin: 0;
+    padding: 10px 0 0 0;
+    font-size: 22px;
+}
+
+body {
+    background-color: #000000;
+    color: #dddddd;
+    text-align: center;
+}
+
+/* Form inside dark card */
+.card {
+    background-color: #1a1a1a;    /* Dark card background */
+    color: #e0e0e0;               /* Light text color */
+    border-color: #333333;         /* Subtle dark border */
+}
+
+.card-header {
+    background-color: #2e2e2e;     /* Slightly lighter background for header */
+    border-bottom-color: #444444;  /* Darker border for header */
+    color: #f8f9fa;                /* Light header text */
+    padding: 30px 0 30px 0;
+}
+
+/* Form elements inside the card */
+.form-control {
+    background-color: #2a2a2a;     /* Darker input background */
+    color: #f8f9fa;                /* Light text */
+    border-color: #444444;         /* Subtle border */
+}
+
+.form-control::placeholder {
+    color: #b3b3b3;                /* Light gray placeholder text */
+}
+
+.form-control:focus {
+    background-color: #3a3a3a;     /* Slightly lighter background when focused */
+    color: #ffffff;                /* White text on focus */
+    border-color: #f8f9fa;         /* Light border on focus */
+    box-shadow: none;              /* Disable the default Bootstrap box-shadow */
+}
+
+/* Form labels */
+.form-label {
+    color: #f8f9fa;                /* Lighter label color */
+}
+
+/* Checkbox */
+.form-check-input {
+    background-color: #444444;     /* Dark checkbox background */
+    border-color: #666666;         /* Darker border for checkbox */
+}
+
+.form-check-input:checked {
+    background-color: #f8f9fa;     /* Light background when checked */
+    border-color: #f8f9fa;         /* Light border when checked */
+}
+
+.form-check-label {
+    color: #e0e0e0;                /* Light text color for checkbox labels */
+}
+
+/* Button */
+.btn-outline-light {
+    border-color: #f8f9fa;         /* Light button border */
+    color: #f8f9fa;                /* Light button text */
+}
+
+.btn-outline-light:hover {
+    background-color: #f8f9fa;     /* Light background on hover */
+    color: #1a1a1a;                /* Dark text on hover */
+}
+
+.hide {
+    display: none;
+}
+
+.success-bg {
+    background-color: #41A245;
+}
+
+.logo {
+    border-radius: 50%;
+    margin-top: 100px;
+}
+
+footer {
+    border-top: 1px solid #333;
+    margin-top: 100px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}

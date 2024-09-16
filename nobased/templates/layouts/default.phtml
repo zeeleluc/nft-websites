@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Mike">
+
+    <title><?=$htmlTitle; ?></title>
+
+    <link href="<?=env('URL'); ?>/assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="<?=env('URL'); ?>/assets/css/main.css?t=<?=date('dmYHi'); ?>" rel="stylesheet">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+</head>
+
+<body data-url="<?=env('URL'); ?>">
+    <main>
+        <img width="150" class="logo" src="./assets/images/logo.png" />
+        <div class="container my-5">
+            <div class="col">
+                <div class="row">
+                    <h1>No-Based is based-af</h1>
+                    <h2>pure traits from <em>No-Punks</em> and a little sauce from <em>based punks</em></h2>
+                </div>
+            </div>
+        </div>
+        <?=$content; ?>
+    </main>
+
+    <footer>
+        &copy; No-Based <?=date('Y'); ?>
+        &nbsp;|&nbsp;
+        Drop on <a href="https://opensea.io/collection/nobaseism/">OpenSea</a>
+        &nbsp;|&nbsp;
+        Find us on <a href="https://x.com/NoBaseism">X</a>
+    </footer>
+
+    <script type="text/javascript" src="<?=env('URL'); ?>/assets/js/main.js"></script>
+</body>
+
+</html>

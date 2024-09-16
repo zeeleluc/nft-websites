@@ -1,0 +1,52 @@
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col col-12 col-md-8 col-lg-6">
+            <div class="card">
+                <div class="card-header">
+                    <h3>Find Your WL Spot</h3>
+                    <p>
+                        There are currently <?=$totalWallets; ?> on the WL!
+                    </p>
+                </div>
+                <div class="card-body py-5">
+                    <div id="check" class="hide">
+                        <img width="50" alt="Eo circle green checkmark" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Eo_circle_green_checkmark.svg/512px-Eo_circle_green_checkmark.svg.png?20200417132424">
+                    </div>
+                    <div id="success-response">
+                        <div class="d-flex justify-content-center">
+                            <form id="lookup-wallet" method="post" action="" class="row g-3 align-items-center">
+                                <div class="col-auto">
+                                    <input
+                                        type="text"
+                                        name="wallet"
+                                        id="wallet"
+                                        class="form-control"
+                                        placeholder="0x0..."
+                                        value=""
+                                    />
+                                </div>
+                                <div class="col-auto">
+                                    <button type="submit" class="btn btn-primary">Look-Up</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div id="failure-response" class="hide mt-4 py-2 bg-danger rounded"></div>
+                </div>
+                <div class="card-footer">
+                    <small class="d-block mb-3">
+                        Holders from the following collections are on the whitelist (alphabetical order)
+                    </small>
+                    <?php foreach ($whitelistCollections as $whitelistCollection): ?>
+                        <div class="badge bg-black">
+                            <?=$whitelistCollection; ?>
+                        </div>
+                    <?php endforeach; ?>
+                </div>
+            </div>
+        </div>
+<!--        <div class="col col-6">-->
+<!--            Find Your No-Based-->
+<!--        </div>-->
+    </div>
+</div>
