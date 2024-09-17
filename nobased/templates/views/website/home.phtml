@@ -1,11 +1,11 @@
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col col-12 col-md-8 col-lg-6">
+        <div class="col col-12 col-md-10 col-lg-8">
             <div class="card">
                 <div class="card-header">
                     <h3>Find Your WL Spot</h3>
                     <p>
-                        There are currently <?=$totalWallets; ?> on the WL!
+                        There are currently <?=number_format($totalWallets); ?> wallets on the WL
                     </p>
                 </div>
                 <div class="card-body py-5">
@@ -14,7 +14,7 @@
                     </div>
                     <div id="success-response">
                         <div class="d-flex justify-content-center">
-                            <form id="lookup-wallet" method="post" action="" class="row g-3 align-items-center">
+                            <form id="lookup-wallet" method="post" action="" class="row align-items-center">
                                 <div class="col-auto">
                                     <input
                                         type="text"
@@ -33,10 +33,13 @@
                     </div>
                     <div id="failure-response" class="hide mt-4 py-2 bg-danger rounded"></div>
                 </div>
-                <div class="card-footer">
-                    <small class="d-block mb-3">
+            </div>
+
+            <div class="card mt-4">
+                <div class="card-body">
+                    <p class="d-block mb- p-large">
                         Holders from the following collections are on the whitelist (alphabetical order)
-                    </small>
+                    </p>
                     <?php foreach ($whitelistCollections as $whitelistCollection): ?>
                         <div class="badge bg-black">
                             <?=$whitelistCollection; ?>

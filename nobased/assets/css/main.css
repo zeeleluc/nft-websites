@@ -12,18 +12,92 @@
 
 }
 
+@font-face {
+    font-family: 'ka1_2regular';
+    src: url('../fonts/ka1_2-webfont.eot');
+    src: url('../fonts/ka1_2-webfont.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/ka1_2-webfont.woff2') format('woff2'),
+    url('../fonts/ka1_2-webfont.woff') format('woff'),
+    url('../fonts/ka1_2-webfont.ttf') format('truetype'),
+    url('../fonts/ka1_2-webfont.svg#ka1_2regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
 h1 {
     font-size: 70px;
-    font-family: 'arcaderegular', sans-serif;
+    font-family: 'ka1_2regular', sans-serif;
     margin: 0;
-    padding: 0;
-    line-height: 43px;
+    padding: 0 20px;
+    line-height: 83px;
+}
+@media (max-width: 575px) {
+    h1 {
+        font-size: 50px;
+        line-height: 63px;
+    }
 }
 
 h2 {
+    font-family: 'arcaderegular', sans-serif;
     margin: 0;
-    padding: 10px 0 0 0;
-    font-size: 22px;
+    padding: 10px 5px;
+    font-size: 28px;
+}
+
+h3 {
+    font-family: 'arcaderegular', sans-serif;
+    font-size: 50px;
+    padding: 30px 20px;
+}
+@media (max-width: 575px) {
+    h3 {
+        font-size: 40px;
+        line-height: 33px;
+    }
+}
+h4 {
+    font-family: 'arcaderegular', sans-serif;
+    padding: 5px 20px;
+}
+
+p {
+    font-family: 'arcaderegular', sans-serif;
+    font-size: 24px;
+}
+.p-large {
+    font-size: 34px;
+    line-height: 30px;
+    padding: 25px 20px;
+}
+@media (max-width: 575px) {
+    .p-large {
+        font-size: 28px;
+        line-height: 28px;
+    }
+}
+
+.badge {
+    font-family: 'ka1_2regular', sans-serif;
+    font-size: 28px;
+    margin: 4px 3px;
+}
+@media (max-width: 575px) {
+    .badge {
+        font-size: 20px;
+        line-height: 33px;
+    }
+}
+
+button.btn {
+    font-family: 'ka1_2regular', sans-serif;
+    font-size: 30px;
+}
+input.form-control {
+    font-family: 'arcaderegular', sans-serif;
+    font-size: 30px;
 }
 
 body {
@@ -105,12 +179,16 @@ body {
 
 .logo {
     border-radius: 50%;
-    margin-top: 100px;
+    margin-top: 50px;
 }
 
 footer {
     border-top: 1px solid #333;
     margin-top: 100px;
-    padding-top: 50px;
-    padding-bottom: 50px;
+    padding: 50px 20px;
+}
+
+#success-response, #failure-response {
+    font-family: 'arcaderegular', sans-serif;
+    font-size: 30px;
 }

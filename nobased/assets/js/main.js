@@ -42,6 +42,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     const walletDiv = document.createElement('div');
                     walletDiv.innerHTML = json.wallet;
                     walletDiv.classList.add('py-2');
+                    walletDiv.classList.add('px-3');
                     walletDiv.classList.add('rounded');
                     walletDiv.classList.add('success-bg');
 

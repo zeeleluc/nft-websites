@@ -23,13 +23,13 @@ class CacheWhiteListAction extends BaseAction
 
         file_put_contents('wallets-wl-nobased.json', json_encode($wallets));
 
-        $csv = '';
+        $csv = 'wallet' . PHP_EOL;
         foreach ($wallets as $wallet) {
             $csv .= $wallet . PHP_EOL;
         }
         file_put_contents('wallets-wl-nobased.csv', $csv);
 
-        $csv = '';
+        $csv = 'wallet,mints' . PHP_EOL;
         foreach ($wallets as $wallet) {
             $csv .= $wallet . ',1' . PHP_EOL;
         }
