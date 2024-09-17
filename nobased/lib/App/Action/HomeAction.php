@@ -19,6 +19,13 @@ class HomeAction extends BaseAction
         $jsonFile = ROOT . '/wallets-wl-nobased.json';
         $wallets = (array) json_decode(file_get_contents($jsonFile), true);
 
+        $images = glob(ROOT . '/assets/images/example_images/*.png');
+        shuffle($images);
+        $imageFileNames = [];
+        foreach ($images as $image) {
+            $imageFileNames[] = pathinfo($image)['basename'];
+        }
+
         $whitelistCollections = [
             'Weeping Plebs',
             'BaseAliens',
@@ -37,5 +44,6 @@ class HomeAction extends BaseAction
 
         $this->setVariable(new Variable('whitelistCollections', $whitelistCollections));
         $this->setVariable(new Variable('totalWallets', count($wallets)));
+        $this->setVariable(new Variable('images', array_slice($imageFileNames, 0, 4)));
     }
 }

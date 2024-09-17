@@ -34,7 +34,24 @@
                     <div id="failure-response" class="hide mt-4 py-2 bg-danger rounded"></div>
                 </div>
             </div>
+        </div>
+    </div>
+</div>
 
+<div class="container-fluid">
+    <div class="row justify-content-center my-5">
+        <?php foreach ($images as $image): ?>
+            <div class="col col-6 col-lg-3">
+                <img class="img-fluid" src="<?=env('APP_ORIGIN_URL'); ?>/assets/images/example_images/<?=$image; ?>" />
+            </div>
+        <?php endforeach; ?>
+    </div>
+</div>
+
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col col-12 col-md-10 col-lg-8">
             <div class="card mt-4">
                 <div class="card-body">
                     <p class="d-block mb- p-large">
