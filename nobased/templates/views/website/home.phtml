@@ -4,7 +4,7 @@
             <div class="card">
                 <div class="card-header">
                     <h3>Find Your WL Spot</h3>
-                    <p>
+                    <p class="special-font">
                         There are currently <?=number_format($totalWallets); ?> wallets on the WL
                     </p>
                 </div>
@@ -48,13 +48,12 @@
     </div>
 </div>
 
-
 <div class="container">
     <div class="row justify-content-center">
         <div class="col col-12 col-md-10 col-lg-8">
             <div class="card mt-4">
                 <div class="card-body">
-                    <p class="d-block mb- p-large">
+                    <p class="d-block mb- p-large special-font">
                         Holders from the following collections are on the whitelist (alphabetical order)
                     </p>
                     <?php foreach ($whitelistCollections as $whitelistCollection): ?>
@@ -68,5 +67,27 @@
 <!--        <div class="col col-6">-->
 <!--            Find Your No-Based-->
 <!--        </div>-->
+    </div>
+</div>
+
+<div class="container mt-5">
+    <div class="row justify-content-center mt-5">
+        <div class="col col-12 col-md-10 col-lg-8 mt-5 about">
+            <h2>About the artist</h2>
+            <p class="regular-text">
+                I'm a professional web developer with a passion for coding and digital art.
+                On Base, I will create free mints on <a target="_blank" href="https://highlight.xyz/user/@0xf33B9684B37542Cfe043e4cA9F1B3AbecE177976">highlight.xyz</a> and one paid mint on <a target="_blank" href="https://opensea.io/collection/nobaseism/">OpenSea</a> (with an 80%+ free WL), simply because I love creating and enjoy seeing my art in collectors' wallets.
+                I won't stop creating; I will continue adding new free collections on Highlight at irregular intervals. No hype, just fun art. If you like my work, you can support me by minting No-Based or one of the free mints on highlight.xyz.
+            </p>
+            <p>
+                See ya,<br />
+                Mike from The Netherlands
+            </p>
+        </div>
+    </div>
+    <div class="row justify-content-center mt-5">
+        <div class="col col-6 col-lg-3">
+            <img class="img-fluid" src="<?=env('APP_ORIGIN_URL'); ?>/assets/images/example_images/15.png" />
+        </div>
     </div>
 </div>

@@ -63,7 +63,7 @@ h4 {
     padding: 5px 20px;
 }
 
-p {
+p.special-font {
     font-family: 'arcaderegular', sans-serif;
     font-size: 24px;
 }
@@ -191,4 +191,11 @@ footer {
 #success-response, #failure-response {
     font-family: 'arcaderegular', sans-serif;
     font-size: 30px;
+}
+
+.about h2 {
+    font-size: 48px;
+}
+.about p {
+    font-size: 22px;
 }
