@@ -199,3 +199,10 @@ footer {
 .about p {
     font-size: 22px;
 }
+.profile {
+    display: block;
+    margin-top: 100px;
+    background-color: #111;
+    border-radius: 10px;
+    border: 1px solid #333;
+}

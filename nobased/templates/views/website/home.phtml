@@ -50,19 +50,15 @@
 
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col col-12 col-md-10 col-lg-8">
-            <div class="card mt-4">
-                <div class="card-body">
-                    <p class="d-block mb- p-large special-font">
-                        Holders from the following collections are on the whitelist (alphabetical order)
-                    </p>
-                    <?php foreach ($whitelistCollections as $whitelistCollection): ?>
-                        <div class="badge bg-black">
-                            <?=$whitelistCollection; ?>
-                        </div>
-                    <?php endforeach; ?>
+        <div class="col col-12 col-md-10 col-lg-10">
+            <p class="d-block mb- p-large special-font">
+                Holders from the following collections are on the whitelist (alphabetical order)
+            </p>
+            <?php foreach ($whitelistCollections as $whitelistCollection): ?>
+                <div class="badge bg-black">
+                    <?=$whitelistCollection; ?>
                 </div>
-            </div>
+            <?php endforeach; ?>
         </div>
 <!--        <div class="col col-6">-->
 <!--            Find Your No-Based-->
@@ -70,7 +66,7 @@
     </div>
 </div>
 
-<div class="container mt-5">
+<div class="container profile">
     <div class="row justify-content-center mt-5">
         <div class="col col-12 col-md-10 col-lg-8 mt-5 about">
             <h2>About the artist</h2>
@@ -85,9 +81,34 @@
             </p>
         </div>
     </div>
-    <div class="row justify-content-center mt-5">
+
+    <hr class="m-5 pb-2" />
+
+    <div class="row justify-content-center mt-5 about mb-4">
+        <p class="regular-text">
+            Here are my other collections available for free minting on Highlight.
+            There's a small marketplace fee of 0.0008 ETH, with 50% of that going directly to my wallet.
+            If you'd like to support my work, feel free to mint and help put "Mike" on the trending list! :)
+        </p>
+        <h2>
+            <a target="_blank" href="https://highlight.xyz/mint/base:0x4C58a4513c2276567Fe1c11BE79cFA11EbFaFc08">
+                BasedDickbutts
+            </a>
+        </h2>
         <div class="col col-6 col-lg-3">
-            <img class="img-fluid" src="<?=env('APP_ORIGIN_URL'); ?>/assets/images/example_images/15.png" />
+            <a target="_blank" href="https://highlight.xyz/mint/base:0x4C58a4513c2276567Fe1c11BE79cFA11EbFaFc08">
+                <img class="img-fluid" src="<?=env('APP_ORIGIN_URL'); ?>/assets/images/baseddickbutts/1.png" />
+            </a>
+        </div>
+        <div class="col col-6 col-lg-3">
+            <a target="_blank" href="https://highlight.xyz/mint/base:0x4C58a4513c2276567Fe1c11BE79cFA11EbFaFc08">
+                <img class="img-fluid" src="<?=env('APP_ORIGIN_URL'); ?>/assets/images/baseddickbutts/2.png" />
+            </a>
+        </div>
+        <div class="col col-6 col-lg-3">
+            <a target="_blank" href="https://highlight.xyz/mint/base:0x4C58a4513c2276567Fe1c11BE79cFA11EbFaFc08">
+                <img class="img-fluid" src="<?=env('APP_ORIGIN_URL'); ?>/assets/images/baseddickbutts/3.png" />
+            </a>
         </div>
     </div>
 </div>
