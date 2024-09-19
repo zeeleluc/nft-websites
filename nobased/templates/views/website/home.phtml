@@ -1,39 +1,36 @@
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col col-12 col-md-10 col-lg-8">
-            <div class="card">
-                <div class="card-header">
-                    <h3>Find Your WL Spot</h3>
-                    <p class="special-font">
-                        There are currently <?=number_format($totalWallets); ?> wallets on the WL
-                    </p>
-                </div>
-                <div class="card-body py-5">
-                    <div id="check" class="hide">
-                        <img width="50" alt="Eo circle green checkmark" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Eo_circle_green_checkmark.svg/512px-Eo_circle_green_checkmark.svg.png?20200417132424">
-                    </div>
-                    <div id="success-response">
-                        <div class="d-flex justify-content-center">
-                            <form id="lookup-wallet" method="post" action="" class="row align-items-center">
-                                <div class="col-auto">
-                                    <input
-                                        type="text"
-                                        name="wallet"
-                                        id="wallet"
-                                        class="form-control"
-                                        placeholder="0x0..."
-                                        value=""
-                                    />
-                                </div>
-                                <div class="col-auto">
-                                    <button type="submit" class="btn btn-primary">Look-Up</button>
-                                </div>
-                            </form>
+        <div class="col col-12 col-md-10 col-lg-8 pb-5">
+
+            <h3>Find Your WL Spot</h3>
+            <p class="special-font">
+                There are currently <?=number_format($totalWallets); ?> wallets on the WL
+            </p>
+
+            <div id="check" class="hide">
+                <img width="50" alt="Eo circle green checkmark" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Eo_circle_green_checkmark.svg/512px-Eo_circle_green_checkmark.svg.png?20200417132424">
+            </div>
+            <div id="success-response">
+                <div class="d-flex justify-content-center">
+                    <form id="lookup-wallet" method="post" action="" class="row align-items-center">
+                        <div class="col-auto">
+                            <input
+                                type="text"
+                                name="wallet"
+                                id="wallet"
+                                class="form-control"
+                                placeholder="0x0..."
+                                value=""
+                            />
                         </div>
-                    </div>
-                    <div id="failure-response" class="hide mt-4 py-2 bg-danger rounded"></div>
+                        <div class="col-auto">
+                            <button type="submit" class="btn btn-primary">Look-Up</button>
+                        </div>
+                    </form>
                 </div>
             </div>
+            <div id="failure-response" class="hide mt-4 py-2 bg-danger rounded"></div>
+
         </div>
     </div>
 </div>
@@ -84,7 +81,7 @@
 
     <hr class="m-5 pb-2" />
 
-    <div class="row justify-content-center mt-5 about mb-4">
+    <div class="row justify-content-center mt-5 about mb-4 pb-5">
         <p class="regular-text">
             Here are my other collections available for free minting on Highlight.
             There's a small marketplace fee of 0.0008 ETH, with 50% of that going directly to my wallet.
