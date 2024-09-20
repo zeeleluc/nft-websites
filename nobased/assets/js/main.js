@@ -45,6 +45,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     walletDiv.classList.add('px-3');
                     walletDiv.classList.add('rounded');
                     walletDiv.classList.add('success-bg');
+                    walletDiv.classList.add('truncate-text');
 
                     successDiv.appendChild(messageDiv);
                     successDiv.appendChild(walletDiv);

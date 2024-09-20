@@ -79,6 +79,28 @@ p.special-font {
     }
 }
 
+@media (max-width: 767.98px) {
+    #lookup-wallet .col-auto {
+        flex: 1 0 100%;
+    }
+    #lookup-wallet .btn {
+        width: 100%;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .container.lookup-wallet {
+        padding: 10px 50px;
+        max-width: 100%;
+        background-color: #333333;
+    }
+    #lookup-wallet .col-12 {
+        max-width: 100%;
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
+
 .badge {
     font-family: 'ka1_2regular', sans-serif;
     font-size: 28px;
@@ -192,7 +214,13 @@ footer {
     font-family: 'arcaderegular', sans-serif;
     font-size: 30px;
 }
-
+.truncate-text {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 100%;
+    display: block; /* This ensures the div takes up the full width when it's a block element */
+}
 .about h2 {
     font-size: 48px;
 }
