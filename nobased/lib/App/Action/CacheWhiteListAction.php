@@ -21,18 +21,18 @@ class CacheWhiteListAction extends BaseAction
         );
         $wallets = array_unique($wallets);
 
-        file_put_contents('wallets-wl-nobased.json', json_encode($wallets));
+        file_put_contents(ROOT . '/wallets-wl-nobased.json', json_encode($wallets));
 
         $csv = 'wallet' . PHP_EOL;
         foreach ($wallets as $wallet) {
             $csv .= $wallet . PHP_EOL;
         }
-        file_put_contents('wallets-wl-nobased.csv', $csv);
+        file_put_contents(ROOT . '/wallets-wl-nobased.csv', $csv);
 
         $csv = 'wallet,mints' . PHP_EOL;
         foreach ($wallets as $wallet) {
             $csv .= $wallet . ',1' . PHP_EOL;
         }
-        file_put_contents('wallets-wl-nobased-opensea.csv', $csv);
+        file_put_contents(ROOT . '/wallets-wl-nobased-opensea.csv', $csv);
     }
 }
