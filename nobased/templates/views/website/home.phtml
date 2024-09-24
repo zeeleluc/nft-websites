@@ -1,12 +1,10 @@
 <div class="container lookup-wallet">
     <div class="row justify-content-center">
-        <div class="col-12 col-md-10 col-lg-8 pb-5">
-
+        <div class="col-12 col-md-10 col-lg-6 pb-5">
             <h3>WL Checker</h3>
             <p class="special-font">
                 <?=number_format($totalWallets); ?> wallets on the WL
             </p>
-
             <div id="check" class="hide">
                 <img width="50" alt="Eo circle green checkmark" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Eo_circle_green_checkmark.svg/512px-Eo_circle_green_checkmark.svg.png?20200417132424">
             </div>
@@ -23,12 +21,61 @@
                         />
                     </div>
                     <div class="col-12">
-                        <button type="submit" class="btn btn-primary w-100">Look-Up</button>
+                        <button type="submit" class="btn btn-primary w-100">Wallet Check</button>
                     </div>
                 </form>
             </div>
             <div id="failure-response" class="hide row gx-3 align-items-center mt-4 py-2 bg-danger rounded"></div>
+        </div>
 
+<!--        <div class="col-12 col-md-10 col-lg-6 pb-5">-->
+<!--            <h3>No-Based Checker</h3>-->
+<!--            <p class="special-font">-->
+<!--                Just drop an ID-->
+<!--            </p>-->
+<!--            <div id="success-response-nobased">-->
+<!--                <form id="lookup-nobased" method="post" action="" class="row g-3 align-items-center">-->
+<!--                    <div class="col-12">-->
+<!--                        <input-->
+<!--                            type="text"-->
+<!--                            name="nobasedid"-->
+<!--                            id="nobasedid"-->
+<!--                            class="form-control"-->
+<!--                            placeholder="15..."-->
+<!--                            value=""-->
+<!--                        />-->
+<!--                    </div>-->
+<!--                    <div class="col-12">-->
+<!--                        <button type="submit" class="btn btn-primary w-100">No-Punk Check</button>-->
+<!--                    </div>-->
+<!--                </form>-->
+<!--            </div>-->
+<!--            <div id="failure-response-nobased" class="hide row gx-3 align-items-center mt-4 py-2 bg-danger rounded"></div>-->
+<!--        </div>-->
+    </div>
+</div>
+
+<div class="container-fluid">
+    <div class="row justify-content-center mt-3 mb-5">
+        <div class="col col-12 col-md-6">
+            <h2>Attention</h2>
+            <div class="text-start">
+                <p>
+                    If your wallet is not eligible for the FREE WL mint, but you believe it should be because you hold at least one of the NFTs listed below, there could be several reasons, such as:
+                </p>
+                <ul>
+                    <li>The NFT in your wallet is new and hasn't synced yet.</li>
+                    <li>The NFT in your wallet is from the same-named collection but under a different contract.</li>
+                </ul>
+                <p>
+                    If neither of these applies and the NFT has been in your wallet for more than 24 hours, send Mike a DM on X.
+                </p>
+                <p>
+                    <em>
+                        A new wallet sync starts every 24 hours at midnight UTC.
+                    </em>
+                </p>
+            </div>
         </div>
     </div>
 </div>
@@ -55,9 +102,6 @@
                 </div>
             <?php endforeach; ?>
         </div>
-<!--        <div class="col col-6">-->
-<!--            Find Your No-Based-->
-<!--        </div>-->
     </div>
 </div>
 
