@@ -29,6 +29,16 @@ class CliAction extends BaseAction
             $action->run();
         }
 
+        if ($this->action === 'cache-wl-data') {
+            $action = new CacheWhiteListAction();
+            $action->run();
+        }
+
+        if ($this->action === 'cache-top-25-holders-1-eth-prize') {
+            $action = new CacheTop25HoldersAction();
+            $action->run();
+        }
+
         exit;
     }
 }
