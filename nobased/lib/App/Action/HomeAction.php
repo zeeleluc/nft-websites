@@ -19,6 +19,10 @@ class HomeAction extends BaseAction
         $jsonFile = ROOT . '/wallets-wl-nobased.json';
         $wallets = (array) json_decode(file_get_contents($jsonFile), true);
 
+        $jsonFile = ROOT . '/top-25-holders-1-eth-share.json';
+        $lastModified = filemtime($jsonFile);
+        $top25Wallets1EthPrize = (array) json_decode(file_get_contents($jsonFile), true);
+
         $images = glob(ROOT . '/assets/images/example_images/*.png');
         shuffle($images);
         $imageFileNames = [];
@@ -45,5 +49,8 @@ class HomeAction extends BaseAction
         $this->setVariable(new Variable('whitelistCollections', $whitelistCollections));
         $this->setVariable(new Variable('totalWallets', count($wallets)));
         $this->setVariable(new Variable('images', array_slice($imageFileNames, 0, 4)));
+
+        $this->setVariable(new Variable('top25syncedAt', date("Y-m-d H:i", $lastModified)));
+        $this->setVariable(new Variable('top25Wallets1EthPrize', $top25Wallets1EthPrize));
     }
 }

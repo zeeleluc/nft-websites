@@ -105,6 +105,75 @@
     </div>
 </div>
 
+<hr class="mt-5" />
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col col-12 col-md-10 col-lg-10 giveaway">
+            <h3 class="mt-2">1 ETH Giveaway</h3>
+            <h4 class="mb-0 pb-0">Wait, what?</h4>
+            <p>
+                You're giving away 1 ETH? That's right! But only if I make at least 1 ETH from primary sales. Let's assume I do.
+            </p>
+
+            <h4 class="mb-0 pb-0">That's awesome!</h4>
+            <p>
+                Absolutely! Sharing is caring, and this will be the first of many exciting giveaways for the No-Based project.
+            </p>
+
+            <h4 class="mb-0 pb-0">Why only 1 ETH?</h4>
+            <p>
+                Well, we need to save some ETH for future giveaways, right?
+            </p>
+
+            <h4 class="mb-0 pb-0">When and how?</h4>
+            <p>
+                Here’s how it works: 24 hours after we sell out, I’ll take a final snapshot of the top 25 holders.
+                Those 25 holders will split 1 ETH, based on how many No-Based NFTs they own.
+            </p>
+
+            <h4 class="mb-0 pb-0">Why do this?</h4>
+            <p>
+                This could give the project a major boost in secondary sales right after we sell out, which could push us to the top spot on several marketplaces.
+            </p>
+
+            <br />
+            <br />
+            <p>
+                <em>Synced at: <?=$top25syncedAt; ?></em>
+                <br />
+                THE TABLE BELOW IS DUMMY DATA - THE COLLECTION HAS NOT YET STARTED MINTING
+            </p>
+
+
+
+            <div class="table-responsive">
+                <table class="table text-white my-5">
+                    <thead>
+                    <tr>
+                        <td></td>
+                        <td>Based Wallet</td>
+                        <td>Total</td>
+                        <td>Percentage</td>
+                        <td>Prize</td>
+                    </tr>
+                    </thead>
+                    <?php $index = 1; ?>
+                    <?php foreach ($top25Wallets1EthPrize as $prizeInfo): ?>
+                        <tr>
+                            <td><?=$index; ?></td>
+                            <td><?=$prizeInfo['wallet']; ?></td>
+                            <td style="min-width: 70px;"><?=$prizeInfo['total']; ?></td>
+                            <td style="min-width: 100px;"><?=number_format($prizeInfo['percentage'], 2); ?>%</td>
+                            <td style="min-width: 100px;">ETH <?=$prizeInfo['eth_share']; ?></td>
+                        </tr>
+                        <?php $index++; ?>
+                    <?php endforeach; ?>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
 <div class="container profile">
     <div class="row justify-content-center mt-5">
         <div class="col col-12 col-md-10 col-lg-8 mt-5 about">

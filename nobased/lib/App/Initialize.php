@@ -76,6 +76,10 @@ class Initialize extends BaseObject
             return new Action\CacheWhiteListAction();
         }
 
+        if ($get['action'] === 'cache-top-25-holders-1-eth-prize') {
+            return new Action\CacheTop25HoldersAction();
+        }
+
         throw new \Exception('Page not found.');
     }
 }

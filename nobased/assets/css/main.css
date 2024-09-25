@@ -234,3 +234,9 @@ footer {
     border-radius: 10px;
     border: 1px solid #333;
 }
+.giveaway h4 {
+    font-size: 34px;
+}
+.giveaway p {
+    font-size: 21px;
+}

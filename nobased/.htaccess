@@ -24,4 +24,4 @@ RewriteCond %{HTTPS} !=on
 RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301,NE]
 
 # Pretty URLs
-RewriteRule ^([a-z-]+)/?$ index.php?action=$1 [NC,L,QSA]
+RewriteRule ^([a-z0-9-]+)/?$ index.php?action=$1 [NC,L,QSA]
