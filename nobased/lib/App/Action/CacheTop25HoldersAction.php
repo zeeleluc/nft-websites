@@ -12,7 +12,6 @@ class CacheTop25HoldersAction extends BaseAction
 //        $richList = (array) json_decode(file_get_contents(env('WL_COLLECTION_SOURCE')), true);
         $richList = (array) json_decode(file_get_contents(env('WL_SOURCE_WEEPING_PLEBS')), true);
 
-        echo '<pre>';
         $top25 = [];
         foreach (array_slice($richList, 0, 25) as $wallet => $richListData) {
             $top25[] = [
@@ -37,6 +36,7 @@ class CacheTop25HoldersAction extends BaseAction
 
     private function generateExampleWallet()
     {
+        return 'test';
         $prefix = '0xExampleWallet';
         $randomPart = bin2hex(random_bytes(30 - strlen($prefix) / 2)); // Adjust to complete 40 characters
 
