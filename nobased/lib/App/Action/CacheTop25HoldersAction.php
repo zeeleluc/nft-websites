@@ -9,14 +9,12 @@ class CacheTop25HoldersAction extends BaseAction
 
         $this->setTerminal(true);
 
-//        $richList = (array) json_decode(file_get_contents(env('WL_COLLECTION_SOURCE')), true);
-        $richList = (array) json_decode(file_get_contents(env('WL_SOURCE_WEEPING_PLEBS')), true);
+        $richList = (array) json_decode(file_get_contents(env('WL_COLLECTION_SOURCE')), true);
 
         $top25 = [];
         foreach (array_slice($richList, 0, 25) as $wallet => $richListData) {
             $top25[] = [
-//                'wallet' => $wallet,
-                'wallet' => $this->generateExampleWallet(),
+                'wallet' => $wallet,
                 'total' => $richListData['total'],
             ];
         }
@@ -32,14 +30,5 @@ class CacheTop25HoldersAction extends BaseAction
 //        $totalEthShare = number_format(array_sum(array_column($top25, 'eth_share')), 2);
 
         file_put_contents(ROOT . '/top-25-holders-1-eth-share.json', json_encode($top25));
-    }
-
-    private function generateExampleWallet()
-    {
-        return 'test';
-        $prefix = '0xExampleWallet';
-        $randomPart = bin2hex(random_bytes(30 - strlen($prefix) / 2)); // Adjust to complete 40 characters
-
-        return $prefix . $randomPart;
     }
 }
