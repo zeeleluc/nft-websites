@@ -1,61 +1,48 @@
 <div class="container lookup-wallet">
     <div class="row justify-content-center">
+
         <div class="col-12 col-md-10 col-lg-6 pb-5">
-            <h3>WL Checker</h3>
-            <p class="special-font">
-                <?=number_format($totalWallets); ?> wallets on the WL
-            </p>
-            <div id="check" class="hide">
-                <img width="50" alt="Eo circle green checkmark" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Eo_circle_green_checkmark.svg/512px-Eo_circle_green_checkmark.svg.png?20200417132424">
-            </div>
-            <div id="success-response">
-                <form id="lookup-wallet" method="post" action="" class="row g-3 align-items-center">
-                    <div class="col-12">
-                        <input
-                            type="text"
-                            name="wallet"
-                            id="wallet"
-                            class="form-control"
-                            placeholder="0xabc..."
-                            value=""
-                        />
-                    </div>
-                    <div class="col-12">
-                        <button type="submit" class="btn btn-primary w-100">Wallet Check</button>
-                    </div>
-                </form>
-            </div>
-            <div id="failure-response" class="hide row gx-3 align-items-center mt-4 py-2 bg-danger rounded"></div>
+            <a target="_blank" href="https://opensea.io/collection/nobaseism/overview" class="btn btn-lg btn-primary">
+                Mint on OpenSea
+            </a>
         </div>
 
-<!--        <div class="col-12 col-md-10 col-lg-6 pb-5">-->
-<!--            <h3>No-Based Checker</h3>-->
-<!--            <p class="special-font">-->
-<!--                Just drop an ID-->
-<!--            </p>-->
-<!--            <div id="success-response-nobased">-->
-<!--                <form id="lookup-nobased" method="post" action="" class="row g-3 align-items-center">-->
-<!--                    <div class="col-12">-->
-<!--                        <input-->
-<!--                            type="text"-->
-<!--                            name="nobasedid"-->
-<!--                            id="nobasedid"-->
-<!--                            class="form-control"-->
-<!--                            placeholder="15..."-->
-<!--                            value=""-->
-<!--                        />-->
-<!--                    </div>-->
-<!--                    <div class="col-12">-->
-<!--                        <button type="submit" class="btn btn-primary w-100">No-Punk Check</button>-->
-<!--                    </div>-->
-<!--                </form>-->
-<!--            </div>-->
-<!--            <div id="failure-response-nobased" class="hide row gx-3 align-items-center mt-4 py-2 bg-danger rounded"></div>-->
-<!--        </div>-->
     </div>
+
+    <div class="card">
+        <div class="card-body">
+            <div class="row justify-content-center">
+                <div class="col-12 col-md-10 col-lg-6 py-5">
+                    <form id="lookup-nobased" method="post" action="" class="row g-3 align-items-center">
+                        <div class="col-12">
+                            <input
+                                type="text"
+                                name="nobasedid"
+                                id="nobasedid"
+                                class="form-control"
+                                placeholder="15..."
+                                value=""
+                            />
+                        </div>
+                        <div class="col-12">
+                            <button type="submit" class="btn btn-primary w-100">No-Based Check</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-12 col-md-10 col-lg-6 py-5">
+                    <div id="success-response-nobased">
+                        No-Based will appear here after the look-up.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
 </div>
 
-<div class="container-fluid">
+<hr class="my-5" />
+
+<div class="container-fluid mt-5">
     <div class="row justify-content-center my-5">
         <?php foreach ($images as $image): ?>
             <div class="col col-6 col-lg-3">

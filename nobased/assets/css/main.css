@@ -113,7 +113,7 @@ p.special-font {
     }
 }
 
-button.btn {
+button.btn, a.btn {
     font-family: 'ka1_2regular', sans-serif;
     font-size: 30px;
 }
@@ -239,4 +239,10 @@ footer {
 }
 .giveaway p {
     font-size: 21px;
+}
+
+#success-response-nobased {
+    font-family: 'arcaderegular', sans-serif;
+    font-size: 26px;
+
 }

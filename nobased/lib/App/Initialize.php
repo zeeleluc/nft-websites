@@ -72,6 +72,10 @@ class Initialize extends BaseObject
             return new Action\LookUpWhiteListAction();
         }
 
+        if ($get['action'] === 'lookup-nobased') {
+            return new Action\LookUpNoBasedAction();
+        }
+
         if ($get['action'] === 'cache-whitelist') {
             return new Action\CacheWhiteListAction();
         }

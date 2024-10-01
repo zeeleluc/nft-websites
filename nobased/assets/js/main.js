@@ -1,86 +1,70 @@
 document.addEventListener('DOMContentLoaded', function() {
+    const nopunksForm = document.getElementById('lookup-nobased');
+    const nopunksUrl = document.body.getAttribute('data-url');
 
-    const form = document.getElementById('lookup-wallet');
-    const url = document.body.getAttribute('data-url');
+    if (nopunksForm) {
+        // Prevent default form submission
+        nopunksForm.addEventListener('submit', function(event) {
+            event.preventDefault();
+            seekNoPunks();
+        });
 
-    if (form) {
-
-        const seekWallet = async () => {
+        const seekNoPunks = async () => {
             try {
 
-                const formData = new FormData(form);
-                const formValues = {};
-                formData.forEach((value, key) => {
-                    formValues[key] = value;
-                });
+                const successDiv = document.getElementById('success-response-nobased');
+                successDiv.innerHTML = '';
 
-                const response = await fetch(url + '/lookup-whitelist', {
+
+                const idValue = document.getElementById('nobasedid').value;
+
+                // Create JSON payload
+                const payload = { 'id': idValue };
+
+                // Log payload for debugging
+                console.log("Payload:", payload);
+
+                const response = await fetch(nopunksUrl + '/lookup-nobased', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
                     },
-                    body: JSON.stringify(formValues),
+                    body: JSON.stringify(payload),
                 });
 
                 if (!response.ok) {
-                    throw new Error('Network response was not ok ' + response.statusText);
+                    throw new Error(`Network response was not ok: ${response.statusText}`);
                 }
 
                 const json = await response.json();
                 if (json.success) {
-                    const checkDiv = document.getElementById('check');
-                    checkDiv.classList.remove('hide');
-
-                    const successDiv = document.getElementById('success-response');
-
-                    successDiv.innerHTML = '';
-
-                    const messageDiv = document.createElement('div');
-                    messageDiv.innerHTML = json.message;
-                    messageDiv.classList.add('py-2');
-
-                    const walletDiv = document.createElement('div');
-                    walletDiv.innerHTML = json.wallet;
-                    walletDiv.classList.add('py-2');
-                    walletDiv.classList.add('px-3');
-                    walletDiv.classList.add('rounded');
-                    walletDiv.classList.add('success-bg');
-                    walletDiv.classList.add('truncate-text');
-
-                    successDiv.appendChild(messageDiv);
-                    successDiv.appendChild(walletDiv);
+                    handleSuccess(json);
                 } else {
-                    form.querySelector('input[name="wallet"]').value = '';
-
-                    const failureDiv = document.getElementById('failure-response');
-                    failureDiv.classList.remove('hide');
-
-                    const messageDiv = document.createElement('div');
-                    messageDiv.innerHTML = json.message;
-
-                    failureDiv.appendChild(messageDiv);
-
-                    form.querySelector('button[type="submit"]').disabled = false;
-                    form.querySelector('input[name="wallet"]').disabled = false;
+                    const successDiv = document.getElementById('success-response-nobased');
+                    successDiv.innerHTML = 'Enter a valid ID between 0 and 9999';
                 }
-                console.log(json);
-            } catch (error) {
-                console.error('Fetch error: ', error);
+            } finally {
+                toggleFormState(false);
             }
         };
 
+        const handleSuccess = (json) => {
 
-        form.addEventListener('submit', function(event) {
-            seekWallet();
+            const successDiv = document.getElementById('success-response-nobased');
+            successDiv.innerHTML = '';
 
-            const failureDiv = document.getElementById('failure-response');
-            failureDiv.classList.add('hide');
-            failureDiv.innerHTML = '';
+            const imageTag = document.createElement('img');
+            imageTag.src = json.url;
+            imageTag.classList.add('img-fluid');
 
-            form.querySelector('button[type="submit"]').disabled = true;
-            form.querySelector('input[name="wallet"]').disabled = true;
+            successDiv.appendChild(imageTag);
+        };
 
-            return event.preventDefault();
-        });
+        const toggleFormState = (isDisabled) => {
+            const formElements = nopunksForm.querySelectorAll('button, input');
+            formElements.forEach(element => {
+                element.disabled = isDisabled;
+            });
+        };
     }
 });
