@@ -93,40 +93,6 @@
 <hr class="mt-5" />
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col col-12 col-md-10 col-lg-10 giveaway">
-            <h3 class="mt-2">1 ETH Giveaway 24 HOURS AFTER mint-out</h3>
-
-            <div class="table-responsive">
-                <table class="table text-white my-5">
-                    <thead>
-                    <tr>
-                        <td>Post URL</td>
-                        <td>Based Wallet</td>
-                        <td>Total</td>
-                        <td>Percentage</td>
-                        <td>Prize</td>
-                    </tr>
-                    </thead>
-                    <?php $index = 1; ?>
-                    <?php foreach ($top25Wallets1EthPrize as $prizeInfo): ?>
-                        <tr>
-                            <td><?=$index; ?></td>
-                            <td><?=$prizeInfo['wallet']; ?></td>
-                            <td style="min-width: 70px;"><?=$prizeInfo['total']; ?></td>
-                            <td style="min-width: 100px;"><?=number_format($prizeInfo['percentage'], 2); ?>%</td>
-                            <td style="min-width: 100px;">ETH <?=$prizeInfo['eth_share']; ?></td>
-                        </tr>
-                        <?php $index++; ?>
-                    <?php endforeach; ?>
-                </table>
-            </div>
-        </div>
-    </div>
-</div>
-
-<hr class="mt-5" />
-<div class="container">
-    <div class="row justify-content-center">
         <div class="col col-12 col-md-10 col-lg-10">
             <p class="d-block mb- p-large special-font">
                 Holders from the following collections were on the whitelist (alphabetical order)
