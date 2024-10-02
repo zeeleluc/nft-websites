@@ -52,5 +52,32 @@ class HomeAction extends BaseAction
 
         $this->setVariable(new Variable('top25syncedAt', date("Y-m-d H:i", $lastModified)));
         $this->setVariable(new Variable('top25Wallets1EthPrize', $top25Wallets1EthPrize));
+
+        $this->setVariable(new Variable('giveaways', array_reverse($this->getGiveaways())));
+    }
+
+    private function getGiveaways(): array
+    {
+        $giveaways = [];
+
+        $file = ROOT . '/giveaways.csv';
+        if (($handle = fopen($file, 'r')) !== false) {
+            $i = 0;
+            while (($data = fgetcsv($handle, 1000, ',')) !== false) {
+                if ($i > 0) {
+                    $giveaways[] = [
+                        'post_url' => $data[0],
+                        'prize' => $data[1],
+                        'winners' => $data[2] ? explode(':', $data[2]) : null,
+                    ];
+                }
+
+                $i++;
+            }
+
+            fclose($handle);
+        }
+
+        return $giveaways;
     }
 }

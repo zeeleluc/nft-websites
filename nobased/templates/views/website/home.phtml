@@ -52,17 +52,36 @@
     </div>
 </div>
 
+
+<hr class="mt-5" />
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col col-12 col-md-10 col-lg-10">
-            <p class="d-block mb- p-large special-font">
-                Holders from the following collections are on the whitelist (alphabetical order)
-            </p>
-            <?php foreach ($whitelistCollections as $whitelistCollection): ?>
-                <div class="badge bg-black">
-                    <?=$whitelistCollection; ?>
-                </div>
-            <?php endforeach; ?>
+        <div class="col col-12 col-md-10 col-lg-10 giveaway">
+            <h3 class="mt-2">Sharing is Caring</h3>
+
+            <div class="table-responsive">
+                <table class="giveaway-table table text-white table-borderless my-5">
+                    </thead>
+                    <?php foreach ($giveaways as $giveaway): ?>
+                        <tr class="<?=$giveaway['winners'] ? 'finished' : ''; ?>">
+                            <td>
+                                <a target="_blank" href="<?=$giveaway['post_url']; ?>">
+                                    <?=$giveaway['prize']; ?>
+                                </a>
+                            </td>
+                            <td>
+                                <?php if ($giveaway['winners']): ?>
+                                    <?php foreach ($giveaway['winners'] as $winner): ?>
+                                        🏆 <?=shortenString($winner); ?><br />
+                                    <?php endforeach; ?>
+                                <?php else: ?>
+                                    Currently Running
+                                <?php endif; ?>
+                            </td>
+                        </tr>
+                    <?php endforeach; ?>
+                </table>
+            </div>
         </div>
     </div>
 </div>
@@ -77,7 +96,7 @@
                 <table class="table text-white my-5">
                     <thead>
                     <tr>
-                        <td></td>
+                        <td>Post URL</td>
                         <td>Based Wallet</td>
                         <td>Total</td>
                         <td>Percentage</td>
@@ -97,6 +116,22 @@
                     <?php endforeach; ?>
                 </table>
             </div>
+        </div>
+    </div>
+</div>
+
+<hr class="mt-5" />
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col col-12 col-md-10 col-lg-10">
+            <p class="d-block mb- p-large special-font">
+                Holders from the following collections were on the whitelist (alphabetical order)
+            </p>
+            <?php foreach ($whitelistCollections as $whitelistCollection): ?>
+                <div class="badge bg-black">
+                    <?=$whitelistCollection; ?>
+                </div>
+            <?php endforeach; ?>
         </div>
     </div>
 </div>

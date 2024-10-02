@@ -60,3 +60,18 @@ if (!function_exists('redirect')) {
         exit;
     }
 }
+
+function shortenString($string, $startLength = 10, $endLength = 10) {
+    // Check if the string is longer than the sum of start and end lengths
+    if (strlen($string) <= ($startLength + $endLength)) {
+        return $string; // If it's already short, return as is
+    }
+
+    // Extract the start and end parts of the string
+    $start = substr($string, 0, $startLength);
+    $end = substr($string, -$endLength);
+
+    // Return the shortened string
+    return $start . '...';
+}
+
