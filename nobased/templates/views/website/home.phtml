@@ -61,9 +61,12 @@
 
             <div class="table-responsive">
                 <table class="giveaway-table table text-white table-borderless my-5">
-                    </thead>
+                    <?php $index = count($giveaways); ?>
                     <?php foreach ($giveaways as $giveaway): ?>
                         <tr class="<?=$giveaway['winners'] ? 'finished' : ''; ?>">
+                            <td>
+                                #<?=$index; ?>
+                            </td>
                             <td>
                                 <a target="_blank" href="<?=$giveaway['post_url']; ?>">
                                     <?=$giveaway['prize']; ?>
@@ -79,6 +82,7 @@
                                 <?php endif; ?>
                             </td>
                         </tr>
+                    <?php $index--; ?>
                     <?php endforeach; ?>
                 </table>
             </div>
