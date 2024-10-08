@@ -80,6 +80,10 @@ class Initialize extends BaseObject
             return new Action\CacheWhiteListAction();
         }
 
+        if ($get['action'] === 'richlist') {
+            return new Action\RichlistAction();
+        }
+
         throw new \Exception('Page not found.');
     }
 }

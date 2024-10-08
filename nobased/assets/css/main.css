@@ -33,6 +33,30 @@ h1 {
     padding: 0 20px;
     line-height: 83px;
 }
+h1.subpage {
+    margin-top: 30px;
+    font-size: 38px;
+}
+h1.subpage img {
+    margin-top: 10px;
+}
+h1.subpage span.text {
+    margin-left: 20px;
+}
+.navbar-brand {
+    font-family: 'ka1_2regular', sans-serif;
+}
+li.nav-item {
+    font-family: 'arcaderegular', sans-serif;
+    font-size: 24px;
+    padding-top: 3px;
+}
+table tr td {
+    color: #ccc;
+    font-size: 20px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
 @media (max-width: 575px) {
     h1 {
         font-size: 50px;

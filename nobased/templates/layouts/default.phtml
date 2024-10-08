@@ -11,6 +11,8 @@
     <link href="<?=env('URL'); ?>/assets/css/bootstrap.min.css" rel="stylesheet">
     <link href="<?=env('URL'); ?>/assets/css/main.css?t=<?=date('dmYHi'); ?>" rel="stylesheet">
 
+    <script type="text/javascript" src="<?=env('URL'); ?>/assets/js/bootstrap.bundle.js"></script>
+
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -18,16 +20,24 @@
 </head>
 
 <body data-url="<?=env('URL'); ?>">
-    <main>
-        <img width="150" class="logo" src="./assets/images/logo.png" />
-        <div class="container my-5">
-            <div class="col">
-                <div class="row">
-                    <h1>No-Based is based-af</h1>
-                    <h2>pure traits from <em>No-Punks</em> and a little sauce from <em>based punks</em></h2>
-                </div>
+
+    <nav class="navbar navbar-expand-lg bg-dark" data-bs-theme="dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="<?=env('APP_ORIGIN_URL'); ?>">No-Based</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="richlist" href="<?=env('APP_ORIGIN_URL'); ?>/richlist">Richlist</a>
+                    </li>
+                </ul>
             </div>
         </div>
+    </nav>
+
+    <main>
         <?=$content; ?>
     </main>
 
