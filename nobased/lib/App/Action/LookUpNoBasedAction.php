@@ -16,6 +16,7 @@ class LookUpNoBasedAction extends BaseAction
                 'success' => true,
                 'id' => $id,
                 'url' => env('IMAGED_ENDPOINT') . $id . '.png',
+                'url_cryptopunk_compare' => env('IMAGES_CRYPTOPUNK_COMPARE_ENDPOINT') . $id . '.png',
             ]);
         } else {
             echo json_encode([

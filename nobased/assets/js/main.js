@@ -49,15 +49,30 @@ document.addEventListener('DOMContentLoaded', function() {
         };
 
         const handleSuccess = (json) => {
-
             const successDiv = document.getElementById('success-response-nobased');
             successDiv.innerHTML = '';
 
-            const imageTag = document.createElement('img');
-            imageTag.src = json.url;
-            imageTag.classList.add('img-fluid');
+            const createImageElement = (url) => {
+                const colDiv = document.createElement('div');
+                colDiv.classList.add('col-12', 'col-md-10', 'col-lg-4', 'py-2');
 
-            successDiv.appendChild(imageTag);
+                const imageTag = document.createElement('img');
+                imageTag.src = url;
+                imageTag.classList.add('img-fluid');
+
+                colDiv.appendChild(imageTag);
+                return colDiv;
+            };
+
+            if (json.url) {
+                const image1 = createImageElement(json.url);
+                successDiv.appendChild(image1);
+            }
+
+            if (json.url_cryptopunk_compare) {
+                const image2 = createImageElement(json.url_cryptopunk_compare);
+                successDiv.appendChild(image2);
+            }
         };
 
         const toggleFormState = (isDisabled) => {
