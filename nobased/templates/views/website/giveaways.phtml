@@ -1,0 +1,42 @@
+<h1 class="subpage">
+    <img width="100" class="logo" src="./assets/images/logo.png" />
+    <span class="text">
+        Giveaways
+    </span>
+</h1>
+
+<div class="container-fluid">
+    <div class="row justify-content-center">
+        <div class="col col-12 col-md-10 col-lg-10 giveaway">
+
+            <div class="table-responsive">
+                <table class="giveaway-table table text-white table-borderless my-5">
+                    <?php $index = count($giveaways); ?>
+                    <?php foreach ($giveaways as $giveaway): ?>
+                        <tr class="<?=$giveaway['winners'] ? 'finished' : ''; ?>">
+                            <td>
+                                #<?=$index; ?>
+                            </td>
+                            <td>
+                                <a target="_blank" href="<?=$giveaway['post_url']; ?>">
+                                    <?=$giveaway['prize']; ?>
+                                </a>
+                            </td>
+                            <td>
+                                <?php if ($giveaway['winners']): ?>
+                                    <?php foreach ($giveaway['winners'] as $winner): ?>
+                                        🏆 <?=shortenString($winner); ?><br />
+                                    <?php endforeach; ?>
+                                <?php else: ?>
+                                    Currently Running
+                                <?php endif; ?>
+                            </td>
+                        </tr>
+                        <?php $index--; ?>
+                    <?php endforeach; ?>
+                </table>
+            </div>
+            <h3 class="mt-2">Sharing is Caring</h3>
+        </div>
+    </div>
+</div>

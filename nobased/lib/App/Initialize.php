@@ -84,6 +84,10 @@ class Initialize extends BaseObject
             return new Action\RichlistAction();
         }
 
+        if ($get['action'] === 'giveaways') {
+            return new Action\GiveawaysAction();
+        }
+
         throw new \Exception('Page not found.');
     }
 }
