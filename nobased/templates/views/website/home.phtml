@@ -1,5 +1,5 @@
 <img width="250" class="logo" src="./assets/images/logo.png" />
-<div class="container my-5">
+<div class="container mt-5 mb-1">
     <div class="col">
         <div class="row">
             <h1>No-Based is based-af</h1>
@@ -8,53 +8,24 @@
     </div>
 </div>
 
+<hr class="my-5" />
 
-<div class="container lookup-wallet">
+<div class="container">
     <div class="row justify-content-center">
 
-        <div class="col-12 col-md-10 col-lg-6 pb-5">
-            <a target="_blank" href="https://opensea.io/collection/nobaseism/overview" class="btn btn-primary">
-                Buy on OpenSea
-            </a>
-            <a target="_blank" href="https://magiceden.io/" class="btn btn-primary">
-                Buy on MagicEden
-            </a>
+        <div class="col-12">
+
+            <h1 class="smaller">Where to buy?</h1>
+
+            <h2>
+                Buy your favorite No-Based on secondary marketplaces like
+                <a target="_blank" href="https://opensea.io/collection/nobaseism/overview">OpenSea</a> and <a target="_blank" href="https://magiceden.io/">
+                    MagicEden
+                </a>
+            </h2>
         </div>
 
     </div>
-
-    <div class="card">
-        <div class="card-body">
-            <div class="row justify-content-center">
-                <div class="col-12 col-md-10 col-lg-6 py-1">
-                    <form id="lookup-nobased" method="post" action="" class="row g-3 align-items-center">
-                        <div class="col-12">
-                            <input
-                                type="text"
-                                name="nobasedid"
-                                id="nobasedid"
-                                class="form-control"
-                                placeholder="15..."
-                                value=""
-                            />
-                        </div>
-                        <div class="col-12">
-                            <button type="submit" class="btn btn-primary w-100">No-Based Check</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="card">
-        <div class="card-body">
-            <div id="success-response-nobased" class="row justify-content-center">
-                Images will appear here after the look-up.
-            </div>
-        </div>
-    </div>
-
 
 </div>
 
@@ -70,21 +41,36 @@
     </div>
 </div>
 
-<hr class="mt-5" />
-<div class="container">
+<hr class="my-5" />
+
+<div class="container lookup-wallet">
     <div class="row justify-content-center">
-        <div class="col col-12 col-md-10 col-lg-10">
-            <p class="d-block mb- p-large special-font">
-                Holders from the following collections were on the whitelist (alphabetical order)
-            </p>
-            <?php foreach ($whitelistCollections as $whitelistCollection): ?>
-                <div class="badge bg-black">
-                    <?=$whitelistCollection; ?>
-                </div>
-            <?php endforeach; ?>
+
+        <div class="col-12">
+            <a href="<?=env('APP_ORIGIN_URL'); ?>/lookup" class="btn btn-primary">
+                Lookup your No-Based
+            </a>
         </div>
+
     </div>
+
 </div>
+<hr class="my-5" />
+
+<!--<div class="container">-->
+<!--    <div class="row justify-content-center">-->
+<!--        <div class="col col-12 col-md-10 col-lg-10">-->
+<!--            <p class="d-block mb- p-large special-font">-->
+<!--                Holders from the following collections were on the whitelist (alphabetical order)-->
+<!--            </p>-->
+<!--            --><?php //foreach ($whitelistCollections as $whitelistCollection): ?>
+<!--                <div class="badge bg-black">-->
+<!--                    --><?php //=$whitelistCollection; ?>
+<!--                </div>-->
+<!--            --><?php //endforeach; ?>
+<!--        </div>-->
+<!--    </div>-->
+<!--</div>-->
 
 <div class="container profile">
     <div class="row justify-content-center mt-5">

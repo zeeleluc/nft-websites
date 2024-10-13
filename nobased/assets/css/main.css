@@ -33,6 +33,9 @@ h1 {
     padding: 0 20px;
     line-height: 83px;
 }
+h1.smaller {
+    font-size: 50px;
+}
 h1.subpage {
     margin-top: 30px;
     font-size: 38px;
@@ -62,6 +65,10 @@ table tr td {
         font-size: 50px;
         line-height: 63px;
     }
+    h1.smaller {
+        font-size: 40px;
+    }
+
 }
 
 h2 {
@@ -81,6 +88,10 @@ h3 {
         font-size: 40px;
         line-height: 33px;
     }
+    h1.smaller {
+        font-size: 30px;
+    }
+
 }
 h4 {
     font-family: 'arcaderegular', sans-serif;
@@ -276,6 +287,7 @@ table.giveaway-table tr td {
     background-color: #333;
     padding: 20px 0;
     font-size: 30px;
+    color: white;
 }
 
 table.giveaway-table tr.finished td {

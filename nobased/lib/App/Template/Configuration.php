@@ -24,6 +24,7 @@ abstract class Configuration extends BaseObject
                 'richlist',
                 'giveaways',
                 'community',
+                'lookup',
             ],
         ];
     }
