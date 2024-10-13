@@ -23,6 +23,7 @@ abstract class Configuration extends BaseObject
                 'home',
                 'richlist',
                 'giveaways',
+                'community',
             ],
         ];
     }

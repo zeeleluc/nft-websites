@@ -84,6 +84,10 @@ class Initialize extends BaseObject
             return new Action\RichlistAction();
         }
 
+        if ($get['action'] === 'community') {
+            return new Action\CommunityAction();
+        }
+
         if ($get['action'] === 'giveaways') {
             return new Action\GiveawaysAction();
         }

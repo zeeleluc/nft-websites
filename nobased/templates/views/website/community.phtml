@@ -1,0 +1,60 @@
+<h1 class="subpage">
+    <img width="100" class="logo" src="./assets/images/logo.png" />
+    <span class="text">
+        Community
+    </span>
+</h1>
+
+<div class="container profile">
+    <div class="row justify-content-center">
+        <div class="col col-12 col-md-10 col-lg-10 community">
+            <h3>
+                Fan-Art
+            </h3>
+            <div class="container-fluid mt-5 pb-5">
+                <div class="row justify-content-center">
+                    <?php foreach ($fanArtImages as $fanArtImage): ?>
+                        <div class="col col-3 col-sm-12 col-lg-3 col-md-6">
+                            <div class="card mb-5">
+                                <div class="card-body">
+                                    <img class="img-fluid" src="<?=env('APP_ORIGIN_URL'); ?>/assets/images/fanart/<?=$fanArtImage; ?>">
+                                </div>
+                                <div class="card-footer pt-0 pb-3">
+                                    <?php $chunks = explode('/', $fanArtImage); ?>
+                                    Credits <a target="_blank" href="https://x.com/<?=$chunks[0]; ?>">@<?=$chunks[0]; ?></a>
+                                </div>
+                            </div>
+                        </div>
+                    <?php endforeach; ?>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container profile">
+    <div class="row justify-content-center">
+        <div class="col col-12 col-md-10 col-lg-10 community">
+            <h3>
+                Memes
+            </h3>
+            <div class="container-fluid mt-5 pb-5">
+                <div class="row justify-content-center">
+                    <?php foreach ($memes as $meme): ?>
+                        <div class="col col-3 col-sm-12 col-lg-3 col-md-6">
+                            <div class="card mb-5">
+                                <div class="card-body">
+                                    <img class="img-fluid" src="<?=env('APP_ORIGIN_URL'); ?>/assets/images/memes/<?=$meme; ?>">
+                                </div>
+                                <div class="card-footer pt-0 pb-3">
+                                    <?php $chunks = explode('/', $meme); ?>
+                                    Credits <a target="_blank" href="https://x.com/<?=$chunks[0]; ?>">@<?=$chunks[0]; ?></a>
+                                </div>
+                            </div>
+                        </div>
+                    <?php endforeach; ?>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
