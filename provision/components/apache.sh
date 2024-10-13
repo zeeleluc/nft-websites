@@ -7,6 +7,7 @@ apt-get install -y apache2
 cp /var/www/provision/config/apache/vhosts/weepingplebs.local.conf /etc/apache2/sites-available/weepingplebs.local.conf
 cp /var/www/provision/config/apache/vhosts/lasereyes.local.conf /etc/apache2/sites-available/lasereyes.local.conf
 cp /var/www/provision/config/apache/vhosts/nobased.local.conf /etc/apache2/sites-available/nobased.local.conf
+cp /var/www/provision/config/apache/vhosts/regens.local.conf /etc/apache2/sites-available/regens.local.conf
 
 # Disable the default vhost file
 a2dissite 000-default
@@ -15,6 +16,7 @@ a2dissite 000-default
 a2ensite weepingplebs.local.conf
 a2ensite lasereyes.local.conf
 a2ensite nobased.local.conf
+a2ensite regens.local.conf
 
 # Enable ModRewrite
 a2enmod rewrite
@@ -49,6 +51,17 @@ sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048 \
     -keyout /etc/ssl/private/nobased.local.key \
     -out /etc/ssl/certs/nobased.local.crt \
     -subj "/C=US/ST=CA/L=San Francisco/O=Example, Inc./OU=IT Department/CN=nobased.local"
+
+sudo a2enmod ssl
+sudo systemctl restart apache2
+
+
+# ssl certificate for domain
+sudo apt install openssl
+sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048 \
+    -keyout /etc/ssl/private/regens.local.key \
+    -out /etc/ssl/certs/regens.local.crt \
+    -subj "/C=US/ST=CA/L=San Francisco/O=Example, Inc./OU=IT Department/CN=regens.local"
 
 sudo a2enmod ssl
 sudo systemctl restart apache2
