@@ -73,6 +73,11 @@ document.addEventListener('DOMContentLoaded', function() {
                 const image2 = createImageElement(json.url_cryptopunk_compare);
                 successDiv.appendChild(image2);
             }
+
+            if (json.url_x_banner) {
+                const image3 = createImageElement(json.url_x_banner);
+                successDiv.appendChild(image3);
+            }
         };
 
         const toggleFormState = (isDisabled) => {
