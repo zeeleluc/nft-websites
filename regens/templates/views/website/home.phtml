@@ -1,0 +1,29 @@
+<div class="container-fluid mt-4">
+    <div class="row justify-content-center">
+        <div class="col col-12">
+            <h1><a href="<?=env('APP_ORIGIN_URL'); ?>">re:gens</a></h1>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col col-12">
+            <p>
+                nostalgia re:loaded. 18x18 re:gens<br />
+                bringing back the memories we lost<br />
+                it’s time to re:set how we feel about art
+            </p>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid mt-4 mb-2 px-5">
+    <div class="row justify-content-center">
+        <?php foreach ($randomNFTs as $NFT): ?>
+            <div class="col col-12 col-sm-6 col-md-4 col-lg-3 col-xl-3 col-xxl-3 mt-4">
+                <?php require ROOT . "/templates/views/website/partials/nft-card.phtml"; ?>
+            </div>
+        <?php endforeach; ?>
+    </div>
+</div>

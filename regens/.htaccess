@@ -1,0 +1,24 @@
+ErrorDocument 403 /403.html
+
+# Disable Directory listing
+Options -Indexes
+
+# Block files which needs to be hidden
+<Files ~ "\.(env|json|config.js|md|gitignore|gitattributes|lock)$">
+    Order allow,deny
+    Deny from all
+</Files>
+
+RewriteEngine On
+# Serve static files directly
+RewriteRule \.(css|jpe?g|gif|png|js|ico)$ - [L]
+
+# Force HTTPS
+RewriteCond %{HTTPS} !=on
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301,NE]
+
+# Pretty URLs
+RewriteRule ^([a-z-]+)/?$ index.php?action=$1 [NC,L,QSA]
+# More inclusive character set for filter
+RewriteRule ^(filter)/([^/]+)/?$ index.php?action=$1&filter=$2 [NC,L,QSA]
+RewriteRule ^(regen)/([0-9]+)/?$ index.php?action=$1&id=$2 [NC,L,QSA]

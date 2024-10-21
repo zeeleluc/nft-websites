@@ -1,0 +1,35 @@
+<?php
+/**
+ * @var $NFT \App\Model\NFT
+ */
+?>
+
+<div class="card">
+    <div class="card-header text-center">
+        #<?=$NFT->id; ?>
+    </div>
+    <div class="card-body p-0">
+        <a href="<?=env('APP_ORIGIN_URL'); ?>/regen/<?=$NFT->id; ?>">
+            <img class="img-fluid" src="<?=$NFT->getImage(); ?>" />
+        </a>
+    </div>
+    <div class="card-footer">
+        <?php foreach ($NFT->getAttributes() as $trait => $property): ?>
+            <?php if ($currentFilter): ?>
+                <?php if (\App\Service\Filter::queryHasFilter($currentFilter, $trait)): ?>
+                    <a class="btn" href="<?=env('APP_ORIGIN_URL') . '/filter/'; ?><?=undo_spaces(\App\Service\Filter::queryRemoveTrait($currentFilter, $trait)); ?>">
+                        <?=$property; ?>
+                    </a>
+                <?php else: ?>
+                    <a class="btn not-selected" href="<?=undo_spaces($currentFilter); ?>;<?=undo_spaces($trait); ?>=<?=undo_spaces($property); ?>">
+                        <?=$property; ?>
+                    </a>
+                <?php endif; ?>
+            <?php else: ?>
+                <a class="btn not-selected" href="/filter/<?=undo_spaces($trait); ?>=<?=undo_spaces($property); ?>">
+                    <?=$property; ?>
+                </a>
+            <?php endif; ?>
+        <?php endforeach; ?>
+    </div>
+</div>

@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Mike from No-Based">
+
+    <title><?=$htmlTitle; ?></title>
+
+    <link href="<?=env('URL'); ?>/assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="<?=env('URL'); ?>/assets/css/main.css?t=<?=date('dmYHi'); ?>" rel="stylesheet">
+</head>
+
+<body>
+    <main>
+        <?=$content; ?>
+    </main>
+
+    <footer class="p-5">
+        <p>
+            re:generates is a 6,666 collection created and minted on the Base blockchain.
+            The collection is created by the artist <a href="https://opensea.io/mechsicko" target="_blank">mechsicko</a>
+        </p>
+    </footer>
+
+    <div id="mike">
+        Website built by Mike, that guy from No-Based.
+    </div>
+
+    <script type="text/javascript" src="<?=env('URL'); ?>/assets/js/main.js"></script>
+</body>
+
+</html>

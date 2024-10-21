@@ -1,0 +1,65 @@
+<?php
+/**
+ * @var $NFT \App\Model\NFT
+ */
+?>
+
+<div class="container-fluid mt-4">
+    <div class="row justify-content-center">
+        <div class="col col-12">
+            <h1><a href="<?=env('APP_ORIGIN_URL'); ?>"><?=$NFT->getName(); ?></a></h1>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid">
+    <div class="row justify-content-center">
+        <div class="col col-12 text-center">
+            <?php if ($previous): ?>
+                <a class="btn" href="<?=env('APP_ORIGIN_URL'); ?>/regen/<?=$previous; ?>">PREVIOUS</a>
+            <?php endif; ?>
+            <?php if ($next): ?>
+                <a class="btn" href="<?=env('APP_ORIGIN_URL'); ?>/regen/<?=$next; ?>">NEXT</a>
+            <?php endif; ?>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid mt-4 mb-5 mb-2">
+    <div class="row justify-content-center">
+        <div class="col col-12 col-sm-4 mt-4">
+            <img class="img-fluid regen" src="<?=$NFT->getImage(); ?>" />
+        </div>
+        <div class="col col-12 col-sm-6 mt-4">
+            <table class="table table-metadata">
+                <?php foreach ($NFT->getAttributes() as $trait => $property): ?>
+                    <tr>
+                        <td class="w-50 text-end">
+                            <?=$trait; ?>
+                        </td>
+                        <td class="w-50">
+                            <a href="/filter/<?=undo_spaces($trait); ?>=<?=undo_spaces($property); ?>">
+                                <?=$property; ?>
+                            </a>
+                        </td>
+                    </tr>
+                <?php endforeach; ?>
+            </table>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid mt-5 mb-2">
+    <div class="row justify-content-center">
+        <div class="col col-12 mt-4">
+            <h3 class="mt-5">Some Random re:gens</h3>
+        </div>
+    </div>
+    <div class="row justify-content-center">
+        <?php foreach ($randomNFTs as $NFT): ?>
+            <div class="col col-12 col-sm-6 col-md-3 col-lg-3 mt-4">
+                <?php require ROOT . "/templates/views/website/partials/nft-card.phtml"; ?>
+            </div>
+        <?php endforeach; ?>
+    </div>
+</div>
