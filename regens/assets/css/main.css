@@ -117,7 +117,7 @@ img.regen {
 
 @media (max-width: 576px) {
     h1 {
-        font-size: 46px;
+        font-size: 40px;
     }
 
     h2 {
@@ -129,13 +129,18 @@ img.regen {
     }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 900px) {
     h1 {
-        font-size: 58px;
+        font-size: 52px;
     }
-
+    p {
+        font-size: 20px;
+    }
+    .card-header {
+        font-size:20px;
+    }
     h2 {
-        font-size: 42px;
+        font-size: 38px;
     }
 
     h3 {
