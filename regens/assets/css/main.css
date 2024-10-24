@@ -117,7 +117,7 @@ img.regen {
 /* Small screens (max-width: 400px) */
 @media (max-width: 400px) {
     h1 {
-        font-size: 35px;
+        font-size: 30px;
         padding-left: 10% !important;
     }
 
@@ -130,7 +130,7 @@ img.regen {
     }
 
     h3 {
-        font-size: 20px;
+        font-size: 26px;
     }
 
     .card-header {
@@ -139,6 +139,11 @@ img.regen {
     .card-footer .btn {
         font-size: 12px;
         padding: 7px;
+    }
+
+
+    table.table-metadata tr td {
+        font-size: 15px !important;
     }
 }
 
