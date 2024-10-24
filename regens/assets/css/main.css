@@ -114,10 +114,15 @@ img.regen {
     font-size: 18px;
     margin: 2px 5px;
 }
-
-@media (max-width: 576px) {
+/* Small screens (max-width: 400px) */
+@media (max-width: 400px) {
     h1 {
-        font-size: 40px;
+        font-size: 35px;
+        padding-left: 10% !important;
+    }
+
+    p {
+        font-size: 20px;
     }
 
     h2 {
@@ -127,24 +132,59 @@ img.regen {
     h3 {
         font-size: 20px;
     }
+
+    .card-header {
+        font-size: 24px;
+    }
+    .card-footer .btn {
+        font-size: 12px;
+        padding: 7px;
+    }
 }
 
-@media (max-width: 900px) {
+/* Medium screens (max-width: 576px) */
+@media (min-width: 401px) and (max-width: 576px) {
+    h1 {
+        font-size: 40px;
+    }
+
+    p {
+        font-size: 24px;
+    }
+
+    h2 {
+        font-size: 34px;
+    }
+
+    h3 {
+        font-size: 24px;
+    }
+
+    .card-header {
+        font-size: 18px;
+    }
+}
+
+/* Large screens (max-width: 900px) */
+@media (min-width: 577px) and (max-width: 900px) {
     h1 {
         font-size: 52px;
     }
+
     p {
-        font-size: 20px;
+        font-size: 30px;
     }
-    .card-header {
-        font-size:20px;
-    }
+
     h2 {
         font-size: 38px;
     }
 
     h3 {
         font-size: 32px;
+    }
+
+    .card-header {
+        font-size: 20px;
     }
 }
 
