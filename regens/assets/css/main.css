@@ -76,6 +76,19 @@ p {
     font-weight: bold;
 }
 
+.btn {
+    border-radius: 0;
+}
+
+.container-socials .btn {
+    /*font-family: '8by8', serif;*/
+    font-size: 40px;
+    /*width: 100%;*/
+    margin-bottom: 10px;
+    /*margin: 30px 30px 10px 30px;*/
+    padding: 30px;
+}
+
 .card-header {
     font-family: '8by8', serif;
     font-size: 30px;
@@ -114,6 +127,13 @@ img.regen {
     font-size: 18px;
     margin: 2px 5px;
 }
+
+.container-socials {
+    padding: 100px 0;
+    margin: 50px 0;
+    background-color: #82C4AE;
+}
+
 /* Small screens (max-width: 400px) */
 @media (max-width: 400px) {
     h1 {
@@ -141,6 +161,10 @@ img.regen {
         padding: 7px;
     }
 
+    .container-socials .btn {
+        font-size: 20px;
+
+    }
 
     table.table-metadata tr td {
         font-size: 15px !important;
@@ -167,6 +191,11 @@ img.regen {
 
     .card-header {
         font-size: 18px;
+    }
+
+    .container-socials .btn {
+        font-size: 30px;
+
     }
 }
 
