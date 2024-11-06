@@ -54,6 +54,10 @@ class Request
 
     public function getPostParam($param): mixed
     {
+        if (isset($_POST[$param])) {
+            return $_POST[$param];
+        }
+
         if (isset($this->post[$param])) {
             return $this->post[$param];
         }

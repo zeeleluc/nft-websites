@@ -65,6 +65,8 @@ class Initialize extends BaseObject
         }
         if (false === isset($get['action']) || (true === isset($get['action']) && '' === $get['action'])) {
             return new Action\HomeAction();
+        } elseif ($get['action'] === 'lookup') {
+            return new Action\LookUpAction();
         } elseif ($get['action'] === 'filter') {
             return new Action\FilterAction();
         } elseif ($get['action'] === 'regen') {
