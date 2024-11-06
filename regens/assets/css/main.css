@@ -249,14 +249,13 @@ table.table-metadata tr td a:hover {
 
 .pagination {
     margin: 20px 0 0 0;
-    background-color: #83C4AE;
 }
 .pagination a, .pagination span {
     font-family: 'fffforwa', sans-serif;
     display: inline-block;
-    padding: 7px 10px;
+    padding: 5px 8px;
     text-decoration: none;
-    font-size: 12px;
+    font-size: 11px;
     color: #333; /* Text color */
     background-color: #f1f1f1; /* Background color */
     transition: background-color 0.3s ease;
