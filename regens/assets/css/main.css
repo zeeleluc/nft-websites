@@ -27,11 +27,24 @@
 
 body {
     background-color: #629685;
-    margin-top: 30px;
 }
 a {
     color: #ffffff;
     text-decoration: none;
+}
+
+.navbar-brand {
+    font-family: '8by8', serif;
+    margin-left: 10px !important;
+}
+#navbarDropdown, .dropdown-item {
+    font-family: 'fffforwa', sans-serif;
+    font-size: 13px;
+    font-weight: normal;
+}
+
+ul.dropdown-menu {
+    border-radius: 0;
 }
 
 h1 {
