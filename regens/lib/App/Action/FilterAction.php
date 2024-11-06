@@ -40,7 +40,7 @@ class FilterAction extends BaseAction
 
         $filteredNFTs = (new NFTs())->getFiltered($filters, $offset);
         $totalFilteredNFTs = (new NFTs())->countFiltered($filters);
-        $totalPages = round($totalFilteredNFTs / env('FILTER_LIMIT')) + 1;
+        $totalPages = ceil($totalFilteredNFTs / env('FILTER_LIMIT'));
 
         if (count($filteredNFTs) === 0) {
             abort();
