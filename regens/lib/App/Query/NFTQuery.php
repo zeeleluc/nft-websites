@@ -62,7 +62,7 @@ SQL;
         return count($results);
     }
 
-    public function getNFTsFiltered(array $filters): array
+    public function getNFTsFiltered(array $filters, int $offset = 0): array
     {
         // Define the maximum number of results to return
         $limit = env('FILTER_LIMIT');
@@ -88,8 +88,8 @@ SQL;
             $sql .= " WHERE " . implode(' AND ', $conditions);
         }
 
-        // Add ORDER BY RAND() to get random results and limit to 10
-        $sql .= " ORDER BY RAND() LIMIT ?";
+        // Add ORDER BY nft_id and limit with offset for pagination
+        $sql .= " ORDER BY nft_id LIMIT ? OFFSET ?";
 
         // Prepare the statement
         $statement = $this->connection->prepare($sql);
@@ -99,8 +99,9 @@ SQL;
             $statement->bindValue($index + 1, $parameter, $types[$index]);
         }
 
-        // Bind the limit parameter
+        // Bind the limit and offset parameters
         $statement->bindValue(count($parameters) + 1, $limit, ParameterType::INTEGER);
+        $statement->bindValue(count($parameters) + 2, $offset, ParameterType::INTEGER);
 
         // Execute query
         $results = $statement->execute()->fetchAllAssociative();
@@ -114,7 +115,7 @@ SQL;
 
         return $nfts;
     }
-    
+
     /**
      * @throws Exception
      */

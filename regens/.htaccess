@@ -3,8 +3,22 @@ ErrorDocument 403 /403.html
 # Disable Directory listing
 Options -Indexes
 
-# Block files which needs to be hidden
-<Files ~ "\.(env|json|config.js|md|gitignore|gitattributes|lock)$">
+# Allow access to .png files in /assets/_tmp_images
+<FilesMatch "\.png$">
+    <If "%{REQUEST_URI} =~ m#^/assets/_tmp_images/#">
+        Require all granted
+    </If>
+</FilesMatch>
+
+# Allow access to .json files in /assets/_tmp_metadata
+<FilesMatch "\.json$">
+    <If "%{REQUEST_URI} =~ m#^/assets/_tmp_metadata/#">
+        Require all granted
+    </If>
+</FilesMatch>
+
+# Block files which need to be hidden (adjusted to prevent conflicts)
+<Files ~ "\.(env|config.js|md|gitignore|gitattributes|lock)$">
     Order allow,deny
     Deny from all
 </Files>

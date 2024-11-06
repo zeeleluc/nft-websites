@@ -239,3 +239,30 @@ table.table-metadata tr td a:hover {
     text-align: center;
     padding: 13px 0;
 }
+.pagination {
+    display: flex;
+    justify-content: center;
+    gap: 8px; /* Spacing between page links */
+    width: 100%;
+    padding: 10px 0;
+}
+
+.pagination a, .pagination span {
+    font-family: 'fffforwa', sans-serif;
+    display: inline-block;
+    padding: 7px 10px;
+    text-decoration: none;
+    font-size: 12px;
+    color: #333; /* Text color */
+    background-color: #f1f1f1; /* Background color */
+    transition: background-color 0.3s ease;
+}
+
+.pagination a:hover {
+    background-color: #ddd; /* Hover color */
+}
+
+.pagination .current {
+    background-color: #333;
+    color: #fff; /* Current page text color */
+}

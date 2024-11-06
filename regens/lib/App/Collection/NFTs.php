@@ -40,9 +40,9 @@ class NFTs
     /**
      * @throws Exception
      */
-    public function getFiltered(array $filters): array
+    public function getFiltered(array $filters, int $offset = 0): array
     {
-        return $this->NFTQuery->getNFTsFiltered($filters);
+        return $this->NFTQuery->getNFTsFiltered($filters, $offset);
     }
 
     /**

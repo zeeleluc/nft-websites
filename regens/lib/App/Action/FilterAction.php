@@ -28,12 +28,22 @@ class FilterAction extends BaseAction
             abort();
         }
 
-        $filteredNFTs = (new NFTs())->getFiltered($filters);
+        $page = (int) $this->getRequest()->getParam('page');
+        if ($page === 0) {
+            $offset = 0;
+            $page = 1;
+        } elseif ($page === 1) {
+            $offset = 0;
+        } else {
+            $offset = (($page - 1) * env('FILTER_LIMIT'));
+        }
+
+        $filteredNFTs = (new NFTs())->getFiltered($filters, $offset);
         $totalFilteredNFTs = (new NFTs())->countFiltered($filters);
+        $totalPages = round($totalFilteredNFTs / env('FILTER_LIMIT'));
 
-        shuffle($filteredNFTs);
-        $filteredNFTs = array_slice($filteredNFTs, 0, env('FILTER_LIMIT'));
-
+        $this->setVariable(new Variable('totalPages', $totalPages));
+        $this->setVariable(new Variable('currentPage', $page));
         $this->setVariable(new Variable('totalFilteredNFTs', $totalFilteredNFTs));
         $this->setVariable(new Variable('filteredNFTs', $filteredNFTs));
         $this->setVariable(new Variable('currentFilter', $this->getRequest()->get()['filter']));

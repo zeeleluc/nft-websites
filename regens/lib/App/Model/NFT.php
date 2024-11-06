@@ -16,7 +16,6 @@ class NFT
     public function getMetadata(int $id): array
     {
         $metadataUrl = env('CDN_ENDPOINT_METADATA') . $id . '.json';
-//        $metadataUrl = ROOT . '/_tmp_metadata/' . $id . '.json';
 
         $content = file_get_contents($metadataUrl);
 
@@ -60,7 +59,6 @@ class NFT
             $ext = 'jpeg';
         }
 
-//        return env('APP_ORIGIN_URL') . '/_tmp_images/' . $this->id . '.' . $ext;
         return env('CDN_ENDPOINT_IMAGES') . $this->id . '.' . $ext;
     }
 }
