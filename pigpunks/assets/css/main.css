@@ -1,0 +1,162 @@
+
+@font-face {
+    font-family: 'story_milky';
+    src: url('../fonts/story_milky-webfont.eot');
+    src: url('../fonts/story_milky-webfont.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/story_milky-webfont.woff2') format('woff2'),
+    url('../fonts/story_milky-webfont.woff') format('woff'),
+    url('../fonts/story_milky-webfont.ttf') format('truetype'),
+    url('../fonts/story_milky-webfont.svg#story_milkyregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'atma_bold';
+    src: url('../fonts/atma-bold-webfont.eot');
+    src: url('../fonts/atma-bold-webfont.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/atma-bold-webfont.woff2') format('woff2'),
+    url('../fonts/atma-bold-webfont.woff') format('woff'),
+    url('../fonts/atma-bold-webfont.ttf') format('truetype'),
+    url('../fonts/atma-bold-webfont.svg#atma-boldregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'atma_light';
+    src: url('../fonts/atma-light-webfont.eot');
+    src: url('../fonts/atma-light-webfont.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/atma-light-webfont.woff2') format('woff2'),
+    url('../fonts/atma-light-webfont.woff') format('woff'),
+    url('../fonts/atma-light-webfont.ttf') format('truetype'),
+    url('../fonts/atma-light-webfont.svg#atma-lightregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'atma_medium';
+    src: url('../fonts/atma-medium-webfont.eot');
+    src: url('../fonts/atma-medium-webfont.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/atma-medium-webfont.woff2') format('woff2'),
+    url('../fonts/atma-medium-webfont.woff') format('woff'),
+    url('../fonts/atma-medium-webfont.ttf') format('truetype'),
+    url('../fonts/atma-medium-webfont.svg#atma-mediumregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'atma_regular';
+    src: url('../fonts/atma-regular-webfont.eot');
+    src: url('../fonts/atma-regular-webfont.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/atma-regular-webfont.woff2') format('woff2'),
+    url('../fonts/atma-regular-webfont.woff') format('woff'),
+    url('../fonts/atma-regular-webfont.ttf') format('truetype'),
+    url('../fonts/atma-regular-webfont.svg#atma-regularregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'atma_semibold';
+    src: url('../fonts/atma-semibold-webfont.eot');
+    src: url('../fonts/atma-semibold-webfont.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/atma-semibold-webfont.woff2') format('woff2'),
+    url('../fonts/atma-semibold-webfont.woff') format('woff'),
+    url('../fonts/atma-semibold-webfont.ttf') format('truetype'),
+    url('../fonts/atma-semibold-webfont.svg#atma-semiboldregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    font-family: 'atma_light', sans-serif;
+    text-align: center;
+    background-color: #a8d7ca;
+}
+
+a {
+    color: #0a53be;
+}
+
+nav.navbar {
+    padding: 15px 0;
+}
+
+nav a.navbar-brand {
+    font-family: 'story_milky', sans-serif;
+    font-size: 30px;
+}
+
+h1 {
+    font-family: 'story_milky', sans-serif;
+    font-size: 62px;
+}
+h1.xxl {
+    font-size: 120px;
+    margin-bottom: -10px;
+}
+
+h2 {
+    font-family: 'atma_semibold', sans-serif;
+    font-size: 46px;
+    padding: 0;
+}
+
+.row.row-pigs {
+    padding: 0 40px;
+}
+
+.card {
+    border: none;
+    margin-bottom: 30px;
+}
+
+.table-container {
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid #ddd;
+}
+
+table.table {
+    margin: 0;
+}
+
+table.table tr td {
+    font-size: 20px;
+    padding: 10px;
+}
+
+.about h3 {
+    font-family: 'atma_medium', sans-serif;
+}
+
+footer {
+    background-color: #f3d479;
+    padding: 15px 0 10px 0;
+    margin-top: 30px;
+}
+
+/* Small devices (smartphones, portrait view) */
+@media (max-width: 575.98px) {
+    h1.xxl {
+        font-size: 50px;
+        margin-bottom: 0;
+    }
+    h2 {
+        font-size: 26px;
+    }
+}
+
+/* Medium devices (tablets, landscape view) */
+@media (min-width: 576px) and (max-width: 991.98px) {
+    h1.xxl {
+        font-size: 80px;
+        margin-bottom: 0;
+    }
+    h2 {
+        font-size: 32px;
+    }
+}

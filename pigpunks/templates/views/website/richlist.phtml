@@ -1,0 +1,30 @@
+<h1 class="subpage">
+    <img width="100" class="logo" src="./assets/images/logo.png" />
+    <span class="text">
+        Richlist
+    </span>
+</h1>
+
+<div class="container-fluid mt-5">
+    <div class="row justify-content-center my-5">
+        <div class="col col-12 col-lg-8">
+
+            <div class="table-responsive">
+                <table class="giveaway-table table text-white table-borderless my-5">
+                    <?php $index = 1; ?>
+                    <?php foreach($richlistWallets as $richlistWallet => $richlistData): ?>
+                        <tr>
+                            <td><?=$index; ?></td>
+                            <td style="max-width: 150px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;"><?=$richlistWallet; ?></td>
+                            <td><?=$richlistData['collections']['No-Based']['total']; ?></td>
+                        </tr>
+                        <?php $index++; ?>
+                    <?php endforeach; ?>
+                </table>
+            </div>
+
+            <h2 class="mt-3">RichList powered by <a href="https://hasmints.com" target="_blank">HasMints</a></h2>
+
+        </div>
+    </div>
+</div>

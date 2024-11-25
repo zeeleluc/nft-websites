@@ -1,0 +1,27 @@
+ErrorDocument 403 /403.html
+
+# Disable Directory listing
+Options -Indexes
+
+# Block files that need to be hidden, except for .json files
+<Files ~ "\.(env|config.js|md|gitignore|gitattributes|lock)$">
+    Order allow,deny
+    Deny from all
+</Files>
+
+RewriteEngine On
+
+# Allow access to JSON files only from the root directory
+<FilesMatch "^/[^/]+\.json$">
+    Order allow,deny
+    Allow from all
+</FilesMatch>
+
+RewriteRule \.(css|jpe?g|gif|png|js|ico)$ - [L]
+
+# Force https
+RewriteCond %{HTTPS} !=on
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301,NE]
+
+# Pretty URLs
+RewriteRule ^([a-z0-9-]+)/?$ index.php?action=$1 [NC,L,QSA]
