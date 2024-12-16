@@ -5,6 +5,7 @@ body {
     font-size: 20px;
     font-family: "Odibee Sans", sans-serif;
 }
+/* Default Button Style */
 .btn {
     background-color: #DEAA79;
     border-color: #DEAA79;
@@ -12,6 +13,29 @@ body {
     padding: 6px 4px;
     font-size: 14px;
     margin-bottom: 4px;
+    transition: background-color 0.3s, border-color 0.3s; /* Smooth color transitions */
+}
+
+/* Button Hover */
+.btn:hover {
+    background-color: #D89A6B;
+    border-color: #D89A6B;
+    color: #493628;
+}
+
+/* Button Active State */
+.btn:active,
+.btn:focus {
+    background-color: #C47A4F; /* Change background color when active */
+    border-color: #C47A4F;    /* Change border color when active */
+    color: white;            /* Optional: Change text color when active */
+}
+
+/* For Toggle Buttons (when `aria-pressed` is true) */
+.btn[aria-pressed="true"] {
+    background-color: #A6633C; /* Darker shade for toggled state */
+    border-color: #A6633C;
+    color: white;
 }
 .progress {
     height: 40px;
