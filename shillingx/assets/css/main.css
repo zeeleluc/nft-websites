@@ -10,7 +10,7 @@ body {
     background-color: #DEAA79;
     border-color: #DEAA79;
     color: #493628;
-    padding: 6px 4px;
+    padding: 6px 7px;
     font-size: 14px;
     margin-bottom: 4px;
     transition: background-color 0.3s, border-color 0.3s; /* Smooth color transitions */
