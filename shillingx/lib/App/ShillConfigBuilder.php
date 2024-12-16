@@ -8,7 +8,8 @@ class ShillConfigBuilder extends BaseObject
     private int $typeGm = 1;
     private int $typeRepost = 3;
     private int $typeReply = 10;
-    private int $typeQuestionWithoutImage = 2;
+    private int $typeQuestion = 1;
+    private int $typeShout = 1;
     private int $typeLeftOrRight = 1;
     private int $typeXChatAction = 0;
     private int $typePoll = 1;
@@ -34,9 +35,16 @@ class ShillConfigBuilder extends BaseObject
         return $this;
     }
 
-    public function setTypeQuestionWithoutImage(int $total): ShillConfigBuilder
+    public function setTypeQuestion(int $total): ShillConfigBuilder
     {
-        $this->typeQuestionWithoutImage = $total;
+        $this->typeQuestion = $total;
+
+        return $this;
+    }
+
+    public function setTypeShout(int $total): ShillConfigBuilder
+    {
+        $this->typeShout = $total;
 
         return $this;
     }
@@ -68,7 +76,8 @@ class ShillConfigBuilder extends BaseObject
             TypesEnum::GM->value => $this->typeGm,
             TypesEnum::REPOST->value => $this->typeRepost,
             TypesEnum::REPLY->value => $this->typeReply,
-            TypesEnum::QUESTION_WITHOUT_IMAGE->value => $this->typeQuestionWithoutImage,
+            TypesEnum::QUESTION->value => $this->typeQuestion,
+            TypesEnum::SHOUT->value => $this->typeShout,
             TypesEnum::LEFT_OR_RIGHT->value => $this->typeLeftOrRight,
             TypesEnum::X_CHAT_ACTION->value => $this->typeXChatAction,
             TypesEnum::POLL->value => $this->typePoll,

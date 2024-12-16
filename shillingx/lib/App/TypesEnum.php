@@ -7,7 +7,8 @@ enum TypesEnum: string
     case GM = 'gm';
     case REPOST = 'repost';
     case REPLY = 'reply';
-    case QUESTION_WITHOUT_IMAGE = 'question_without_image';
+    case QUESTION = 'question';
+    case SHOUT = 'shout';
     case LEFT_OR_RIGHT = 'left_or_right';
     case X_CHAT_ACTION = 'x_chat_action';
     case POLL = 'poll';
@@ -18,7 +19,8 @@ enum TypesEnum: string
             self::GM => 'GM',
             self::REPOST => 'Repost',
             self::REPLY => 'Reply',
-            self::QUESTION_WITHOUT_IMAGE => 'Question Without Image',
+            self::QUESTION => 'Question',
+            self::SHOUT => 'Shout',
             self::LEFT_OR_RIGHT => 'Left or Right',
             self::X_CHAT_ACTION => 'X Chat Action',
             self::POLL => 'Poll',
@@ -31,7 +33,8 @@ enum TypesEnum: string
             self::GM => 'GM',
             self::REPOST => 'Repost',
             self::REPLY => 'Reply',
-            self::QUESTION_WITHOUT_IMAGE => '?',
+            self::QUESTION => '?',
+            self::SHOUT => '!',
             self::LEFT_OR_RIGHT => 'LR',
             self::X_CHAT_ACTION => 'Chat',
             self::POLL => 'Poll',
