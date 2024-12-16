@@ -3,6 +3,7 @@
 DBHOST=localhost
 DBNAMES=(
     'nftwebsites'
+    'shillingx'
 )
 DBUSER=root
 DBPASSWD=root

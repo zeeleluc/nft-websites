@@ -1,0 +1,54 @@
+<div class="container mt-5 mb-1">
+    <?php foreach ($remaining as $project => $actions): ?>
+        <table>
+            <tr>
+                <td>
+                    <?=\App\ProjectsEnum::from($project)->abbr(); ?>
+                </td>
+                <td class="text-start">
+                    <div class="btn-toolbar" role="toolbar">
+                        <div class="btn-group" role="group" aria-label="Action buttons">
+                            <?php foreach ($actions as $action => $actionRemaining): ?>
+                                <button
+                                    data-project="<?=$project; ?>"
+                                    data-action="<?=$action; ?>"
+                                    class="btn btn-sm btn-primary async-action-btn">
+                                    <?=\App\TypesEnum::from($action)->abbr(); ?>
+                                    <?php if ($actionRemaining > 1): ?>
+                                        <sup><?=$actionRemaining; ?></sup>
+                                    <?php endif; ?>
+                                </button>
+                            <?php endforeach; ?>
+                        </div>
+                    </div>
+                </td>
+
+            </tr>
+        </table>
+    <?php endforeach; ?>
+</div>
+
+<div class="container mt-5 mb-1">
+    <div class="row">
+        <div class="col">
+            <?php foreach ($progress as $project => $percentage): ?>
+                <div class="progress">
+                    <?php if ($percentage > 0): ?>
+                        <div class="progress-bar" role="progressbar" style="width: <?=$percentage; ?>%"  aria-valuenow="<?=$percentage; ?>" aria-valuemin="0" aria-valuemax="100">
+                            <?php if ($percentage >= 30): ?>
+                                <?=\App\ProjectsEnum::from($project)->label(); ?>
+                            <?php endif; ?>
+                        </div>
+                    <?php else: ?>
+                        <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                    <?php endif; ?>
+                    <?php if ($percentage < 30): ?>
+                        <span class="far-from-ready">
+                            <?=\App\ProjectsEnum::from($project)->label(); ?>
+                        </span>
+                    <?php endif; ?>
+                </div>
+            <?php endforeach; ?>
+        </div>
+    </div>
+</div>
