@@ -14,6 +14,7 @@ enum TypesEnum: string
     case X_CHAT_ACTION = 'x_chat_action';
     case POLL = 'poll';
     case EASY_POST = 'easy_post';
+    case IMAGE = 'image';
 
     public function label(): string
     {
@@ -28,6 +29,7 @@ enum TypesEnum: string
             self::X_CHAT_ACTION => 'X Chat Action',
             self::POLL => 'Poll',
             self::EASY_POST => 'Easy Post',
+            self::IMAGE => 'Image',
         };
     }
 
@@ -44,6 +46,7 @@ enum TypesEnum: string
             self::X_CHAT_ACTION => 'Chat',
             self::POLL => 'Poll',
             self::EASY_POST => 'Easy Post',
+            self::IMAGE => 'Image',
         };
     }
 }

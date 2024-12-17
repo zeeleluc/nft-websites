@@ -15,6 +15,7 @@ class ShillConfigBuilder extends BaseObject
     private int $typeXChatAction = 0;
     private int $typePoll = 1;
     private int $typeEasyPost = 0;
+    private int $typeImage = 2;
 
     public function setTypeGm(int $total): ShillConfigBuilder
     {
@@ -86,6 +87,13 @@ class ShillConfigBuilder extends BaseObject
         return $this;
     }
 
+    public function setTypeImage(int $total): ShillConfigBuilder
+    {
+        $this->typeImage = $total;
+
+        return $this;
+    }
+
     public function toArray()
     {
         return [
@@ -99,6 +107,7 @@ class ShillConfigBuilder extends BaseObject
             TypesEnum::POLL->value => $this->typePoll,
             TypesEnum::GN->value => $this->typeGn,
             TypesEnum::EASY_POST->value => $this->typeEasyPost,
+            TypesEnum::IMAGE->value => $this->typeImage,
         ];
     }
 }
