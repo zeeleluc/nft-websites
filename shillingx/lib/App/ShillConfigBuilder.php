@@ -16,6 +16,7 @@ class ShillConfigBuilder extends BaseObject
     private int $typePoll = 1;
     private int $typeEasyPost = 0;
     private int $typeImage = 2;
+    private int $typeHashtag = 1;
 
     public function setTypeGm(int $total): ShillConfigBuilder
     {
@@ -94,20 +95,28 @@ class ShillConfigBuilder extends BaseObject
         return $this;
     }
 
+    public function setTypeHashtag(int $total): ShillConfigBuilder
+    {
+        $this->typeHashtag = $total;
+
+        return $this;
+    }
+
     public function toArray()
     {
         return [
+            TypesEnum::EASY_POST->value => $this->typeEasyPost,
             TypesEnum::GM->value => $this->typeGm,
-            TypesEnum::REPOST->value => $this->typeRepost,
-            TypesEnum::REPLY->value => $this->typeReply,
+            TypesEnum::HASHTAG->value => $this->typeHashtag,
             TypesEnum::QUESTION->value => $this->typeQuestion,
             TypesEnum::SHOUT->value => $this->typeShout,
             TypesEnum::LEFT_OR_RIGHT->value => $this->typeLeftOrRight,
             TypesEnum::X_CHAT_ACTION->value => $this->typeXChatAction,
             TypesEnum::POLL->value => $this->typePoll,
-            TypesEnum::GN->value => $this->typeGn,
-            TypesEnum::EASY_POST->value => $this->typeEasyPost,
             TypesEnum::IMAGE->value => $this->typeImage,
+            TypesEnum::REPOST->value => $this->typeRepost,
+            TypesEnum::REPLY->value => $this->typeReply,
+            TypesEnum::GN->value => $this->typeGn,
         ];
     }
 }

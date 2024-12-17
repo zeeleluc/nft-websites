@@ -119,6 +119,15 @@ class HomeAction extends BaseAction
                 case ProjectsEnum::RIPPLEPUNKS->value: $examples[$project]['GN'] = 'GN Punks on XRPL 👑'; break;
             }
 
+            switch ($project) {
+                case ProjectsEnum::PIGPUNKS->value: $examples[$project]['#'] = '#PigPunks 🐽 Pigs with an attitude'; break;
+                case ProjectsEnum::LOONEYLUKE->value: $examples[$project]['#'] = '#LooneyLuke is a little rebel, just like you were once 🧢'; break;
+                case ProjectsEnum::HASMINTS->value: $examples[$project]['#'] = '#HasMints has mints day and night on different chains 💦'; break;
+                case ProjectsEnum::LOADINGPUNKS->value: $examples[$project]['#'] = '#LoadingPunks keep \'em loading every day 🔄'; break;
+                case ProjectsEnum::NOBASED->value: $examples[$project]['#'] = '#NoBased on @base is they way 🟦'; break;
+                case ProjectsEnum::RIPPLEPUNKS->value: $examples[$project]['#'] = '#RipplePunk are The Punks on the XRPL 👑'; break;
+            }
+
         }
 
         return $examples;

@@ -15,6 +15,7 @@ enum TypesEnum: string
     case POLL = 'poll';
     case EASY_POST = 'easy_post';
     case IMAGE = 'image';
+    case HASHTAG = '#';
 
     public function label(): string
     {
@@ -30,6 +31,7 @@ enum TypesEnum: string
             self::POLL => 'Poll',
             self::EASY_POST => 'Easy Post',
             self::IMAGE => 'Image',
+            self::HASHTAG => 'Hashtag',
         };
     }
 
@@ -47,6 +49,7 @@ enum TypesEnum: string
             self::POLL => 'Poll',
             self::EASY_POST => 'Easy Post',
             self::IMAGE => 'Image',
+            self::HASHTAG => '#',
         };
     }
 }
