@@ -46,6 +46,7 @@ class ShillConfig extends BaseObject
     private static function getConfigHasMints()
     {
         $builder = new ShillConfigBuilder();
+        $builder->setTypeEasyPosts(1);
 
         return $builder->toArray();
     }
