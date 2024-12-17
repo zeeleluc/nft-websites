@@ -30,7 +30,7 @@ class ShillConfig extends BaseObject
     {
         $builder = new ShillConfigBuilder();
         $builder->setTypeGXChatAction(1);
-        $builder->setTypeReply(25);
+        $builder->setTypeReply(200);
         $builder->setTypeRepost(5);
 
         return $builder->toArray();
