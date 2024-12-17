@@ -21,7 +21,7 @@ class ShillConfig extends BaseObject
     private static function getConfigNoBased()
     {
         $builder = new ShillConfigBuilder();
-        $builder->setTypeGXChatAction(3);
+        $builder->setTypeGXChatAction(1);
 
         return $builder->toArray();
     }

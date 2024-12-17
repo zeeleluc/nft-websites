@@ -6,6 +6,7 @@ use App\Object\BaseObject;
 class ShillConfigBuilder extends BaseObject
 {
     private int $typeGm = 1;
+    private int $typeGn = 1;
     private int $typeRepost = 3;
     private int $typeReply = 10;
     private int $typeQuestion = 1;
@@ -17,6 +18,13 @@ class ShillConfigBuilder extends BaseObject
     public function setTypeGm(int $total): ShillConfigBuilder
     {
         $this->typeGm = $total;
+
+        return $this;
+    }
+
+    public function setTypeGn(int $total): ShillConfigBuilder
+    {
+        $this->typeGn = $total;
 
         return $this;
     }
@@ -81,6 +89,7 @@ class ShillConfigBuilder extends BaseObject
             TypesEnum::LEFT_OR_RIGHT->value => $this->typeLeftOrRight,
             TypesEnum::X_CHAT_ACTION->value => $this->typeXChatAction,
             TypesEnum::POLL->value => $this->typePoll,
+            TypesEnum::GN->value => $this->typeGm,
         ];
     }
 }

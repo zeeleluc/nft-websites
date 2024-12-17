@@ -15,6 +15,15 @@ body {
     margin-bottom: 4px;
     transition: background-color 0.3s, border-color 0.3s; /* Smooth color transitions */
 }
+.btn-lg {
+    padding: 9px 13px;
+    font-size: 22px;
+}
+.btn.disabled {
+    background-color: #cccccc;
+    border-color: #cccccc;
+    color: #111111;
+}
 
 /* Button Hover */
 .btn:hover {

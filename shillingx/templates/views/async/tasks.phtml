@@ -12,7 +12,8 @@
                                 <button
                                     data-project="<?=$project; ?>"
                                     data-action="<?=$action; ?>"
-                                    class="btn btn-sm btn-primary async-action-btn">
+                                    class="btn btn-sm btn-primary async-action-btn"
+                                >
                                     <?=\App\TypesEnum::from($action)->abbr(); ?>
                                     <?php if ($actionRemaining > 1): ?>
                                         <sup><?=$actionRemaining; ?></sup>
@@ -32,7 +33,7 @@
     <div class="row">
         <div class="col">
             <?php foreach ($progress as $project => $percentage): ?>
-                <div class="progress">
+                <div data-project="<?=$project; ?>" class="progress">
                     <?php if ($percentage > 0): ?>
                         <div class="progress-bar" role="progressbar" style="width: <?=$percentage; ?>%"  aria-valuenow="<?=$percentage; ?>" aria-valuemin="0" aria-valuemax="100">
                             <?php if ($percentage >= 30): ?>

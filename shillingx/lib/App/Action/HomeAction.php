@@ -1,6 +1,7 @@
 <?php
 namespace App\Action;
 
+use App\ProjectsEnum;
 use App\Variable;
 use Carbon\Carbon;
 use Doctrine\DBAL\Driver\Exception;
@@ -23,14 +24,12 @@ class HomeAction extends BaseAction
     private function getExampleSubjects()
     {
         return [
-            'a pig',
-            'a 12-year-old boy',
-            'a Web3 expert',
-            'an NFT expert',
-            'a crypto expert',
-            'a pixel art expert',
-            'a Base chain expert',
-            'an XRPL chain expert',
+            ProjectsEnum::PIGPUNKS->value => 'a pig', // PigPunks
+            ProjectsEnum::LOONEYLUKE->value => 'a 12-year-old boy', // Looney Luke
+            ProjectsEnum::HASMINTS->value => 'a blockchain/web3 expert', // HasMints
+            ProjectsEnum::LOADINGPUNKS->value => 'a pixel art expert', // LoadingPunks
+            ProjectsEnum::NOBASED->value => 'a Base chain NFT deployer expert', // No-Based
+            ProjectsEnum::RIPPLEPUNKS->value => 'an XRPL chain expert and/or XRPL NFT deployer', // RipplePunks
         ];
     }
 
@@ -39,10 +38,17 @@ class HomeAction extends BaseAction
         $options = [
             25,
             50,
+            50,
+            50,
             100,
+            100,
+            100,
+            200,
+            200,
             200,
         ];
 
+        shuffle($options);
         shuffle($options);
 
         return $options[0];
@@ -59,6 +65,7 @@ class HomeAction extends BaseAction
         ];
 
         shuffle($options);
+        shuffle($options);
 
         return $options[0];
     }
@@ -68,38 +75,31 @@ class HomeAction extends BaseAction
         $question1 = 'Write a fun statement that :subject :couldShould say. Max :chars characters. Return it in a code block for easy copy-pasting. Don\'t add quotes.';
         $question2 = 'Write a fun question that :subject :couldShould ask. Make the question max :chars characters. Give 3 answers. Return the question and answers in separate code blocks for easy copy-pasting. So I want 4 separate code blocks. Don\'t add quotes.';
         $question3 = 'Write a fun question that :subject :couldShould ask. Max :chars characters. Return it in a code block for easy copy-pasting. Don\'t add quotes.';
-        $question4 = 'Write a fun statement that :subject :couldShould ask. Max :chars characters. Return it in a code block for easy copy-pasting. Don\'t add quotes.';
 
         $examples = [];
 
-        foreach ($this->getExampleSubjects() as $subject) {
-            $question = $question1;
-            $question = str_replace(':subject', $subject, $question);
-            $question = str_replace(':couldShould', $this->getRandomWouldOrCould(), $question);
-            $question = str_replace(':chars', $this->getRandomMaxChars(), $question);
-
-            $examples[$subject][] = $question;
-
-            $question = $question2;
-            $question = str_replace(':subject', $subject, $question);
-            $question = str_replace(':couldShould', $this->getRandomWouldOrCould(), $question);
-            $question = str_replace(':chars', $this->getRandomMaxChars(), $question);
-
-            $examples[$subject][] = $question;
+        foreach ($this->getExampleSubjects() as $project => $subject) {
 
             $question = $question3;
             $question = str_replace(':subject', $subject, $question);
             $question = str_replace(':couldShould', $this->getRandomWouldOrCould(), $question);
             $question = str_replace(':chars', $this->getRandomMaxChars(), $question);
 
-            $examples[$subject][] = $question;
+            $examples[$project]['?'] = $question;
 
-            $question = $question4;
+            $question = $question1;
             $question = str_replace(':subject', $subject, $question);
             $question = str_replace(':couldShould', $this->getRandomWouldOrCould(), $question);
             $question = str_replace(':chars', $this->getRandomMaxChars(), $question);
 
-            $examples[$subject][] = $question;
+            $examples[$project]['!'] = $question;
+
+            $question = $question2;
+            $question = str_replace(':subject', $subject, $question);
+            $question = str_replace(':couldShould', $this->getRandomWouldOrCould(), $question);
+            $question = str_replace(':chars', $this->getRandomMaxChars(), $question);
+
+            $examples[$project]['Poll'] = $question;
         }
 
         return $examples;

@@ -5,6 +5,7 @@ namespace App;
 enum TypesEnum: string
 {
     case GM = 'gm';
+    case GN = 'gn';
     case REPOST = 'repost';
     case REPLY = 'reply';
     case QUESTION = 'question';
@@ -17,6 +18,7 @@ enum TypesEnum: string
     {
         return match ($this) {
             self::GM => 'GM',
+            self::GN => 'GN',
             self::REPOST => 'Repost',
             self::REPLY => 'Reply',
             self::QUESTION => 'Question',
@@ -31,6 +33,7 @@ enum TypesEnum: string
     {
         return match ($this) {
             self::GM => 'GM',
+            self::GN => 'GN',
             self::REPOST => 'Repost',
             self::REPLY => 'Reply',
             self::QUESTION => '?',

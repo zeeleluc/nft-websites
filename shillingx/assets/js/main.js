@@ -74,16 +74,43 @@ async function loadTasks() {
         alert("Failed to load tasks. Please try again later.");
     }
 }
+document.addEventListener('DOMContentLoaded', () => {
+    // Event delegation to handle dynamically added elements
+    const container = document.body; // Change to a specific container if needed
 
-// Add click event listener to all code elements
-document.querySelectorAll('code').forEach((codeElement) => {
-    codeElement.addEventListener('click', function () {
-        // Copy the content of the clicked code element to the clipboard
-        navigator.clipboard.writeText(this.textContent).then(() => {
-            // Provide feedback to the user
-        }).catch((err) => {
-            console.error('Failed to copy text: ', err);
+    // Listen for clicks on .progress elements to toggle related project examples
+    container.addEventListener('click', (event) => {
+        const progress = event.target.closest('.progress');
+        if (!progress) return;
+
+        // Get the related project identifier
+        const project = progress.getAttribute('data-project');
+
+        // Hide all example cards
+        document.querySelectorAll('.examples-project').forEach(card => {
+            card.style.display = 'none';
         });
+
+        // Show the related example card
+        const relatedExample = document.querySelector(`[data-example="${project}"]`);
+        if (relatedExample) {
+            relatedExample.style.display = 'block';
+        }
+    });
+
+    // Listen for clicks on example buttons to copy text
+    container.addEventListener('click', (event) => {
+        const exampleButton = event.target.closest('button[id="example"]');
+        if (!exampleButton) return;
+
+        // Copy the data-text value to the clipboard
+        const textToCopy = exampleButton.getAttribute('data-text');
+        if (textToCopy) {
+            navigator.clipboard.writeText(textToCopy).then(() => {
+
+            }).catch(err => {
+                console.error('Failed to copy text: ', err);
+            });
+        }
     });
 });
-
