@@ -1,1 +1,20 @@
 <div id="tasks"></div>
+
+<div class="container mt-5 mb-1">
+    <div class="row">
+        <div class="col">
+            <h1>ChatGPT examples</h1>
+            <?php foreach ($examples as $subject => $projectExamples): ?>
+                <div class="card mb-2">
+                    <div class="card-body">
+                        <?php foreach ($projectExamples as $key => $example): ?>
+                            <code id="example" data-key="example-<?=$key; ?>">
+                                <?=$example; ?>
+                            </code>
+                        <?php endforeach; ?>
+                    </div>
+                </div>
+            <?php endforeach; ?>
+        </div>
+    </div>
+</div>

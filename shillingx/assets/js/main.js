@@ -74,3 +74,16 @@ async function loadTasks() {
         alert("Failed to load tasks. Please try again later.");
     }
 }
+
+// Add click event listener to all code elements
+document.querySelectorAll('code').forEach((codeElement) => {
+    codeElement.addEventListener('click', function () {
+        // Copy the content of the clicked code element to the clipboard
+        navigator.clipboard.writeText(this.textContent).then(() => {
+            // Provide feedback to the user
+        }).catch((err) => {
+            console.error('Failed to copy text: ', err);
+        });
+    });
+});
+

@@ -64,3 +64,9 @@ table tr td:first-child {
     width: 50px;
     text-align: center;
 }
+code {
+    display: block;
+    font-size: 12px;
+    padding: 10px;
+    cursor: pointer;
+}
