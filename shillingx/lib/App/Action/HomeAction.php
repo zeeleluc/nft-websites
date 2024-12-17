@@ -100,6 +100,25 @@ class HomeAction extends BaseAction
             $question = str_replace(':chars', $this->getRandomMaxChars(), $question);
 
             $examples[$project]['Poll'] = $question;
+
+            switch ($project) {
+                case ProjectsEnum::PIGPUNKS->value: $examples[$project]['GM'] = 'GM pigs and hoomans 🐽'; break;
+                case ProjectsEnum::LOONEYLUKE->value: $examples[$project]['GM'] = 'GM guys and girls 🧢'; break;
+                case ProjectsEnum::HASMINTS->value: $examples[$project]['GM'] = 'GM web3, enjoy your day, tell your friends it\'s another day to mint 💦'; break;
+                case ProjectsEnum::LOADINGPUNKS->value: $examples[$project]['GM'] = 'GM BM, keep \'em loading! 🔄'; break;
+                case ProjectsEnum::NOBASED->value: $examples[$project]['GM'] = 'GM from No-Based on @base 🟦'; break;
+                case ProjectsEnum::RIPPLEPUNKS->value: $examples[$project]['GM'] = 'Gm Punks on XRPL - keep grinding 👑'; break;
+            }
+
+            switch ($project) {
+                case ProjectsEnum::PIGPUNKS->value: $examples[$project]['GN'] = 'GN pigs and hoomans 🐽'; break;
+                case ProjectsEnum::LOONEYLUKE->value: $examples[$project]['GN'] = 'GN and thanks for all the laughs 🧢'; break;
+                case ProjectsEnum::HASMINTS->value: $examples[$project]['GN'] = 'GN web3, tomorrow it\'s another day to mint 💦'; break;
+                case ProjectsEnum::LOADINGPUNKS->value: $examples[$project]['GN'] = 'GN fam, keep \'em loading while you sleep! 🔄'; break;
+                case ProjectsEnum::NOBASED->value: $examples[$project]['GN'] = 'GN from No-Based on @base 🟦'; break;
+                case ProjectsEnum::RIPPLEPUNKS->value: $examples[$project]['GN'] = 'GN Punks on XRPL 👑'; break;
+            }
+
         }
 
         return $examples;
