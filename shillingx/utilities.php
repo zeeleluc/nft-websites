@@ -110,7 +110,7 @@ function calculateCompletionPercentages(array $actions, array $requiredActions):
         }
 
         // Calculate the percentage and round it to the nearest whole number
-        $percentages[$project] = (int) floor($totalRequired > 0 ? ($totalCompleted / $totalRequired) * 100 : 0);
+        $percentages[$project] = floor($totalRequired > 0 ? ($totalCompleted / $totalRequired) * 100 : 0);
     }
 
     return $percentages;
