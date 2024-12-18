@@ -61,7 +61,6 @@ class ShillConfig extends BaseObject
     private static function getConfigLooneyLuke()
     {
         $builder = new ShillConfigBuilder();
-        $builder->setTypeReply(100);
 
         return $builder->toArray();
     }
