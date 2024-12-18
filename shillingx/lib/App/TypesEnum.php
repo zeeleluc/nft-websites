@@ -15,7 +15,7 @@ enum TypesEnum: string
     case POLL = 'poll';
     case EASY_POST = 'easy_post';
     case IMAGE = 'image';
-    case HASHTAG = '#';
+    case HASHTAG = 'hashtag';
 
     public function label(): string
     {

@@ -1,6 +1,5 @@
 <div id="tasks"></div>
-
-<div class="container mb-1">
+<div class="container mb-1 mt-3">
     <div class="row">
         <div class="col">
             <?php foreach ($examples as $project => $projectExamples): ?>
@@ -8,12 +7,14 @@
                     <div class="btn-toolbar" role="toolbar">
                         <div class="btn-group" role="group" aria-label="Action buttons">
                             <button class="btn btn-lg btn-primary disabled" disabled>
-                                <?=\App\ProjectsEnum::from($project)->abbr(); ?>
+                                <?=\App\ProjectsEnum::from($project)->icon(); ?>
                             </button>
                             <?php foreach ($projectExamples as $key => $example): ?>
-                                <button data-text="<?=$example; ?>" id="example" data-key="example-<?=$key; ?>" class="btn btn-lg btn-primary">
-                                    <?=$key; ?>
-                                </button>
+                                <?php if (array_key_exists($key, $remaining[$project])): ?>
+                                    <button data-text="<?=$example; ?>" id="example" data-key="example-<?=$key; ?>" class="btn btn-lg btn-primary">
+                                        <?=\App\TypesEnum::from($key)->abbr(); ?>
+                                    </button>
+                                <?php endif; ?>
                             <?php endforeach; ?>
                         </div>
                     </div>

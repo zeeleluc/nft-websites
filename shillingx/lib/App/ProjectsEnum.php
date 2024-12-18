@@ -34,4 +34,16 @@ enum ProjectsEnum: string
             self::PIGPUNKS => 'PP',
         };
     }
+
+    public function icon(): string
+    {
+        return match ($this) {
+            self::NOBASED => '🟦',
+            self::RIPPLEPUNKS => '👑',
+            self::HASMINTS => '💦',
+            self::LOADINGPUNKS => '🔄',
+            self::LOONEYLUKE => '🧢',
+            self::PIGPUNKS => '🐽',
+        };
+    }
 }
