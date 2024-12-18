@@ -81,9 +81,9 @@ class HomeAction extends BaseAction
 
     private function getExamples()
     {
-        $question1 = 'Write a fun statement that :subject :couldShould say. Max :chars characters. Return it in a code block for easy copy-pasting. Don\'t add quotes.';
-        $question2 = 'Write a fun question that :subject :couldShould ask. Make the question max :chars characters. Give 3 answers with max. 23 chars. Return the question and answers in separate code blocks for easy copy-pasting. So I want 4 separate code blocks. Don\'t add quotes. Also don\'t add numbers at front of the answers.';
-        $question3 = 'Write a fun question that :subject :couldShould ask. Max :chars characters. Return it in a code block for easy copy-pasting. Don\'t add quotes.';
+        $question1 = 'Write a fun statement that :subject :couldShould say. Max :chars characters. Return it in a code block for easy copy-pasting. Don\'t add quotes. End with emoticon :emoticon.';
+        $question2 = 'Write a fun question that :subject :couldShould ask. Make the question max :chars characters. Give 3 answers with max. 23 chars. Return the question and answers in separate code blocks for easy copy-pasting. So I want 4 separate code blocks. Don\'t add quotes. Also don\'t add numbers at front of the answers. End the question with emoticon :emoticon.';
+        $question3 = 'Write a fun question that :subject :couldShould ask. Max :chars characters. Return it in a code block for easy copy-pasting. Don\'t add quotes. End with emoticon :emoticon.';
 
         $examples = [];
 
@@ -93,6 +93,7 @@ class HomeAction extends BaseAction
             $question = str_replace(':subject', $subject, $question);
             $question = str_replace(':couldShould', $this->getRandomWouldOrCould(), $question);
             $question = str_replace(':chars', $this->getRandomMaxChars(), $question);
+            $question = str_replace(':emoticon', ProjectsEnum::from($project)->icon(), $question);
 
             $examples[$project][TypesEnum::QUESTION->value] = $question;
 
@@ -100,6 +101,7 @@ class HomeAction extends BaseAction
             $question = str_replace(':subject', $subject, $question);
             $question = str_replace(':couldShould', $this->getRandomWouldOrCould(), $question);
             $question = str_replace(':chars', $this->getRandomMaxChars(), $question);
+            $question = str_replace(':emoticon', ProjectsEnum::from($project)->icon(), $question);
 
             $examples[$project][TypesEnum::SHOUT->value] = $question;
 
@@ -107,6 +109,7 @@ class HomeAction extends BaseAction
             $question = str_replace(':subject', $subject, $question);
             $question = str_replace(':couldShould', $this->getRandomWouldOrCould(), $question);
             $question = str_replace(':chars', $this->getRandomMaxChars(), $question);
+            $question = str_replace(':emoticon', ProjectsEnum::from($project)->icon(), $question);
 
             $examples[$project][TypesEnum::POLL->value] = $question;
 
@@ -130,7 +133,7 @@ class HomeAction extends BaseAction
 
             switch ($project) {
                 case ProjectsEnum::PIGPUNKS->value: $examples[$project][TypesEnum::HASHTAG->value] = 'PigPunks 🐽 Pigs with an attitude'; break;
-                case ProjectsEnum::LOONEYLUKE->value: $examples[$project][TypesEnum::HASHTAG->value] = 'LooneyLuke is a little rebel, just like you were once 🧢'; break;
+                case ProjectsEnum::LOONEYLUKE->value: $examples[$project][TypesEnum::HASHTAG->value] = 'Looney Luke is a little rebel, just like you were once 🧢'; break;
                 case ProjectsEnum::HASMINTS->value: $examples[$project][TypesEnum::HASHTAG->value] = 'HasMints has mints day and night on different chains 💦'; break;
                 case ProjectsEnum::LOADINGPUNKS->value: $examples[$project][TypesEnum::HASHTAG->value] = 'LoadingPunks keep \'em loading every day 🔄'; break;
                 case ProjectsEnum::NOBASED->value: $examples[$project][TypesEnum::HASHTAG->value] = 'NoBased on @base is the way 🟦'; break;
