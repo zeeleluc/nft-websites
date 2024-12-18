@@ -8,7 +8,7 @@ class ShillConfigBuilder extends BaseObject
     private int $typeGm = 1;
     private int $typeGn = 1;
     private int $typeRepost = 3;
-    private int $typeReply = 50;
+    private int $typeReply = 20;
     private int $typeQuestion = 1;
     private int $typeShout = 1;
     private int $typeLeftOrRight = 1;
