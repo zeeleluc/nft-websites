@@ -21,7 +21,13 @@ class ShillConfig extends BaseObject
     private static function getConfigNoBased()
     {
         $builder = new ShillConfigBuilder();
-        $builder->setTypeGXChatAction(1);
+        $builder->setTypeGm(0);
+        $builder->setTypeQuestion(0);
+        $builder->setTypeShout(0);
+        $builder->setTypePoll(0);
+        $builder->setTypeRepost(0);
+        $builder->setTypeReply(0);
+        $builder->setTypeGn(0);
 
         return $builder->toArray();
     }
@@ -30,7 +36,7 @@ class ShillConfig extends BaseObject
     {
         $builder = new ShillConfigBuilder();
         $builder->setTypeGXChatAction(1);
-        $builder->setTypeReply(200);
+        $builder->setTypeReply(75);
         $builder->setTypeRepost(5);
 
         return $builder->toArray();
@@ -39,6 +45,13 @@ class ShillConfig extends BaseObject
     private static function getConfigLoadingPunks()
     {
         $builder = new ShillConfigBuilder();
+        $builder->setTypeGm(0);
+        $builder->setTypeQuestion(0);
+        $builder->setTypeShout(0);
+        $builder->setTypePoll(0);
+        $builder->setTypeRepost(0);
+        $builder->setTypeReply(0);
+        $builder->setTypeGn(0);
 
         return $builder->toArray();
     }
@@ -46,7 +59,7 @@ class ShillConfig extends BaseObject
     private static function getConfigHasMints()
     {
         $builder = new ShillConfigBuilder();
-        $builder->setTypeEasyPosts(1);
+        $builder->setTypeEasyPosts(0);
 
         return $builder->toArray();
     }
@@ -54,6 +67,9 @@ class ShillConfig extends BaseObject
     private static function getConfigRipplePunks()
     {
         $builder = new ShillConfigBuilder();
+        $builder->setTypeRepost(1);
+        $builder->setTypeReply(4);
+        $builder->setTypeImage(1);
 
         return $builder->toArray();
     }
@@ -61,6 +77,13 @@ class ShillConfig extends BaseObject
     private static function getConfigLooneyLuke()
     {
         $builder = new ShillConfigBuilder();
+        $builder->setTypeGm(0);
+        $builder->setTypeQuestion(0);
+        $builder->setTypeShout(0);
+        $builder->setTypePoll(0);
+        $builder->setTypeRepost(0);
+        $builder->setTypeReply(0);
+        $builder->setTypeGn(0);
 
         return $builder->toArray();
     }
