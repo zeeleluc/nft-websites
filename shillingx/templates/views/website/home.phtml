@@ -10,7 +10,7 @@
                                 <?=\App\ProjectsEnum::from($project)->icon(); ?>
                             </button>
                             <?php foreach ($projectExamples as $key => $example): ?>
-                                <?php if (array_key_exists($key, $remaining[$project])): ?>
+                                <?php if (array_key_exists($project, $remaining) && array_key_exists($key, $remaining[$project])): ?>
                                     <button data-text="<?=$example; ?>" id="example" data-key="example-<?=$key; ?>" class="btn btn-lg btn-primary">
                                         <?=\App\TypesEnum::from($key)->abbr(); ?>
                                     </button>
