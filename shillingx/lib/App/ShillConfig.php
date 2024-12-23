@@ -60,6 +60,7 @@ class ShillConfig extends BaseObject
     {
         $builder = new ShillConfigBuilder();
         $builder->setTypeEasyPosts(0);
+        $builder->setTypeReply(75);
 
         return $builder->toArray();
     }

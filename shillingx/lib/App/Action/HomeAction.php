@@ -34,11 +34,11 @@ class HomeAction extends BaseAction
     {
         return [
             ProjectsEnum::PIGPUNKS->value => 'a pig', // PigPunks
-            ProjectsEnum::LOONEYLUKE->value => 'a 12-year-old boy', // Looney Luke
-            ProjectsEnum::HASMINTS->value => 'a blockchain/web3 expert', // HasMints
+            ProjectsEnum::LOONEYLUKE->value => 'a boy between 10 and 14 years old', // Looney Luke
+            ProjectsEnum::HASMINTS->value => 'a enthusiastic NFT collector', // HasMints
             ProjectsEnum::LOADINGPUNKS->value => 'a pixel art expert', // LoadingPunks
             ProjectsEnum::NOBASED->value => 'a Base chain NFT deployer expert', // No-Based
-            ProjectsEnum::RIPPLEPUNKS->value => 'an XRPL chain expert and/or XRPL NFT deployer', // RipplePunks
+            ProjectsEnum::RIPPLEPUNKS->value => 'a enthusiastic NFT collector', // RipplePunks
         ];
     }
 

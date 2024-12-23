@@ -38,10 +38,10 @@ enum ProjectsEnum: string
     public function icon(): string
     {
         return match ($this) {
-            self::NOBASED => '🟦',
+            self::NOBASED => '✊🏻',
             self::RIPPLEPUNKS => '👑',
             self::HASMINTS => '💦',
-            self::LOADINGPUNKS => '🔄',
+            self::LOADINGPUNKS => '🔃',
             self::LOONEYLUKE => '🧢',
             self::PIGPUNKS => '🐽',
         };
