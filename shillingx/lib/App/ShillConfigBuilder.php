@@ -17,6 +17,14 @@ class ShillConfigBuilder extends BaseObject
     private int $typeEasyPost = 0;
     private int $typeImage = 2;
     private int $typeHashtag = 1;
+    private int $typeJoke = 0;
+
+    public function setTypeJoke(int $total): ShillConfigBuilder
+    {
+        $this->typeJoke = $total;
+
+        return $this;
+    }
 
     public function setTypeGm(int $total): ShillConfigBuilder
     {
@@ -108,6 +116,7 @@ class ShillConfigBuilder extends BaseObject
             TypesEnum::EASY_POST->value => $this->typeEasyPost,
             TypesEnum::GM->value => $this->typeGm,
             TypesEnum::HASHTAG->value => $this->typeHashtag,
+            TypesEnum::JOKE->value => $this->typeJoke,
             TypesEnum::QUESTION->value => $this->typeQuestion,
             TypesEnum::SHOUT->value => $this->typeShout,
             TypesEnum::LEFT_OR_RIGHT->value => $this->typeLeftOrRight,

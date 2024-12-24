@@ -40,6 +40,7 @@ class HomeAction extends BaseAction
             ProjectsEnum::LOADINGPUNKS->value => 'a pixel art expert', // LoadingPunks
             ProjectsEnum::NOBASED->value => 'a Base chain NFT deployer expert', // No-Based
             ProjectsEnum::RIPPLEPUNKS->value => 'a enthusiastic NFT collector', // RipplePunks
+            ProjectsEnum::BASEALIENS->value => 'an alien', // RipplePunks
         ];
     }
 
@@ -85,10 +86,19 @@ class HomeAction extends BaseAction
         $question1 = 'Write a fun statement that :subject :couldShould say. Max :chars characters. Return it in a code block for easy copy-pasting. Don\'t add quotes. End with emoticon :emoticon.';
         $question2 = 'Write a fun question that :subject :couldShould ask. Make the question max :chars characters. Give 3 answers with max. 23 chars. Return the question and answers in separate code blocks for easy copy-pasting. So I want 4 separate code blocks. Don\'t add quotes. Also don\'t add numbers at front of the answers. End the question with emoticon :emoticon.';
         $question3 = 'Write a fun question that :subject :couldShould ask. Max :chars characters. Return it in a code block for easy copy-pasting. Don\'t add quotes. End with emoticon :emoticon.';
+        $joke = 'Write a joke that :subject could make. Return it in a code block for easy copy-pasting. Don\'t add quotes. End with emoticon :emoticon.';
 
         $examples = [];
 
         foreach ($this->getExampleSubjects() as $project => $subject) {
+
+            $question = $joke;
+            $question = str_replace(':subject', $subject, $question);
+            $question = str_replace(':couldShould', $this->getRandomWouldOrCould(), $question);
+            $question = str_replace(':chars', $this->getRandomMaxChars(), $question);
+            $question = str_replace(':emoticon', ProjectsEnum::from($project)->icon(), $question);
+
+            $examples[$project][TypesEnum::JOKE->value] = $question;
 
             $question = $question3;
             $question = str_replace(':subject', $subject, $question);
@@ -122,6 +132,7 @@ class HomeAction extends BaseAction
                 case ProjectsEnum::LOADINGPUNKS->value: $examples[$project][TypesEnum::GM->value] = 'GM BM, keep \'em loading! 🔃'; break;
                 case ProjectsEnum::NOBASED->value: $examples[$project][TypesEnum::GM->value] = 'GM from No-Based on @base ✊🏻'; break;
                 case ProjectsEnum::RIPPLEPUNKS->value: $examples[$project][TypesEnum::GM->value] = 'Gm Punks on XRPL - keep grinding 👑'; break;
+                case ProjectsEnum::BASEALIENS->value: $examples[$project][TypesEnum::GM->value] = 'Gm Aliens 👽'; break;
             }
 
             switch ($project) {
@@ -132,16 +143,18 @@ class HomeAction extends BaseAction
                 case ProjectsEnum::LOADINGPUNKS->value: $examples[$project][TypesEnum::GN->value] = 'GN fam, keep \'em loading while you sleep! 🔃'; break;
                 case ProjectsEnum::NOBASED->value: $examples[$project][TypesEnum::GN->value] = 'GN from No-Based on @base ✊🏻'; break;
                 case ProjectsEnum::RIPPLEPUNKS->value: $examples[$project][TypesEnum::GN->value] = 'GN Punks on XRPL 👑'; break;
+                case ProjectsEnum::BASEALIENS->value: $examples[$project][TypesEnum::GM->value] = 'Gn Aliens 👽'; break;
             }
 
             switch ($project) {
-                case ProjectsEnum::PIGPUNKS->value: $examples[$project][TypesEnum::HASHTAG->value] = 'NO:GENERATES are better than re:generates 🟩'; break;
+                case ProjectsEnum::NOGENS->value: $examples[$project][TypesEnum::HASHTAG->value] = 'NO:GENERATES are better than re:generates 🟩'; break;
                 case ProjectsEnum::PIGPUNKS->value: $examples[$project][TypesEnum::HASHTAG->value] = 'PigPunks 🐽 Pigs with an attitude'; break;
                 case ProjectsEnum::LOONEYLUKE->value: $examples[$project][TypesEnum::HASHTAG->value] = 'Looney Luke is a little rebel, just like you were once 🧢'; break;
                 case ProjectsEnum::HASMINTS->value: $examples[$project][TypesEnum::HASHTAG->value] = 'HasMints has mints day and night on different chains 💦'; break;
                 case ProjectsEnum::LOADINGPUNKS->value: $examples[$project][TypesEnum::HASHTAG->value] = 'LoadingPunks keep \'em loading every day 🔃'; break;
                 case ProjectsEnum::NOBASED->value: $examples[$project][TypesEnum::HASHTAG->value] = 'NoBased on @base is the way ✊🏻'; break;
                 case ProjectsEnum::RIPPLEPUNKS->value: $examples[$project][TypesEnum::HASHTAG->value] = 'RipplePunk are The Punks on the XRPL 👑'; break;
+                case ProjectsEnum::BASEALIENS->value: $examples[$project][TypesEnum::GM->value] = 'BaseAliens once were humanoid Punks on Ethereum 👽'; break;
             }
 
         }

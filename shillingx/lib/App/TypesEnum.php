@@ -16,10 +16,12 @@ enum TypesEnum: string
     case EASY_POST = 'easy_post';
     case IMAGE = 'image';
     case HASHTAG = 'hashtag';
+    case JOKE = 'joke';
 
     public function label(): string
     {
         return match ($this) {
+            self::JOKE => 'Joke',
             self::GM => 'GM',
             self::GN => 'GN',
             self::REPOST => 'Repost',
@@ -38,6 +40,7 @@ enum TypesEnum: string
     public function abbr(): string
     {
         return match ($this) {
+            self::JOKE => 'Joke',
             self::GM => 'GM',
             self::GN => 'GN',
             self::REPOST => 'Repost',

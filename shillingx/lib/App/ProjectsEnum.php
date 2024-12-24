@@ -4,6 +4,7 @@ namespace App;
 
 enum ProjectsEnum: string
 {
+    case BASEALIENS = 'basealiens';
     case PIGPUNKS = 'pigpunks';
     case HASMINTS = 'hasmints';
     case NOGENS = 'nogens';
@@ -15,6 +16,7 @@ enum ProjectsEnum: string
     public function label(): string
     {
         return match ($this) {
+            self::BASEALIENS => 'BaseAliens',
             self::PIGPUNKS => 'Pig Punks',
             self::HASMINTS => 'Has Mints',
             self::NOGENS => 'NO:GENERATES',
@@ -28,6 +30,7 @@ enum ProjectsEnum: string
     public function abbr(): string
     {
         return match ($this) {
+            self::BASEALIENS => 'BA',
             self::PIGPUNKS => 'PP',
             self::HASMINTS => 'HM',
             self::NOGENS => 'NG',
@@ -41,6 +44,7 @@ enum ProjectsEnum: string
     public function icon(): string
     {
         return match ($this) {
+            self::BASEALIENS => '👽',
             self::PIGPUNKS => '🐽',
             self::HASMINTS => '💦',
             self::NOGENS => '🟩',
