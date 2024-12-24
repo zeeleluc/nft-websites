@@ -4,46 +4,50 @@ namespace App;
 
 enum ProjectsEnum: string
 {
+    case PIGPUNKS = 'pigpunks';
+    case HASMINTS = 'hasmints';
+    case NOGENS = 'nogens';
     case NOBASED = 'nobased';
     case RIPPLEPUNKS = 'ripplepunks';
-    case HASMINTS = 'hasmints';
     case LOADINGPUNKS = 'loadingpunks';
     case LOONEYLUKE = 'looneyluke';
-    case PIGPUNKS = 'pigpunks';
 
     public function label(): string
     {
         return match ($this) {
+            self::PIGPUNKS => 'Pig Punks',
+            self::HASMINTS => 'Has Mints',
+            self::NOGENS => 'NO:GENERATES',
             self::NOBASED => 'No-Based',
             self::RIPPLEPUNKS => 'Ripple Punks',
-            self::HASMINTS => 'Has Mints',
             self::LOADINGPUNKS => 'Loading Punks',
             self::LOONEYLUKE => 'Looney Luke',
-            self::PIGPUNKS => 'Pig Punks',
         };
     }
 
     public function abbr(): string
     {
         return match ($this) {
+            self::PIGPUNKS => 'PP',
+            self::HASMINTS => 'HM',
+            self::NOGENS => 'NG',
             self::NOBASED => 'NB',
             self::RIPPLEPUNKS => 'RP',
-            self::HASMINTS => 'HM',
             self::LOADINGPUNKS => 'LP',
             self::LOONEYLUKE => 'LL',
-            self::PIGPUNKS => 'PP',
         };
     }
 
     public function icon(): string
     {
         return match ($this) {
+            self::PIGPUNKS => '🐽',
+            self::HASMINTS => '💦',
+            self::NOGENS => '🟩',
             self::NOBASED => '✊🏻',
             self::RIPPLEPUNKS => '👑',
-            self::HASMINTS => '💦',
             self::LOADINGPUNKS => '🔃',
             self::LOONEYLUKE => '🧢',
-            self::PIGPUNKS => '🐽',
         };
     }
 }

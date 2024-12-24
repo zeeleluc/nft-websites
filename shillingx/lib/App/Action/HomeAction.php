@@ -33,6 +33,7 @@ class HomeAction extends BaseAction
     private function getExampleSubjects()
     {
         return [
+            ProjectsEnum::NOGENS->value => 'a enthusiastic NFT collector', // PigPunks
             ProjectsEnum::PIGPUNKS->value => 'a pig', // PigPunks
             ProjectsEnum::LOONEYLUKE->value => 'a boy between 10 and 14 years old', // Looney Luke
             ProjectsEnum::HASMINTS->value => 'a enthusiastic NFT collector', // HasMints
@@ -114,29 +115,32 @@ class HomeAction extends BaseAction
             $examples[$project][TypesEnum::POLL->value] = $question;
 
             switch ($project) {
+                case ProjectsEnum::NOGENS->value: $examples[$project][TypesEnum::GM->value] = 'GM mfs on base 🟩'; break;
                 case ProjectsEnum::PIGPUNKS->value: $examples[$project][TypesEnum::GM->value] = 'GM pigs and hoomans 🐽'; break;
                 case ProjectsEnum::LOONEYLUKE->value: $examples[$project][TypesEnum::GM->value] = 'GM guys and girls 🧢'; break;
                 case ProjectsEnum::HASMINTS->value: $examples[$project][TypesEnum::GM->value] = 'GM web3, enjoy your day, tell your friends it\'s another day to mint 💦'; break;
-                case ProjectsEnum::LOADINGPUNKS->value: $examples[$project][TypesEnum::GM->value] = 'GM BM, keep \'em loading! 🔄'; break;
-                case ProjectsEnum::NOBASED->value: $examples[$project][TypesEnum::GM->value] = 'GM from No-Based on @base 🟦'; break;
+                case ProjectsEnum::LOADINGPUNKS->value: $examples[$project][TypesEnum::GM->value] = 'GM BM, keep \'em loading! 🔃'; break;
+                case ProjectsEnum::NOBASED->value: $examples[$project][TypesEnum::GM->value] = 'GM from No-Based on @base ✊🏻'; break;
                 case ProjectsEnum::RIPPLEPUNKS->value: $examples[$project][TypesEnum::GM->value] = 'Gm Punks on XRPL - keep grinding 👑'; break;
             }
 
             switch ($project) {
+                case ProjectsEnum::NOGENS->value: $examples[$project][TypesEnum::GN->value] = 'GN mfs on base 🟩'; break;
                 case ProjectsEnum::PIGPUNKS->value: $examples[$project][TypesEnum::GN->value] = 'GN pigs and hoomans 🐽'; break;
                 case ProjectsEnum::LOONEYLUKE->value: $examples[$project][TypesEnum::GN->value] = 'GN and thanks for all the laughs 🧢'; break;
                 case ProjectsEnum::HASMINTS->value: $examples[$project][TypesEnum::GN->value] = 'GN web3, tomorrow it\'s another day to mint 💦'; break;
-                case ProjectsEnum::LOADINGPUNKS->value: $examples[$project][TypesEnum::GN->value] = 'GN fam, keep \'em loading while you sleep! 🔄'; break;
-                case ProjectsEnum::NOBASED->value: $examples[$project][TypesEnum::GN->value] = 'GN from No-Based on @base 🟦'; break;
+                case ProjectsEnum::LOADINGPUNKS->value: $examples[$project][TypesEnum::GN->value] = 'GN fam, keep \'em loading while you sleep! 🔃'; break;
+                case ProjectsEnum::NOBASED->value: $examples[$project][TypesEnum::GN->value] = 'GN from No-Based on @base ✊🏻'; break;
                 case ProjectsEnum::RIPPLEPUNKS->value: $examples[$project][TypesEnum::GN->value] = 'GN Punks on XRPL 👑'; break;
             }
 
             switch ($project) {
+                case ProjectsEnum::PIGPUNKS->value: $examples[$project][TypesEnum::HASHTAG->value] = 'NO:GENERATES are better than re:generates 🟩'; break;
                 case ProjectsEnum::PIGPUNKS->value: $examples[$project][TypesEnum::HASHTAG->value] = 'PigPunks 🐽 Pigs with an attitude'; break;
                 case ProjectsEnum::LOONEYLUKE->value: $examples[$project][TypesEnum::HASHTAG->value] = 'Looney Luke is a little rebel, just like you were once 🧢'; break;
                 case ProjectsEnum::HASMINTS->value: $examples[$project][TypesEnum::HASHTAG->value] = 'HasMints has mints day and night on different chains 💦'; break;
-                case ProjectsEnum::LOADINGPUNKS->value: $examples[$project][TypesEnum::HASHTAG->value] = 'LoadingPunks keep \'em loading every day 🔄'; break;
-                case ProjectsEnum::NOBASED->value: $examples[$project][TypesEnum::HASHTAG->value] = 'NoBased on @base is the way 🟦'; break;
+                case ProjectsEnum::LOADINGPUNKS->value: $examples[$project][TypesEnum::HASHTAG->value] = 'LoadingPunks keep \'em loading every day 🔃'; break;
+                case ProjectsEnum::NOBASED->value: $examples[$project][TypesEnum::HASHTAG->value] = 'NoBased on @base is the way ✊🏻'; break;
                 case ProjectsEnum::RIPPLEPUNKS->value: $examples[$project][TypesEnum::HASHTAG->value] = 'RipplePunk are The Punks on the XRPL 👑'; break;
             }
 
