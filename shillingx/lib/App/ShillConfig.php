@@ -24,6 +24,8 @@ class ShillConfig extends BaseObject
     {
         $builder = new ShillConfigBuilder();
         $builder->setTypeReply(40);
+        $builder->setTypeGn(0);
+        $builder->setTypeGn(0);
 
         return $builder->toArray();
     }
