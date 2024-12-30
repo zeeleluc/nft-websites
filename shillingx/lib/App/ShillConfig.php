@@ -25,7 +25,10 @@ class ShillConfig extends BaseObject
         $builder->setTypeGXChatAction(1);
         $builder->setTypeReply(5);
         $builder->setTypeRepost(5);
-        $builder->setTypeJoke(1);
+        $builder->setTypeJoke(0);
+        $builder->setTypeQuestion(0);
+        $builder->setTypeShout(0);
+        $builder->setTypeLeftOrRight(1);
 
         return $builder->toArray();
     }
@@ -36,7 +39,10 @@ class ShillConfig extends BaseObject
         $builder->setTypeGXChatAction(1);
         $builder->setTypeReply(10);
         $builder->setTypeRepost(5);
-        $builder->setTypeJoke(1);
+        $builder->setTypeJoke(0);
+        $builder->setTypeQuestion(0);
+        $builder->setTypeShout(0);
+        $builder->setTypeLeftOrRight(1);
 
         return $builder->toArray();
     }
@@ -44,14 +50,14 @@ class ShillConfig extends BaseObject
     private static function getConfigLoadingPunks()
     {
         $builder = new ShillConfigBuilder();
-        $builder->setTypeGm(0);
         $builder->setTypeQuestion(0);
         $builder->setTypeShout(0);
         $builder->setTypePoll(0);
         $builder->setTypeRepost(0);
         $builder->setTypeReply(0);
         $builder->setTypeGn(0);
-        $builder->setTypeImage(2);
+        $builder->setTypeImage(1);
+        $builder->setTypeJoke(0);
 
         return $builder->toArray();
     }
@@ -61,6 +67,10 @@ class ShillConfig extends BaseObject
         $builder = new ShillConfigBuilder();
         $builder->setTypeEasyPosts(0);
         $builder->setTypeReply(50);
+        $builder->setTypeJoke(0);
+        $builder->setTypeQuestion(0);
+        $builder->setTypeShout(0);
+        $builder->setTypeLeftOrRight(0);
 
         return $builder->toArray();
     }
@@ -79,14 +89,14 @@ class ShillConfig extends BaseObject
     {
         $builder = new ShillConfigBuilder();
         $builder->setTypeGm(0);
-        $builder->setTypeQuestion(1);
+        $builder->setTypeQuestion(0);
         $builder->setTypeShout(0);
         $builder->setTypePoll(0);
         $builder->setTypeRepost(0);
         $builder->setTypeReply(0);
         $builder->setTypeGn(0);
         $builder->setTypeImage(1);
-        $builder->setTypeJoke(1);
+        $builder->setTypeJoke(0);
 
         return $builder->toArray();
     }
@@ -95,14 +105,14 @@ class ShillConfig extends BaseObject
     {
         $builder = new ShillConfigBuilder();
         $builder->setTypeGm(0);
-        $builder->setTypeQuestion(1);
+        $builder->setTypeQuestion(0);
         $builder->setTypeShout(0);
         $builder->setTypePoll(0);
         $builder->setTypeRepost(0);
         $builder->setTypeReply(0);
         $builder->setTypeGn(0);
         $builder->setTypeImage(1);
-        $builder->setTypeJoke(1);
+        $builder->setTypeJoke(0);
 
         return $builder->toArray();
     }
