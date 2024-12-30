@@ -11,7 +11,6 @@ class ShillConfig extends BaseObject
         return [
             ProjectsEnum::PIGPUNKS->value => self::getConfigPigPunks(),
             ProjectsEnum::HASMINTS->value => self::getConfigHasMints(),
-            ProjectsEnum::NOGENS->value => self::getConfigNoGens(),
             ProjectsEnum::RIPPLEPUNKS->value => self::getConfigRipplePunks(),
             ProjectsEnum::NOBASED->value => self::getConfigNoBased(),
             ProjectsEnum::LOADINGPUNKS->value => self::getConfigLoadingPunks(),
@@ -20,26 +19,13 @@ class ShillConfig extends BaseObject
         ];
     }
 
-    private static function getConfigNoGens()
-    {
-        $builder = new ShillConfigBuilder();
-        $builder->setTypeReply(40);
-        $builder->setTypeGn(0);
-        $builder->setTypeGn(0);
-
-        return $builder->toArray();
-    }
-
     private static function getConfigNoBased()
     {
         $builder = new ShillConfigBuilder();
-        $builder->setTypeGm(0);
-        $builder->setTypeQuestion(0);
-        $builder->setTypeShout(0);
-        $builder->setTypePoll(0);
-        $builder->setTypeRepost(0);
-        $builder->setTypeReply(0);
-        $builder->setTypeGn(0);
+        $builder->setTypeGXChatAction(1);
+        $builder->setTypeReply(5);
+        $builder->setTypeRepost(5);
+        $builder->setTypeJoke(1);
 
         return $builder->toArray();
     }
@@ -48,7 +34,7 @@ class ShillConfig extends BaseObject
     {
         $builder = new ShillConfigBuilder();
         $builder->setTypeGXChatAction(1);
-        $builder->setTypeReply(50);
+        $builder->setTypeReply(10);
         $builder->setTypeRepost(5);
         $builder->setTypeJoke(1);
 
@@ -74,7 +60,7 @@ class ShillConfig extends BaseObject
     {
         $builder = new ShillConfigBuilder();
         $builder->setTypeEasyPosts(0);
-        $builder->setTypeReply(25);
+        $builder->setTypeReply(50);
 
         return $builder->toArray();
     }
