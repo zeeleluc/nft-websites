@@ -35,6 +35,7 @@ enum SportTypesEnum: string
     case LEGS_WALL_SITS = 'legs_wall_sits';
     case LEGS_CALVES = 'legs_calves';
 
+    case CARDIO_WALK = 'cardio_walk';
     case CARDIO_SPRINTING = 'cardio_sprinting';
     case CARDIO_MOUNTAIN_CLIMBERS = 'cardio_mountain_climbers';
     case CARDIO_JUMPING_JACKS = 'cardio_jumping_jacks';
@@ -43,9 +44,20 @@ enum SportTypesEnum: string
     case FULL_BODY_KB_SWING_BOTH_HANDS = 'full_body_kb_swing_both_hands';
     case FULL_BODY_KB_SWING_SINGLE_HAND = 'full_body_kb_swing_single_hand';
 
+    public function multiplier(): string
+    {
+        switch ($this) {
+            case self::CARDIO_WALK:
+                return 10;
+            default:
+                return 1;
+        }
+    }
+
     public function type(): string
     {
         switch ($this) {
+            case self::CARDIO_WALK:
             case self::CARDIO_SPRINTING:
             case self::CARDIO_MOUNTAIN_CLIMBERS:
             case self::CARDIO_JUMPING_JACKS:
@@ -90,6 +102,7 @@ enum SportTypesEnum: string
             self::LEGS_WALL_SITS => 'Legs: Wall Sits',
             self::LEGS_CALVES => 'Legs: Calves',
 
+            self::CARDIO_WALK => 'Cardio: Walk',
             self::CARDIO_SPRINTING => 'Cardio: Sprinting',
             self::CARDIO_MOUNTAIN_CLIMBERS => 'Cardio: Mountain Climbers',
             self::CARDIO_JUMPING_JACKS => 'Cardio: Jumping Jacks',

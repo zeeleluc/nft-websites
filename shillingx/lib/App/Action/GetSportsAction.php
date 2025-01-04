@@ -58,9 +58,9 @@ class GetSportsAction extends BaseAction
             }
 
             if (isset($grouped[$subject][$exerciseLabel]['count'])) {
-                $grouped[$subject][$exerciseLabel]['count']++;
+                $grouped[$subject][$exerciseLabel]['count'] = $grouped[$subject][$exerciseLabel]['count'] + (1 * $sportType->multiplier());
             } else {
-                $grouped[$subject][$exerciseLabel]['count'] = 1;
+                $grouped[$subject][$exerciseLabel]['count'] = 1 * $sportType->multiplier();
             }
         }
 
