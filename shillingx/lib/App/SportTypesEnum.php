@@ -10,6 +10,7 @@ enum SportTypesEnum: string
     case ARMS_BARBELL_BICEPS = 'arms_barbell_biceps';
     case ARMS_DUMBBELL_BICEPS = 'arms_dumbbell_biceps';
     case ARMS_DUMBBELL_TRICEPS = 'arms_dumbbell_triceps';
+    case ARMS_PUSH_UPS = 'arms_push_ups';
 
     case ABS_LEG_RAISE_OVER_KB = 'abs_leg_raise_over_kb';
     case ABS_LEG_RAISE_WITH_KB_HOLD = 'abs_leg_raise_with_kb_hold';
@@ -74,9 +75,10 @@ enum SportTypesEnum: string
             self::BAR_PULL_UPS => 'Bar: Pull Ups',
             self::BAR_CHIN_UPS => 'Bar: Chin Ups',
 
-            self::ARMS_BARBELL_BICEPS => 'Arms Barbell: Bi-Ceps',
-            self::ARMS_DUMBBELL_BICEPS => 'Arms Dumbbell: Bi-Ceps',
-            self::ARMS_DUMBBELL_TRICEPS => 'Arms Dumbbell: Tri-Ceps',
+            self::ARMS_BARBELL_BICEPS => 'Arms: Barbell Bi-Ceps',
+            self::ARMS_DUMBBELL_BICEPS => 'Arms: Dumbbell Bi-Ceps',
+            self::ARMS_DUMBBELL_TRICEPS => 'Arms: Dumbbell Tri-Ceps',
+            self::ARMS_PUSH_UPS=> 'Arms: Push-Ups',
 
             self::ABS_LEG_RAISE_OVER_KB => 'Abs: Leg Raise Over KB',
             self::ABS_LEG_RAISE_WITH_KB_HOLD => 'Abs: Leg Raise with KB Hold',
