@@ -1,20 +1,20 @@
 <div id="sport-type-actions" class="container mt-3">
     <?php foreach ($sportTypes as $subject => $exercises): ?>
-        <div class="btn-group mb-1" role="group" aria-label="Sport Type Actions">
-            <button class="btn btn-secondary" disabled>
+        <div class="btn-group" role="group" aria-label="Sport Type Actions">
+            <button class="btn btn-secondary no-wrap" disabled>
                 <?=$subject; ?>
             </button>
             <?php foreach ($exercises as $exercise): ?>
                 <button
                     data-sport-type="<?=$exercise['enum']->value; ?>"
-                    class="btn btn-primary async-sport-type-action-btn"
+                    class="btn btn-primary async-sport-type-action-btn no-wrap"
                 >
                     <?=$exercise['clean']; ?>
                 </button>
             <?php endforeach; ?>
         </div>
+        <br />
     <?php endforeach; ?>
 </div>
-
 
 <div id="sports"></div>

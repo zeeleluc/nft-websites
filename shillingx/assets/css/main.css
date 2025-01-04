@@ -81,5 +81,25 @@ code {
 }
 #sport-type-actions .btn {
     font-size: 18px;
-    /*font-family: "Arial", sans-serif;*/
+    padding: 1px 6px;
+    margin-bottom: 2px;
+}
+.no-wrap {
+    white-space: nowrap;
+}
+#sport-type-actions {
+    overflow-x: scroll;
+}
+tr.exercises-group td {
+    font-size: 26px;
+    padding-top: 17px;
+    padding-bottom: 0;
+    padding-left: 25px;
+}
+tr.exercises-done td {
+    padding-top: 0;
+    padding-bottom: 0;
+}
+tr.exercises-done td:first-child {
+    padding-left: 50px;
 }

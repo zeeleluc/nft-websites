@@ -13,12 +13,26 @@
         <div class="col">
             <div class="table-responsive">
                 <table class="table">
-                    <?php foreach($exercisesGrouped as $exerciseEnum => $exerciseCount): ?>
-                        <tr>
-                            <td class="w-50 text-end"><?=\App\SportTypesEnum::from($exerciseEnum)->label(); ?></td>
-                            <td><?=$exerciseCount; ?>x</td>
+                    <?php foreach($exercisesGrouped as $type => $exerciseCollection): ?>
+                        <tr class="exercises-group">
+                            <td colspan="2" class="text-start">
+                                <strong>
+                                    <?=$type; ?>
+                                </strong>
+                            </td>
                         </tr>
+                        <?php foreach ($exerciseCollection as $exerciseLabel => $exerciseData): ?>
+                        <tr class="exercises-done">
+                            <td style="width: 60px" class="text-start">
+                                <?=$exerciseData['count']; ?><?=$exerciseData['enum']->type(); ?>
+                            </td>
+                            <td><?=$exerciseLabel; ?></td>
+                        </tr>
+                        <?php endforeach; ?>
                     <?php endforeach; ?>
+                    <tr>
+                        <td colspan="2"></td>
+                    </tr>
                 </table>
             </div>
         </div>

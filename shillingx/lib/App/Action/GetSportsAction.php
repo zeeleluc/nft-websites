@@ -2,6 +2,7 @@
 namespace App\Action;
 
 use App\Query\DoSportQuery;
+use App\SportTypesEnum;
 use App\Variable;
 use Carbon\Carbon;
 use Doctrine\DBAL\Driver\Exception;
@@ -36,11 +37,30 @@ class GetSportsAction extends BaseAction
         $grouped = [];
 
         foreach ($exercises as $exercise) {
-            $type = $exercise['type']; // Get the type of the exercise
-            if (isset($grouped[$type])) {
-                $grouped[$type]++; // Increment the count if type already exists
+
+            $sportType = SportTypesEnum::from($exercise['type']);
+            $position = strpos($sportType->label(), ':');
+            if ($position === false) {
+                $subject = 'General';
+                $exerciseLabel = $sportType->label();
             } else {
-                $grouped[$type] = 1; // Initialize the count if type is new
+                $subject = substr($sportType->label(), 0, $position);
+                $exerciseLabel = substr($sportType->label(), $position + 1);
+            }
+
+            if (!array_key_exists($subject, $grouped)) {
+                $grouped[$subject] = [];
+            }
+
+            if (!array_key_exists($exerciseLabel, $grouped[$subject])) {
+                $grouped[$subject][$exerciseLabel]['count'] = 0;
+                $grouped[$subject][$exerciseLabel]['enum'] = $sportType;
+            }
+
+            if (isset($grouped[$subject][$exerciseLabel]['count'])) {
+                $grouped[$subject][$exerciseLabel]['count']++;
+            } else {
+                $grouped[$subject][$exerciseLabel]['count'] = 1;
             }
         }
 

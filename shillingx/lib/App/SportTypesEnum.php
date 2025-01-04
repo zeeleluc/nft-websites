@@ -43,6 +43,19 @@ enum SportTypesEnum: string
     case FULL_BODY_KB_SWING_BOTH_HANDS = 'full_body_kb_swing_both_hands';
     case FULL_BODY_KB_SWING_SINGLE_HAND = 'full_body_kb_swing_single_hand';
 
+    public function type(): string
+    {
+        switch ($this) {
+            case self::CARDIO_SPRINTING:
+            case self::CARDIO_MOUNTAIN_CLIMBERS:
+            case self::CARDIO_JUMPING_JACKS:
+            case self::CARDIO_BICYCLE_CROSS_CRUNCHES:
+                return 'min';
+            default:
+                return 'x';
+        }
+    }
+
     public function label(): string
     {
         return match ($this) {
