@@ -6,6 +6,10 @@ enum TypesEnum: string
 {
     case GM = 'gm';
     case GN = 'gn';
+    case PIGPUNKS_IMAGE = 'pigpunks_image';
+    case TEXT = 'text';
+    case GIVEAWAY_CREATE = 'giveaway_create';
+    case GIVEAWAY_WINNER = 'giveaway_winner';
     case REPOST = 'repost';
     case REPLY = 'reply';
     case QUESTION = 'question';
@@ -24,6 +28,9 @@ enum TypesEnum: string
             self::JOKE => 'Joke',
             self::GM => 'GM',
             self::GN => 'GN',
+            self::GIVEAWAY_CREATE => 'Giveaway Create',
+            self::GIVEAWAY_WINNER => 'Giveaway Winner',
+            self::TEXT => 'Text',
             self::REPOST => 'Repost',
             self::REPLY => 'Reply',
             self::QUESTION => 'Question',
@@ -33,6 +40,7 @@ enum TypesEnum: string
             self::POLL => 'Poll',
             self::EASY_POST => 'Easy Post',
             self::IMAGE => 'Image',
+            self::PIGPUNKS_IMAGE => 'Image PigPunks',
             self::HASHTAG => 'Hashtag',
         };
     }
@@ -43,6 +51,9 @@ enum TypesEnum: string
             self::JOKE => 'Joke',
             self::GM => 'GM',
             self::GN => 'GN',
+            self::GIVEAWAY_CREATE => 'Giveaway Create',
+            self::GIVEAWAY_WINNER => 'Giveaway Winner',
+            self::TEXT => 'Text',
             self::REPOST => 'Repost',
             self::REPLY => 'Reply',
             self::QUESTION => '?',
@@ -52,6 +63,7 @@ enum TypesEnum: string
             self::POLL => 'Poll',
             self::EASY_POST => 'Easy Post',
             self::IMAGE => 'Image',
+            self::PIGPUNKS_IMAGE => 'Image PigPunks',
             self::HASHTAG => '#',
         };
     }

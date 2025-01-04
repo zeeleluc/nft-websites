@@ -21,9 +21,11 @@ abstract class Configuration extends BaseObject
             ],
             'async' => [
                 'tasks',
+                'sports',
             ],
             'website' => [
                 'home',
+                'sport',
             ],
         ];
     }

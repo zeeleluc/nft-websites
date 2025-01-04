@@ -44,36 +44,40 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 async function loadTasks() {
-    try {
-        // Make the GET request to "get-tasks"
-        const response = await fetch("/get-tasks", {
-            method: "GET",
-            headers: {
-                "Content-Type": "text/html", // Specify content type for response
-            },
-        });
+    const tasksDiv = document.getElementById("tasks");
+    if (tasksDiv) {
+        try {
+            // Make the GET request to "get-tasks"
+            const response = await fetch("/get-tasks", {
+                method: "GET",
+                headers: {
+                    "Content-Type": "text/html", // Specify content type for response
+                },
+            });
 
-        // Check if the response is successful
-        if (!response.ok) {
-            throw new Error(`Failed to fetch tasks: ${response.statusText}`);
+            // Check if the response is successful
+            if (!response.ok) {
+                throw new Error(`Failed to fetch tasks: ${response.statusText}`);
+            }
+
+            // Get the HTML response as text
+            const html = await response.text();
+
+            // Find the div with id "tasks" and inject the HTML
+            const tasksDiv = document.getElementById("tasks");
+            if (tasksDiv) {
+                tasksDiv.innerHTML = html;
+            } else {
+                console.error("Element with id 'tasks' not found.");
+            }
+        } catch (error) {
+            // Handle any errors that occur during the fetch
+            console.error("Error loading tasks:", error);
+            alert("Failed to load tasks. Please try again later.");
         }
-
-        // Get the HTML response as text
-        const html = await response.text();
-
-        // Find the div with id "tasks" and inject the HTML
-        const tasksDiv = document.getElementById("tasks");
-        if (tasksDiv) {
-            tasksDiv.innerHTML = html;
-        } else {
-            console.error("Element with id 'tasks' not found.");
-        }
-    } catch (error) {
-        // Handle any errors that occur during the fetch
-        console.error("Error loading tasks:", error);
-        alert("Failed to load tasks. Please try again later.");
     }
 }
+
 document.addEventListener('DOMContentLoaded', () => {
     // Event delegation to handle dynamically added elements
     const container = document.body; // Change to a specific container if needed
@@ -113,4 +117,78 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         }
     });
+
+
+    // sports
+    const buttons = document.querySelectorAll('.async-sport-type-action-btn');
+
+    buttons.forEach(button => {
+        button.addEventListener('click', async (event) => {
+            const sportType = event.currentTarget.getAttribute('data-sport-type');
+            const originalText = button.innerHTML; // Save the original text
+            button.disabled = true; // Disable the button
+
+            try {
+                const response = await fetch('do-sport', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ sportType }) // Send sportType in the POST body
+                });
+
+                if (!response.ok) {
+                    throw new Error(`HTTP error! Status: ${response.status}`);
+                }
+
+                const result = await response.json();
+                console.log('Success:', result);
+                loadSports();
+
+            } catch (error) {
+                console.error('Error:', error);
+                button.innerHTML = 'Failed!';
+                setTimeout(() => (button.innerHTML = originalText), 2000); // Restore original text after 2 seconds
+            } finally {
+                button.disabled = false; // Re-enable the button
+            }
+        });
+    });
 });
+
+loadSports();
+
+async function loadSports() {
+    const sportsDiv = document.getElementById("sports");
+    if (sportsDiv) {
+        try {
+            // Make the GET request to "get-tasks"
+            const response = await fetch("/get-sports", {
+                method: "GET",
+                headers: {
+                    "Content-Type": "text/html", // Specify content type for response
+                },
+            });
+
+            // Check if the response is successful
+            if (!response.ok) {
+                throw new Error(`Failed to fetch sports: ${response.statusText}`);
+            }
+
+            // Get the HTML response as text
+            const html = await response.text();
+
+            // Find the div with id "tasks" and inject the HTML
+            const sportsDiv = document.getElementById("sports");
+            if (sportsDiv) {
+                sportsDiv.innerHTML = html;
+            } else {
+                console.error("Element with id 'sports' not found.");
+            }
+        } catch (error) {
+            // Handle any errors that occur during the fetch
+            console.error("Error loading sports:", error);
+            alert("Failed to load sports. Please try again later.");
+        }
+    }
+}

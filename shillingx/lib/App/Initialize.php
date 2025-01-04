@@ -6,7 +6,6 @@ use App\Action\Action as AbstractAction;
 use App\Action\BaseAction;
 use App\Object\BaseObject;
 use App\Object\ObjectManager;
-use App\Query\DoShillQuery;
 
 class Initialize extends BaseObject
 {
@@ -75,6 +74,18 @@ class Initialize extends BaseObject
 
         if ($get['action'] === 'get-tasks') {
             return new Action\GetTasksAction();
+        }
+
+        if ($get['action'] === 'sport') {
+            return new Action\SportAction();
+        }
+
+        if ($get['action'] === 'do-sport') {
+            return new Action\DoSportAction();
+        }
+
+        if ($get['action'] === 'get-sports') {
+            return new Action\GetSportsAction();
         }
 
         throw new \Exception('Page not found.');

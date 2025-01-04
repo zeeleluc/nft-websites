@@ -4,7 +4,6 @@ namespace App\Action;
 use App\ProjectsEnum;
 use App\Query\DoShillQuery;
 use App\TypesEnum;
-use App\Variable;
 use Doctrine\DBAL\Driver\Exception;
 
 class DoShillAction extends BaseAction
@@ -30,7 +29,5 @@ class DoShillAction extends BaseAction
         ];
         echo json_encode($response);
         exit;
-
-
     }
 }

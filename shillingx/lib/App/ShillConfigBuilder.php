@@ -6,9 +6,12 @@ use App\Object\BaseObject;
 class ShillConfigBuilder extends BaseObject
 {
     private int $typeGm = 1;
-    private int $typeGn = 1;
+
+    private int $typeText = 0;
+    private int $typeGn = 0;
     private int $typeRepost = 3;
     private int $typeReply = 20;
+    private int $typeImagePigPunks = 0;
     private int $typeQuestion = 1;
     private int $typeShout = 1;
     private int $typeLeftOrRight = 1;
@@ -18,10 +21,40 @@ class ShillConfigBuilder extends BaseObject
     private int $typeImage = 2;
     private int $typeHashtag = 1;
     private int $typeJoke = 0;
+    private int $typeGiveawayCreate = 0;
+    private int $typeGiveawayWinner = 0;
+
+    public function setTypeGiveawayCreate(int $total): ShillConfigBuilder
+    {
+        $this->typeGiveawayCreate = $total;
+
+        return $this;
+    }
+
+    public function setTypePigPunksImage(int $total): ShillConfigBuilder
+    {
+        $this->typeImagePigPunks = $total;
+
+        return $this;
+    }
+
+    public function setTypeGiveawayWinner(int $total): ShillConfigBuilder
+    {
+        $this->typeGiveawayWinner = $total;
+
+        return $this;
+    }
 
     public function setTypeJoke(int $total): ShillConfigBuilder
     {
         $this->typeJoke = $total;
+
+        return $this;
+    }
+
+    public function setTypeText(int $total): ShillConfigBuilder
+    {
+        $this->typeText = $total;
 
         return $this;
     }
@@ -115,16 +148,20 @@ class ShillConfigBuilder extends BaseObject
         return [
             TypesEnum::EASY_POST->value => $this->typeEasyPost,
             TypesEnum::GM->value => $this->typeGm,
+            TypesEnum::REPLY->value => $this->typeReply,
             TypesEnum::HASHTAG->value => $this->typeHashtag,
+            TypesEnum::GIVEAWAY_WINNER->value => $this->typeGiveawayWinner,
+            TypesEnum::GIVEAWAY_CREATE->value => $this->typeGiveawayCreate,
             TypesEnum::JOKE->value => $this->typeJoke,
             TypesEnum::QUESTION->value => $this->typeQuestion,
             TypesEnum::SHOUT->value => $this->typeShout,
             TypesEnum::LEFT_OR_RIGHT->value => $this->typeLeftOrRight,
             TypesEnum::X_CHAT_ACTION->value => $this->typeXChatAction,
             TypesEnum::POLL->value => $this->typePoll,
+            TypesEnum::TEXT->value => $this->typeText,
             TypesEnum::IMAGE->value => $this->typeImage,
+            TypesEnum::PIGPUNKS_IMAGE->value => $this->typeImagePigPunks,
             TypesEnum::REPOST->value => $this->typeRepost,
-            TypesEnum::REPLY->value => $this->typeReply,
             TypesEnum::GN->value => $this->typeGn,
         ];
     }

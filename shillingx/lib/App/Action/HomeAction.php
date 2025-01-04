@@ -154,7 +154,7 @@ class HomeAction extends BaseAction
                 case ProjectsEnum::LOADINGPUNKS->value: $examples[$project][TypesEnum::HASHTAG->value] = 'LoadingPunks keep \'em loading every day 🔃'; break;
                 case ProjectsEnum::NOBASED->value: $examples[$project][TypesEnum::HASHTAG->value] = 'NoBased on @base is the way ✊🏻'; break;
                 case ProjectsEnum::RIPPLEPUNKS->value: $examples[$project][TypesEnum::HASHTAG->value] = 'RipplePunk are The Punks on the XRPL 👑'; break;
-                case ProjectsEnum::BASEALIENS->value: $examples[$project][TypesEnum::GM->value] = 'BaseAliens once were humanoid Punks on Ethereum 👽'; break;
+                case ProjectsEnum::BASEALIENS->value: $examples[$project][TypesEnum::HASHTAG->value] = 'BaseAliens once were humanoid Punks on Ethereum 👽'; break;
             }
 
         }

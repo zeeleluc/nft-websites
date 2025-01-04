@@ -1,0 +1,26 @@
+<div class="container mt-3">
+    <div class="row">
+        <div class="col">
+            <div class="progress">
+                <div class="progress-bar" role="progressbar" style="width: <?=$percentageDone; ?>%" aria-valuenow="<?=$percentageDone; ?>" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container mt-3">
+    <div class="row">
+        <div class="col">
+            <div class="table-responsive">
+                <table class="table">
+                    <?php foreach($exercisesGrouped as $exerciseEnum => $exerciseCount): ?>
+                        <tr>
+                            <td class="w-50 text-end"><?=\App\SportTypesEnum::from($exerciseEnum)->label(); ?></td>
+                            <td><?=$exerciseCount; ?>x</td>
+                        </tr>
+                    <?php endforeach; ?>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

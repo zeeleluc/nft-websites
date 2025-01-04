@@ -79,3 +79,7 @@ code {
     padding: 10px;
     cursor: pointer;
 }
+#sport-type-actions .btn {
+    font-size: 18px;
+    /*font-family: "Arial", sans-serif;*/
+}
