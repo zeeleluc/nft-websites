@@ -57,6 +57,9 @@ body {
 .progress-bar {
     background-color: #659287;
 }
+.progress-bar-missing {
+    background-color: #e77128;
+}
 .far-from-ready {
     padding-left: 10px;
     padding-top: 6px;

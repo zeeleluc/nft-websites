@@ -30,4 +30,10 @@ class DoSportQuery extends Query
             ->where('date', $date->format('Y-m-d'))
             ->get($this->table);
     }
+
+    public function getAllSports(): array
+    {
+        return $this->db
+            ->get($this->table);
+    }
 }
