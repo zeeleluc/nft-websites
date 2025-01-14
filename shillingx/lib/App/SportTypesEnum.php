@@ -63,6 +63,7 @@ enum SportTypesEnum: string
             case self::CARDIO_MOUNTAIN_CLIMBERS:
             case self::CARDIO_JUMPING_JACKS:
             case self::CARDIO_BICYCLE_CROSS_CRUNCHES:
+            case self::LEGS_WALL_SITS:
                 return 'min';
             default:
                 return 'x';
@@ -76,8 +77,8 @@ enum SportTypesEnum: string
             self::BAR_CHIN_UPS => 'Bar: Chin Ups',
 
             self::ARMS_BARBELL_BICEPS => 'Arms: Barbell Bi-Ceps',
-            self::ARMS_DUMBBELL_BICEPS => 'Arms: Dumbbell Bi-Ceps',
-            self::ARMS_DUMBBELL_TRICEPS => 'Arms: Dumbbell Tri-Ceps',
+            self::ARMS_DUMBBELL_BICEPS => 'Arms: Dumbbell/KB Bi-Ceps',
+            self::ARMS_DUMBBELL_TRICEPS => 'Arms: Dumbbell/KB Tri-Ceps',
             self::ARMS_PUSH_UPS=> 'Arms: Push-Ups',
 
             self::ABS_LEG_RAISE_OVER_KB => 'Abs: Leg Raise Over KB',
