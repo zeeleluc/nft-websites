@@ -1,20 +1,68 @@
-<div id="sport-type-actions" class="container mt-3">
-    <?php foreach ($sportTypes as $subject => $exercises): ?>
-        <div class="btn-group" role="group" aria-label="Sport Type Actions">
-            <button class="btn btn-secondary no-wrap" disabled>
-                <?=$subject; ?>
-            </button>
-            <?php foreach ($exercises as $exercise): ?>
-                <button
-                    data-sport-type="<?=$exercise['enum']->value; ?>"
-                    class="btn btn-primary async-sport-type-action-btn no-wrap"
-                >
-                    <?=$exercise['clean']; ?>
-                </button>
-            <?php endforeach; ?>
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <div id="sport-type-actions" class="container mt-3">
+                <?php foreach ($sportTypes as $subject => $exercises): ?>
+                    <div class="btn-group" role="group" aria-label="Sport Type Actions">
+                        <button class="btn btn-secondary no-wrap" disabled>
+                            <?=$subject; ?>
+                        </button>
+                        <?php foreach ($exercises as $exercise): ?>
+                            <button
+                                data-sport-type="<?=$exercise['enum']->value; ?>"
+                                class="btn btn-primary async-sport-type-action-btn no-wrap"
+                            >
+                                <?=$exercise['clean']; ?>
+                            </button>
+                        <?php endforeach; ?>
+                    </div>
+                    <br />
+                <?php endforeach; ?>
+            </div>
         </div>
-        <br />
-    <?php endforeach; ?>
+    </div>
 </div>
 
-<div id="sports"></div>
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <div id="sports"></div>
+        </div>
+        <div class="col pt-3">
+            <div id="sports-year">
+                <div class="table-responsive">
+                    <table class="table table-year-progress">
+                        <?php $index = 1; ?>
+                        <?php foreach($yearExercisesGrouped as $type => $exerciseCollection): ?>
+                            <tr class="exercises-group">
+                                <td colspan="2" class="text-start">
+                                    <strong>
+                                        <?=$type; ?>
+                                    </strong>
+                                    <?php if ($index === 1): ?>
+                                        <div class="float-end pd-3">
+                                            2025&nbsp;&nbsp;&nbsp;&nbsp;
+                                        </div>
+                                    <?php endif; ?>
+                                </td>
+                            </tr>
+                            <?php foreach ($exerciseCollection as $exerciseLabel => $exerciseData): ?>
+                                <tr class="exercises-done">
+                                    <td style="width: 60px" class="text-start">
+                                        <?=$exerciseData['count']; ?><?=$exerciseData['enum']->type(); ?>
+                                    </td>
+                                    <td><?=$exerciseLabel; ?></td>
+                                </tr>
+                            <?php endforeach; ?>
+                            <?php $index++; ?>
+                        <?php endforeach; ?>
+                        <tr>
+                            <td colspan="2"></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

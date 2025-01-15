@@ -41,6 +41,9 @@ class GetSportsAction extends BaseAction
         $percentageYearMissing = $goalPoints > 0 ? ($missingPointsThisYear / $yearGoalPoints) * 100 : 0;
         $percentageYearMissing = min(100, $percentageYearMissing);
 
+        $this->setVariable(new Variable('pointsDailyGoal', $goalPoints));
+        $this->setVariable(new Variable('pointsDoneToday', $doneToday));
+
         $this->setVariable(new Variable('missingPointsThisYear', $missingPointsThisYear));
         $this->setVariable(new Variable('percentageDone', $percentageDone));
         $this->setVariable(new Variable('percentageYearDone', $percentageYearDone));
@@ -49,40 +52,5 @@ class GetSportsAction extends BaseAction
 
         $this->setLayout('async');
         $this->setView('async/sports');
-    }
-
-    private function groupExercisesByType(array $exercises): array
-    {
-        $grouped = [];
-
-        foreach ($exercises as $exercise) {
-
-            $sportType = SportTypesEnum::from($exercise['type']);
-            $position = strpos($sportType->label(), ':');
-            if ($position === false) {
-                $subject = 'General';
-                $exerciseLabel = $sportType->label();
-            } else {
-                $subject = substr($sportType->label(), 0, $position);
-                $exerciseLabel = substr($sportType->label(), $position + 1);
-            }
-
-            if (!array_key_exists($subject, $grouped)) {
-                $grouped[$subject] = [];
-            }
-
-            if (!array_key_exists($exerciseLabel, $grouped[$subject])) {
-                $grouped[$subject][$exerciseLabel]['count'] = 0;
-                $grouped[$subject][$exerciseLabel]['enum'] = $sportType;
-            }
-
-            if (isset($grouped[$subject][$exerciseLabel]['count'])) {
-                $grouped[$subject][$exerciseLabel]['count'] = $grouped[$subject][$exerciseLabel]['count'] + (1 * $sportType->multiplier());
-            } else {
-                $grouped[$subject][$exerciseLabel]['count'] = 1 * $sportType->multiplier();
-            }
-        }
-
-        return $grouped;
     }
 }

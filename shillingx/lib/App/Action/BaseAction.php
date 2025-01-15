@@ -2,6 +2,7 @@
 namespace App\Action;
 
 use App\Object\BaseObject;
+use App\SportTypesEnum;
 use App\Template\Template;
 use App\Variable;
 
@@ -34,6 +35,58 @@ abstract class BaseAction extends BaseObject
                 $this->setVariable(new Variable('currentAction', null));
             }
         }
+    }
+
+    protected function groupExercisesByType(array $exercises, string $sort = 'mostFirst'): array
+    {
+        $grouped = [];
+
+        foreach ($exercises as $exercise) {
+
+            $sportType = SportTypesEnum::from($exercise['type']);
+            $position = strpos($sportType->label(), ':');
+            if ($position === false) {
+                $subject = 'General';
+                $exerciseLabel = $sportType->label();
+            } else {
+                $subject = substr($sportType->label(), 0, $position);
+                $exerciseLabel = substr($sportType->label(), $position + 2);
+            }
+
+            if (!array_key_exists($subject, $grouped)) {
+                $grouped[$subject] = [];
+                $grouped[$subject]['_subject_total'] = 0;
+            }
+
+            if (!array_key_exists($exerciseLabel, $grouped[$subject])) {
+                $grouped[$subject][$exerciseLabel]['count'] = 0;
+                $grouped[$subject][$exerciseLabel]['enum'] = $sportType;
+            }
+
+            if (isset($grouped[$subject][$exerciseLabel]['count'])) {
+                $grouped[$subject][$exerciseLabel]['count'] = $grouped[$subject][$exerciseLabel]['count'] + (1 * $sportType->multiplier());
+                $grouped[$subject]['_subject_total'] = $grouped[$subject]['_subject_total'] + (1 * $sportType->multiplier());
+            } else {
+                $grouped[$subject][$exerciseLabel]['count'] = 1 * $sportType->multiplier();
+                $grouped[$subject]['_subject_total'] = 1 * $sportType->multiplier();
+            }
+        }
+
+        if ($sort === 'lessFirst') {
+            uasort($grouped, function ($a, $b) {
+                return $a['_subject_total'] <=> $b['_subject_total'];
+            });
+        } elseif ($sort === 'mostFirst') {
+            uasort($grouped, function ($a, $b) {
+                return $b['_subject_total'] <=> $a['_subject_total'];
+            });
+        }
+
+        foreach ($grouped as $subject => $data) {
+            unset($grouped[$subject]['_subject_total']);
+        }
+
+        return $grouped;
     }
 
     public function setVariable(Variable $variable): void

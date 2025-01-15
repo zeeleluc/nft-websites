@@ -156,4 +156,3 @@ function calculateRemainingActions(array $actions, array $requiredActions): arra
 
     return $remaining;
 }
-

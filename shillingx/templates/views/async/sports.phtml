@@ -1,29 +1,47 @@
-<div class="container mt-3">
+
+<div class="container mt-3 bg-white pt-4">
+
     <div class="row">
-        <div class="col">
+        <div class="col px-4 mb-3">
+            <img class="mr-3" src="./assets/images/loading.gif" />
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col px-4 mb-3">
             <div class="progress">
                 <div class="progress-bar" role="progressbar" style="width: <?=$percentageDone; ?>%" aria-valuenow="<?=$percentageDone; ?>" aria-valuemin="0" aria-valuemax="100"></div>
             </div>
+            <?php if ($pointsDoneToday < $pointsDailyGoal): ?>
+                <small>
+                    <?=$pointsDoneToday; ?> / <?=$pointsDailyGoal; ?>
+                </small>
+            <?php else: ?>
+                <small>
+                    <?=$pointsDailyGoal; ?> + <?=($pointsDoneToday - $pointsDailyGoal); ?> = <strong><?=$pointsDoneToday; ?></strong>
+                </small>
+            <?php endif; ?>
         </div>
     </div>
-</div>
-<div class="container mt-3">
+
     <div class="row">
-        <div class="col">
+        <div class="col px-4">
             <div class="progress">
                 <div class="progress-bar" role="progressbar" style="width: <?=$percentageYearDone; ?>%" aria-valuenow="<?=$percentageYearDone; ?>" aria-valuemin="0" aria-valuemax="100"></div>
                 <div class="progress-bar progress-bar-missing" role="progressbar" style="width: <?=$percentageYearMissing; ?>%" aria-valuenow="<?=$percentageYearMissing; ?>" aria-valuemin="0" aria-valuemax="100"></div>
             </div>
             <?php if ($missingPointsThisYear > 0): ?>
                 <small>
-                    <?=$missingPointsThisYear; ?> missing points for 2025
+                    missing <?=$missingPointsThisYear; ?> points for 2025
+                </small>
+            <?php else: ?>
+                <small>
+                    you are ahead of track!
                 </small>
             <?php endif; ?>
         </div>
     </div>
-</div>
 
-<div class="container mt-3">
     <div class="row">
         <div class="col">
             <div class="table-responsive">

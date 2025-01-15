@@ -97,7 +97,7 @@ tr.exercises-group td {
     font-size: 26px;
     padding-top: 17px;
     padding-bottom: 0;
-    padding-left: 25px;
+    padding-left: 15px;
 }
 tr.exercises-done td {
     padding-top: 0;
@@ -105,4 +105,15 @@ tr.exercises-done td {
 }
 tr.exercises-done td:first-child {
     padding-left: 50px;
+}
+table.table.table-year-progress tr td {
+    background-color: #e3e2d7;
+    color: #333;
+}
+
+table.table.table-year-progress tr.exercises-group td {
+    font-size: 24px;
+    padding-top: 17px;
+    padding-bottom: 0;
+    padding-left: 25px;
 }

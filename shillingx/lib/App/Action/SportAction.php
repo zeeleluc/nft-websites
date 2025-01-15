@@ -18,10 +18,14 @@ class SportAction extends BaseAction
 
         $this->setLayout('default');
         $this->setView('website/sport');
+        $this->setVariable(new Variable('htmlTitle', 'Sport'));
 
         $query = new DoSportQuery();
-        $sports = $query->getSports(Carbon::now('America/Curacao'));
+        $sports = $query->getAllSports();
 
+        $yearExercisesGrouped = $this->groupExercisesByType($sports, 'lessFirst');
+
+        $this->setVariable(new Variable('yearExercisesGrouped', $yearExercisesGrouped));
         $this->setVariable(new Variable('progress', $sports));
         $this->setVariable(new Variable('sportTypes', $this->translateSportsPerSubject(SportTypesEnum::cases())));
     }
