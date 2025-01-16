@@ -22,14 +22,15 @@ class ShillConfig extends BaseObject
     private static function getConfigNoBased()
     {
         $builder = new ShillConfigBuilder();
-        $builder->setTypeGXChatAction(1);
-        $builder->setTypeReply(3);
-        $builder->setTypeRepost(5);
+        $builder->setTypeGXChatAction(0);
+        $builder->setTypeReply(0);
+        $builder->setTypeImage(1);
+        $builder->setTypeRepost(1);
         $builder->setTypeJoke(0);
         $builder->setTypeQuestion(0);
         $builder->setTypeShout(0);
         $builder->setTypeLeftOrRight(1);
-        $builder->setTypeText(3);
+        $builder->setTypeText(1);
         $builder->setTypePoll(0);
 
         return $builder->toArray();
@@ -38,15 +39,16 @@ class ShillConfig extends BaseObject
     private static function getConfigPigPunks()
     {
         $builder = new ShillConfigBuilder();
-        $builder->setTypeGXChatAction(1);
-        $builder->setTypeReply(5);
-        $builder->setTypeRepost(3);
+        $builder->setTypeGXChatAction(0);
+        $builder->setTypeReply(0);
+        $builder->setTypeImage(1);
+        $builder->setTypeRepost(1);
         $builder->setTypeJoke(0);
         $builder->setTypeQuestion(0);
         $builder->setTypeShout(0);
         $builder->setTypePoll(0);
         $builder->setTypeLeftOrRight(1);
-        $builder->setTypeText(3);
+        $builder->setTypeText(1);
 
         return $builder->toArray();
     }
@@ -89,9 +91,9 @@ class ShillConfig extends BaseObject
     {
         $builder = new ShillConfigBuilder();
         $builder->setTypeRepost(1);
-        $builder->setTypeReply(4);
+        $builder->setTypeReply(0);
         $builder->setTypeImage(1);
-        $builder->setTypeText(2);
+        $builder->setTypeText(1);
         $builder->setTypeJoke(0);
         $builder->setTypeQuestion(0);
         $builder->setTypeShout(0);
