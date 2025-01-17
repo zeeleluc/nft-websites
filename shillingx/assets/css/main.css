@@ -93,6 +93,11 @@ code {
 #sport-type-actions {
     overflow-x: scroll;
 }
+#sport-type-actions .btn-group .btn:nth-child(2) {
+    background-color: #ffdabe;
+    border-color: #ffdabe;
+
+}
 tr.exercises-group td {
     font-size: 26px;
     padding-top: 17px;

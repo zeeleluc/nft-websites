@@ -16,10 +16,18 @@ class DoSportAction extends BaseAction
 
         $this->setTerminal(true);
 
-        $type = $this->getRequest()->getPostParam('sportType');
-
         $query = new DoSportQuery();
-        $query->doSport(SportTypesEnum::from($type));
+
+        $type = $this->getRequest()->getPostParam('sportType');
+        $multiple = (int) $this->getRequest()->getPostParam('multiple');
+
+        if ($multiple) {
+            for ($i = 1; $i <= $multiple; $i++) {
+                $query->doSport(SportTypesEnum::from($type));
+            }
+        } else {
+            $query->doSport(SportTypesEnum::from($type));
+        }
 
         $response = [
             'success' => true,

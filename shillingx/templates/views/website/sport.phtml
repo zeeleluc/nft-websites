@@ -1,34 +1,67 @@
-<div class="container">
+<div class="container mb-5">
     <div class="row">
-        <div class="col">
-            <div id="sport-type-actions" class="container mt-3">
-                <?php foreach ($sportTypes as $subject => $exercises): ?>
-                    <div class="btn-group" role="group" aria-label="Sport Type Actions">
-                        <button class="btn btn-secondary no-wrap" disabled>
-                            <?=$subject; ?>
-                        </button>
-                        <?php foreach ($exercises as $exercise): ?>
-                            <button
-                                data-sport-type="<?=$exercise['enum']->value; ?>"
-                                class="btn btn-primary async-sport-type-action-btn no-wrap"
-                            >
-                                <?=$exercise['clean']; ?>
-                            </button>
-                        <?php endforeach; ?>
-                    </div>
-                    <br />
-                <?php endforeach; ?>
+        <div class="col col-12 col-lg-6 mt-4">
+            <div id="sport-type-actions">
+                <table>
+                    <?php foreach ($sportTypes as $subject => $exercises): ?>
+                        <tr>
+                            <td style="width: 120px; vertical-align: top; padding-top: 20px;">
+                                <?=$subject; ?>
+                            </td>
+                            <td style="vertical-align: top; padding-top: 15px;">
+                                <?php foreach ($exercises as $exercise): ?>
+                                    <div class="btn-group mt-1" style="margin-left: 5px;" role="group" aria-label="Sport Type Actions">
+                                        <button
+                                            data-sport-type="<?=$exercise['enum']->value; ?>"
+                                            class="btn btn-primary async-sport-type-action-btn no-wrap"
+                                        >
+                                            <?=$exercise['clean']; ?>
+                                        </button>
+                                        <button
+                                            data-sport-type="<?=$exercise['enum']->value; ?>"
+                                            data-multiple="12"
+                                            class="btn btn-primary async-sport-type-action-btn no-wrap"
+                                        >
+                                            x12
+                                        </button>
+                                    </div>
+                                <?php endforeach; ?>
+                            </td>
+                        </tr>
+                    <?php endforeach; ?>
+                </table>
             </div>
+        </div>
+        <div class="col col-12 col-lg-6">
+            <div id="sports"></div>
         </div>
     </div>
 </div>
 
+<br />
+<br />
+
 <div class="container">
     <div class="row">
-        <div class="col">
-            <div id="sports"></div>
-        </div>
         <div class="col pt-3">
+
+            <div class="progress">
+                <div class="progress-bar" role="progressbar" style="width: <?=$percentageYearDone; ?>%" aria-valuenow="<?=$percentageYearDone; ?>" aria-valuemin="0" aria-valuemax="100"></div>
+                <div class="progress-bar progress-bar-missing" role="progressbar" style="width: <?=$percentageYearMissing; ?>%" aria-valuenow="<?=$percentageYearMissing; ?>" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+            <?php if ($missingPointsThisYear > 0): ?>
+                <small>
+                    missing <?=$missingPointsThisYear; ?> points for 2025
+                </small>
+            <?php else: ?>
+                <small>
+                    you are ahead of track!
+                </small>
+            <?php endif; ?>
+
+            <br />
+            <br />
+
             <div id="sports-year">
                 <div class="table-responsive">
                     <table class="table table-year-progress">

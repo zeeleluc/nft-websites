@@ -125,6 +125,7 @@ document.addEventListener('DOMContentLoaded', () => {
     buttons.forEach(button => {
         button.addEventListener('click', async (event) => {
             const sportType = event.currentTarget.getAttribute('data-sport-type');
+            const multiple = event.currentTarget.getAttribute('data-multiple');
             const originalText = button.innerHTML; // Save the original text
             button.disabled = true; // Disable the button
 
@@ -134,7 +135,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     headers: {
                         'Content-Type': 'application/json',
                     },
-                    body: JSON.stringify({ sportType }) // Send sportType in the POST body
+                    body: JSON.stringify({ sportType, multiple }) // Send sportType in the POST body
                 });
 
                 if (!response.ok) {

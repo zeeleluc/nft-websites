@@ -25,24 +25,6 @@
     </div>
 
     <div class="row">
-        <div class="col px-4">
-            <div class="progress">
-                <div class="progress-bar" role="progressbar" style="width: <?=$percentageYearDone; ?>%" aria-valuenow="<?=$percentageYearDone; ?>" aria-valuemin="0" aria-valuemax="100"></div>
-                <div class="progress-bar progress-bar-missing" role="progressbar" style="width: <?=$percentageYearMissing; ?>%" aria-valuenow="<?=$percentageYearMissing; ?>" aria-valuemin="0" aria-valuemax="100"></div>
-            </div>
-            <?php if ($missingPointsThisYear > 0): ?>
-                <small>
-                    missing <?=$missingPointsThisYear; ?> points for 2025
-                </small>
-            <?php else: ?>
-                <small>
-                    you are ahead of track!
-                </small>
-            <?php endif; ?>
-        </div>
-    </div>
-
-    <div class="row">
         <div class="col">
             <div class="table-responsive">
                 <table class="table">
